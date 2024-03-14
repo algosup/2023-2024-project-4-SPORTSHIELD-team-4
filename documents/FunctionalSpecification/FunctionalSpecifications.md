@@ -1,4 +1,4 @@
-# Functional Specification: SPORTSHIELD Project
+# Functional Specifications: SPORTSHIELD Project
 
 ## 1. Document Control
 
@@ -23,7 +23,7 @@
 <details>
 <summary>Table of Contents</summary>
 
-- [Functional Specification: SPORTSHIELD Project](#functional-specification-sportshield-project)
+- [Functional Specifications: SPORTSHIELD Project](#functional-specifications-sportshield-project)
   - [1. Document Control](#1-document-control)
     - [1.1 Version History](#11-version-history)
     - [1.2 Document Approval](#12-document-approval)
