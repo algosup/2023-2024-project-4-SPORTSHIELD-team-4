@@ -1,0 +1,54 @@
+name: 🗎 Documentation Report 
+descrption: Report an error in the documentation.
+title: ""
+labels: ["Documentation","Error"]
+assignees: ["AlexisLasselin"]
+body:
+  - type: markdown
+  attributes:
+  value: |
+    Please fill out the sections below to help the team to fix what's wrong.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      placeholder: Describe the aspect of documentation that needs attention. Be clear about what needs to be updated, added, or improved.
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date
+      placeholder: The date in "dd/mm/yyyy"
+  - type: dropdown
+    id: importance
+    attributes:
+      label: "Importance"
+      options:
+        - 1 - Urgent
+        - 2 - High Priority
+        - 3 - Normal Priority
+        - 4 - Low Priority
+        - 5 - Informational
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason for Update
+      placeholder: Explain why this change is necessary. For example, is there a new feature that needs documentation, outdated information that needs to be corrected, or areas that need clarification?
+  - type: textarea
+    id: changes
+    attributes:
+      label: Proposed Changes
+      placeholder: Provide specific details on the changes to be made. This could include adding new sections, updating existing content, or removing outdated information.
+  - type: checkboxes
+    id: terms
+    attributes:
+    label: Extra Field
+    options:
+      - I want to work on this issue 
+  - type: markdown 
+    attributes:
+      value : |
+        Thanks for reporting this issue ! The team will try to solve the problem.
