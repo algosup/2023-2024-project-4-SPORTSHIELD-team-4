@@ -1,0 +1,351 @@
+# Technical Specifications
+
+---
+
+## Table of Contents
+
+<details>
+<summary><b>Click to expand</b></summary>
+
+- [Technical Specifications](#technical-specifications)
+  - [Table of Contents](#table-of-contents)
+  - [I. Introduction](#i-introduction)
+    - [1. Overview](#1-overview)
+    - [2. Glossary](#2-glossary)
+    - [3. Context](#3-context)
+    - [4. Goals and Objectives](#4-goals-and-objectives)
+    - [5. Out of Scope](#5-out-of-scope)
+    - [6. Future Goals](#6-future-goals)
+    - [7. Assumptions](#7-assumptions)
+  - [II. Solutions](#ii-solutions)
+    - [1. Current Solution](#1-current-solution)
+    - [2. Suggested Solution](#2-suggested-solution)
+    - [3. Test Plan](#3-test-plan)
+    - [4. Monitoring and Alerting Plan](#4-monitoring-and-alerting-plan)
+    - [5. Rollout Plan](#5-rollout-plan)
+    - [6. Rollback Plan](#6-rollback-plan)
+    - [7. Alternate Solutions](#7-alternate-solutions)
+  - [III. Further Considerations](#iii-further-considerations)
+    - [1. Impact on Other Teams](#1-impact-on-other-teams)
+    - [2. Third-Party Services](#2-third-party-services)
+    - [3. Considerations](#3-considerations)
+      - [A. Security Considerations](#a-security-considerations)
+      - [B. Privacy Considerations](#b-privacy-considerations)
+      - [C. Regional Considerations](#c-regional-considerations)
+      - [D. Accessibility Considerations](#d-accessibility-considerations)
+      - [E. Operational Considerations](#e-operational-considerations)
+      - [F. Risks](#f-risks)
+      - [G. Support Considerations](#g-support-considerations)
+    - [IV. Success Evaluation](#iv-success-evaluation)
+      - [1. Impact](#1-impact)
+      - [2. Metrics](#2-metrics)
+    - [V. Work](#v-work)
+      - [1. Work Estimates and Timelines](#1-work-estimates-and-timelines)
+      - [2. Prioritization](#2-prioritization)
+      - [3. Milestones](#3-milestones)
+      - [4. Future Work](#4-future-work)
+    - [VI. Deliberations](#vi-deliberations)
+      - [1. Discussion](#1-discussion)
+      - [2. Open Questions](#2-open-questions)
+    - [VII. Conclusion](#vii-conclusion)
+    - [VIII. References](#viii-references)
+
+</details>
+
+---
+
+## I. Introduction
+
+### 1. Overview
+
+<!--
+Summary of the problem (from the perspective of the user), the context, suggested solution, and the stakeholders.
+-->
+
+### 2. Glossary
+
+<!--
+New terms you come across as you research your design or terms you may suspect your readers/stakeholders not to know.
+-->
+
+### 3. Context
+
+<!--
+Reasons why the problem is worth solving
+Origin of the problem
+How the problem affects users and company goals
+Past efforts made to solve the solution and why they were not effective
+How the product relates to team goals, OKRs
+How the solution fits into the overall product roadmap and strategy
+How the solution fits into the technical strategy
+-->
+
+### 4. Goals and Objectives
+
+<!--
+Product requirements in the form of user stories
+Technical requirements
+-->
+
+### 5. Out of Scope
+
+<!--
+Product and technical requirements that will be disregarded
+-->
+
+### 6. Future Goals
+
+<!--
+Product and technical requirements slated for a future time
+-->
+
+### 7. Assumptions
+
+<!--
+Conditions and resources that need to be present and accessible for the solution to work as described.
+-->
+
+## II. Solutions
+
+### 1. Current Solution
+
+<!--
+Current solution description
+Pros and cons of the current solution
+-->
+
+### 2. Suggested Solution
+
+<!--
+External components that the solution will interact with and that it will alter
+Dependencies of the current solution
+Pros and cons of the proposed solution
+**Data Model / Schema Changes**
+  Schema definitions
+  New data models
+  Modified data models
+  Data validation methods
+**Business Logic**
+  API changes
+  Pseudocode
+  Flowcharts
+  Error states
+  Failure scenarios
+  Conditions that lead to errors and failures
+  Limitations
+**Presentation Layer**
+  User requirements
+  UX changes
+  UI changes
+  Wireframes with descriptions
+  Links to UI/UX designer’s work
+  Mobile concerns
+  Web concerns
+  UI states
+  Error handling
+**Other questions to answer**
+  How will the solution scale?
+  What are the limitations of the solution?
+  How will it recover in the event of a failure?
+  How will it cope with future requirements?
+-->
+
+### 3. Test Plan
+
+<!--
+Explanations of how the tests will make sure user requirements are met
+Unit tests
+Integrations tests
+QA
+-->
+
+### 4. Monitoring and Alerting Plan
+
+<!--
+Logging plan and tools
+Monitoring plan and tools
+Metrics to be used to measure health
+How to ensure observability
+Alerting plan and tools
+-->
+
+### 5. Rollout Plan
+
+<!--
+Deployment architecture
+Deployment environments
+Phased roll-out plan e.g. using feature flags
+Plan outlining how to communicate changes to the users, for example, with release notes
+-->
+
+### 6. Rollback Plan
+
+<!--
+Detailed and specific liabilities
+Plan to reduce liabilities
+Plan describing how to prevent other components, services, and systems from being affected
+-->
+
+### 7. Alternate Solutions
+
+<!--
+Short summary statement for each alternative solution
+Pros and cons for each alternative
+Reasons why each solution couldn’t work
+Ways in which alternatives were inferior to the proposed solution
+Migration plan to next best alternative in case the proposed solution falls through
+-->
+
+## III. Further Considerations
+
+### 1. Impact on Other Teams
+
+<!--
+How will this increase the work of other people?
+-->
+
+### 2. Third-Party Services
+
+<!--
+Is it really worth it compared to building the service in-house?
+What are some of the security and privacy concerns associated with the services/platforms?
+How much will it cost?
+How will it scale?
+What possible future issues are anticipated?
+-->
+
+### 3. Considerations
+
+#### A. Security Considerations
+
+<!--
+What are the potential threats?
+How will they be mitigated?
+How will the solution affect the security of other components, services, and systems?
+-->
+
+#### B. Privacy Considerations
+
+<!--
+Does the solution follow local laws and legal policies on data privacy?
+How does the solution protect users’ data privacy?
+What are some of the tradeoffs between personalization and privacy in the solution?
+-->
+
+#### C. Regional Considerations
+
+<!--
+What is the impact of internationalization and localization on the solution?
+What are the latency issues?
+What are the legal concerns?
+What is the state of service availability?
+How will data transfer across regions be achieved and what are the concerns here?
+-->
+
+#### D. Accessibility Considerations
+
+<!--
+How accessible is the solution?
+What tools will you use to evaluate its accessibility?
+-->
+
+#### E. Operational Considerations
+
+<!--
+Does this solution cause adverse aftereffects?
+How will data be recovered in case of failure?
+How will the solution recover in case of a failure?
+How will operational costs be kept low while delivering increased value to the users?
+-->
+
+#### F. Risks
+
+<!--
+What risks are being undertaken with this solution?
+Are there risks that once taken can’t be walked back?
+What is the cost-benefit analysis of taking these risks?
+-->
+
+#### G. Support Considerations
+
+<!--
+How will the support team get across information to users about common issues they may face while interacting with the changes?
+How will we ensure that the users are satisfied with the solution and can interact with it with minimal support?
+Who is responsible for the maintenance of the solution?
+How will knowledge transfer be accomplished if the project owner is unavailable?
+-->
+
+### IV. Success Evaluation
+
+#### 1. Impact
+
+<!--
+Security impact
+Performance impact
+Cost impact
+Impact on other components and services
+-->
+
+#### 2. Metrics
+
+<!--
+List of metrics to capture
+Tools to capture and measure metrics
+-->
+
+### V. Work
+
+#### 1. Work Estimates and Timelines
+
+<!--
+List of specific, measurable, and time-bound tasks
+Resources needed to finish each task
+Time estimates for how long each task needs to be completed
+-->
+
+#### 2. Prioritization
+
+<!--
+Categorization of tasks by urgency and impact
+-->
+
+#### 3. Milestones
+
+<!--
+Dated checkpoints when significant chunks of work will have been completed
+Metrics to indicate the passing of the milestone
+-->
+
+#### 4. Future Work
+
+<!--
+List of tasks that will be completed in the future
+-->
+
+### VI. Deliberations
+
+#### 1. Discussion
+
+<!--
+Elements of the solution that members of the team do not agree on and need to be debated further to reach a consensus.
+-->
+
+#### 2. Open Questions
+
+<!--
+Questions about things you do not know the answers to or are unsure that you pose to the team and stakeholders for their input. These may include aspects of the problem you don’t know how to resolve yet.
+-->
+
+### VII. Conclusion
+
+<!--
+Summary of the solution
+-->
+
+### VIII. References
+
+<!--
+Links to documents and resources that you used when coming up with your design and wish to credit.
+-->
+
+---
