@@ -58,9 +58,7 @@
 
 ### 1. Overview
 
-<!--
-Summary of the problem (from the perspective of the user), the context, suggested solution, and the stakeholders.
--->
+A French company named CORIS Innovation asked us to improve their product named SPORTSHIELD. The product is a device that serves as a lock for all sorts of sports equipment. The device is connected to a mobile application that allows the user to lock and unlock the equipment. The company has been facing a lot of issues with the current solution and has asked us to come up with a new solution that will solve the issues they are facing. The stakeholders are the company and the users of the product.
 
 ### 2. Glossary
 
@@ -68,24 +66,22 @@ Summary of the problem (from the perspective of the user), the context, suggeste
 New terms you come across as you research your design or terms you may suspect your readers/stakeholders not to know.
 -->
 
+| Term | Definition                                                                                                                                                                                                                           | Source                                                              |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
+| NFC  | NFC, or near-field communication, is a short-range wireless technology that allows your phone to act as a transit pass or credit card, quickly transfer data, or instantly pair with Bluetooth devices like headphones and speakers. | [Wikipedia](https://en.wikipedia.org/wiki/Near-field_communication) |
+
 ### 3. Context
 
-<!--
-Reasons why the problem is worth solving
-Origin of the problem
-How the problem affects users and company goals
-Past efforts made to solve the solution and why they were not effective
-How the product relates to team goals, OKRs
-How the solution fits into the overall product roadmap and strategy
-How the solution fits into the technical strategy
--->
+The decision for the company to seek improvement for their product stems from numerous issues within the current solution. These include limitations such as the device's autonomy, the lack of user notification during alarm activation, and the inability to halt the alarm once the ringing cycle initiates.
 
 ### 4. Goals and Objectives
 
-<!--
-Product requirements in the form of user stories
-Technical requirements
--->
+Fortunately, the company has provided us with a comprehensive list of requirements for the new solution:
+
+- Ensure the device maintains a battery life of at least 7 days, allowing for up to 6 hours of active use per day.
+- Implement NFC functionality for device unlocking.
+- Introduce multi-action capability, such as sending user notifications when the alarm activates.
+- Enhance security protocols for accessing key system features like lock/unlock and alarm management.
 
 ### 5. Out of Scope
 
@@ -93,17 +89,34 @@ Technical requirements
 Product and technical requirements that will be disregarded
 -->
 
+Several requirements fall outside the scope of this project and will not be addressed:
+
+- Implementing LED blinking to indicate device functionality.
+- Addressing security concerns related to charging.
+- Further enhancements to shock detection.
+
 ### 6. Future Goals
 
 <!--
 Product and technical requirements slated for a future time
 -->
 
+Certain requirements have been identified for future iterations:
+
+- Securing the Bluetooth connection between the device and the mobile application.
+- Enhancing alarm management to allow users to halt the alarm once the ringing cycle commences.
+
 ### 7. Assumptions
 
 <!--
 Conditions and resources that need to be present and accessible for the solution to work as described.
 -->
+
+We are operating under the following assumptions:
+
+- All essential hardware and software components required for development and testing will be readily available.
+- Access to the current solution will be granted to facilitate understanding of its functionality and encountered issues.
+- The company will furnish us with requisite documentation and assistance to comprehend the current solution and its associated challenges.
 
 ## II. Solutions
 
