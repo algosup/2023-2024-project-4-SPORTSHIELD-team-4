@@ -173,11 +173,11 @@ The "SPORTSHIELD" device and app offer valuable features to enhance the security
 
 The "SPORTSHIELD" project aims to deliver the following key features to meet the needs and expectations of sport enthusiasts:
 
-- **Long Battery Life:** The device features a rechargeable battery with extended battery life, ensuring reliable operation without frequent recharging.
-- **Anti-Theft Protection:** The device detects unauthorized movement or tampering of sport equipment and activates an alarm to deter theft.
-- **GPS Tracking:** The device is equipped with GPS functionality, allowing users to track the location of their sport equipment in real-time using a mobile app.
-- **Bluetooth Connectivity:** The device communicates with a mobile app via Bluetooth connection, enabling users to configure settings and receive notifications.
-- **User-Friendly App:** The mobile app provides a user-friendly interface for accessing device settings, tracking sport equipment, and receiving alerts.
+- **Long Battery Life:** The device features a rechargeable battery with extended battery life, ensuring reliable operation without frequent recharging. Current battery life is 3 days and the goal is to reach a minimum of 7 days with at least 6 hours of active mode and 18 hours of standby mode.
+- **Anti-Theft Protection:** The device detects unauthorized movement or tampering of sport equipment and activates an alarm to deter theft. The alarm need to make 3 short sounds when the device detects a small movement and 5 long sounds when the device detects a strong movement.
+- **GPS Tracking:** The device is equipped with GPS functionality, allowing users to track the location of their sport equipment in real-time using a mobile app. The device need to send the GPS location and the battery level to a server using HTTPs requests every 15 minutes when the device is in active mode.
+- **Bluetooth Connectivity:** The device communicates with a mobile app via Bluetooth connection, enabling users to configure settings and receive notifications. Or using 2G network to send the GPS location and the battery level to a server if the device is to far from the smartphone.s
+- **User-Friendly App:** The mobile app provides a user-friendly interface for accessing device settings, tracking sport equipment, and receiving alerts if the device detects unauthorized movement or tampering.
 - **NFC Integration:** The device integrates Near Field Communication (NFC) technology, allowing users to activate and deactivate anti-theft protection using NFC cards or smartphones.
 
 ## 6. Acceptance Criteria
@@ -188,7 +188,7 @@ Acceptance criteria are a detailed and measurable list of conditions that must b
 
 These are the critical acceptance criteria that absolutely must be met for the project to be considered successful. They represent the core functionalities or features without which the project cannot proceed. These criteria should be the highest priority and receive the most attention during development and testing. They are composed of :
 
-#### 6.1.1 Battery Optimisation 
+#### 6.1.1 Battery Optimisation
 
 1. Improve energy efficiency of the system:
 
@@ -200,7 +200,7 @@ These are the critical acceptance criteria that absolutely must be met for the p
 
    - Enforce a minimum battery charge threshold of 20% to prevent deep discharge cycles that could degrade the battery's health over time.
 
-#### 6.1.2 NFC Management 
+#### 6.1.2 NFC Management
 
 1. NFC activation of anti-theft system and cable unlocking:
 
