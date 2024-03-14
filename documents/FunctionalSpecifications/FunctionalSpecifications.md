@@ -41,28 +41,14 @@
   - [4. Constraints](#4-constraints)
   - [5. Targeted Features](#5-targeted-features)
         - [6. Acceptance Criteria](#6-acceptance-criteria)
-      - [6.1 Must have](#61-must-have)
-        - [6.1.1 Battery Optimisation](#611-battery-optimisation)
-        - [6.1.2 NFC Management](#612-nfc-management)
-        - [6.1.3 Shock detection](#613-shock-detection)
-      - [6.2 Should Have](#62-should-have)
-        - [6.2.1 Battery low level management](#621-battery-low-level-management)
-        - [6.2.2 Manage simultaneous actions](#622-manage-simultaneous-actions)
-      - [6.3 Could Have](#63-could-have)
-        - [6.3.1 Improve shock detection](#631-improve-shock-detection)
-        - [6.3.2 Bluetooth Secure](#632-bluetooth-secure)
-        - [6.3.3 Alarm management](#633-alarm-management)
-    - [6.1 Must have](#61-must-have-1)
-      - [6.1.1 Battery Optimisation](#611-battery-optimisation-1)
-      - [6.1.2 NFC Management](#612-nfc-management-1)
-      - [6.1.3 Shock detection](#613-shock-detection-1)
-    - [6.2 Should Have](#62-should-have-1)
-      - [6.2.1 Battery low level management](#621-battery-low-level-management-1)
-      - [6.2.2 Manage simultaneous actions](#622-manage-simultaneous-actions-1)
-    - [6.3 Could Have](#63-could-have-1)
-      - [6.3.1 Improve shock detection](#631-improve-shock-detection-1)
-      - [6.3.2 Bluetooth Secure](#632-bluetooth-secure-1)
-      - [6.3.3 Alarm management](#633-alarm-management-1)
+    - [6.1 Must have](#61-must-have)
+      - [6.1.1 Battery Optimisation](#611-battery-optimisation)
+      - [6.1.2 NFC Management](#612-nfc-management)
+      - [6.1.3 Shock detection](#613-shock-detection)
+    - [6.2 Should Have](#62-should-have)
+      - [6.2.1 Battery low level management](#621-battery-low-level-management)
+      - [6.2.2 Manage simultaneous actions](#622-manage-simultaneous-actions)
+      - [6.3.3 Alarm management](#633-alarm-management)
   - [7. Non-Functional Requirements](#7-non-functional-requirements)
   - [8. Assumptions](#8-assumptions)
   - [9. Risks](#9-risks)
@@ -194,67 +180,6 @@ The "SPORTSHIELD" project aims to deliver the following key features to meet the
 
 ##### 6. Acceptance Criteria
 
-Below are the acceptance criteria for each targeted feature, outlined in a measurable and understandable format:
-
-#### 6.1 Must have
-
-##### 6.1.1 Battery Optimisation
-
-1. **Improve energy efficiency of the system:**
-   - Measure and ensure that components are activated only when necessary, achieving at least a 90% reduction in power consumption during standby mode compared to active mode.
-
-2. **Increase the battery lifespan:**
-   - Verify that the system limits battery charging to a maximum of 80% of its maximum capacity (Vmax) to prolong battery lifespan.
-   - Confirm that the device maintains a minimum battery charge threshold of 20% to prevent deep discharge cycles.
-   - Test the device's ability to operate for at least 7 days without recharging, with a minimum of 6 hours of active mode and 18 hours of standby mode.
-
-##### 6.1.2 NFC Management
-
-1. **NFC activation of anti-theft system and cable unlocking:**
-   - Ensure that users can activate and deactivate the anti-theft system and unlock the cable using NFC technology with their smartphones or NFC cards, achieving a success rate of at least 95%.
-
-2. **Integration with Bluetooth via smartphone and 2G/GSM network:**
-   - Verify seamless integration with Bluetooth, allowing users to manage device functions through their smartphones with a success rate of at least 90%.
-   - Ensure that the device can connect to the server using the 2G/GSM network, with successful HTTPs requests for sending GPS location and battery level at least 80% of the time.
-
-##### 6.1.3 Shock detection
-
-- Confirm that the device detects a shock with a minimum accuracy of 99% under various conditions and environments.
-
-#### 6.2 Should Have
-
-##### 6.2.1 Battery low level management
-
-- Ensure that critical safety features are prioritized over non-essential functions when the battery is low.
-- Implement fail-safe measures to prevent unsafe situations, such as ensuring that the electromagnet cannot be powered to release the cable when the battery is critically low.
-- Verify that the device enters sleep mode when the battery reaches 30% of its capacity to conserve power.
-
-##### 6.2.2 Manage simultaneous actions
-
-1. **Alarm ringing while sending HTTP notification to the server:**
-   - Confirm that the system allows the alarm to continue ringing while simultaneously sending an HTTP notification to the server.
-
-2. **Improved management of interruptions:**
-   - Ensure better management of interruptions to maintain system functionality, allowing users to stop the alarm manually, even if the ringing cycle is not finished.
-
-#### 6.3 Could Have
-
-##### 6.3.1 Improve shock detection
-
-- Research and implement advanced algorithms to enhance shock detection accuracy to achieve 100% accuracy.
-
-##### 6.3.2 Bluetooth Secure
-
-- Implement stronger encryption protocols for Bluetooth communication to ensure secure data transmission between devices.
-- Allow users to create a whitelist of trusted Bluetooth devices for enhanced security.
-
-##### 6.3.3 Alarm management
-
-- Implement the option for users to stop the alarm manually, even if the ringing cycle is not finished, achieving a success rate of at least 98% for simultaneous alarm ringing and HTTPs requests.
-
-
-Acceptance criteria are a detailed and measurable list of conditions that must be met for a project element to be considered complete and acceptable. They play an essential role in communicating expectations between stakeholders and in ensuring the quality of the final product.
-
 ### 6.1 Must have
 
 These are the critical acceptance criteria that absolutely must be met for the project to be considered successful. They represent the core functionalities or features without which the project cannot proceed. These criteria should be the highest priority and receive the most attention during development and testing. They are composed of :
@@ -284,10 +209,10 @@ These are the critical acceptance criteria that absolutely must be met for the p
    - The system should seamlessly integrate with the Blutooth, allowing users to manage device functions through their smartphones.
    - The users should also be able to connect the device to the server using the 2G/GSM network.
    - At least 80% of the time, the device should be able to send the GPS location and the battery level to the server using HTTPs requests every 15 minutes.
-  
+
 #### 6.1.3 Shock detection
 
-  - The device should be able to detect a shock with a minimum of 99% accuracy.
+- The device should be able to detect a shock with a minimum of 99% accuracy and trigger the alarm accordingly.
 
 ### 6.2 Should Have
 
@@ -313,19 +238,6 @@ These acceptance criteria are important for the overall success of the project b
    - Implement better management of interruptions to ensure that simultaneous actions do not interfere with each other. The user should be able to stop the alarm manually, even if the ringing cycle is not finished.
 
    - Prioritize critical actions such as alarm ringing and HTTP notifications, while appropriately handling other interruptions to maintain system functionality.
-
-### 6.3 Could Have
-
-These acceptance criterias are optional and represent functionalities or features that would enhance the project but are not essential for its success. They can be included if time and resources permit, but their absence would not significantly impact the project's overall outcome.
-
-#### 6.3.1 Improve shock detection
-
-- Explore and implement advanced algorithms to enhance the accuracy and sensitivity of shock detection. To have a 100% accuracy of shock detection.
-
-#### 6.3.2 Bluetooth Secure
-
-- Implement stronger encryption protocols for Bluetooth communication to ensure secure data transmission between devices.
-- Allow users to create a whitelist of trusted Bluetooth devices that are permitted to connect to the system.
 
 #### 6.3.3 Alarm management
 
