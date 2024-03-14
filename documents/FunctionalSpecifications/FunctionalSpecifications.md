@@ -172,11 +172,12 @@ The "SPORTSHIELD" device and app offer valuable features to enhance the security
 
 The "SPORTSHIELD" project aims to deliver the following key features to meet the needs and expectations of sport enthusiasts:
 
+- **Long Battery Life:** The device features a rechargeable battery with extended battery life, ensuring reliable operation without frequent recharging.
 - **Anti-Theft Protection:** The device detects unauthorized movement or tampering of sport equipment and activates an alarm to deter theft.
 - **GPS Tracking:** The device is equipped with GPS functionality, allowing users to track the location of their sport equipment in real-time using a mobile app.
 - **Bluetooth Connectivity:** The device communicates with a mobile app via Bluetooth connection, enabling users to configure settings and receive notifications.
-- **Long Battery Life:** The device features a rechargeable battery with extended battery life, ensuring reliable operation without frequent recharging.
 - **User-Friendly App:** The mobile app provides a user-friendly interface for accessing device settings, tracking sport equipment, and receiving alerts.
+- **NFC Integration:** The device integrates Near Field Communication (NFC) technology, allowing users to activate and deactivate anti-theft protection using NFC cards or smartphones.
 
 ## 6. Acceptance Criteria
 
