@@ -12,14 +12,14 @@
 
 ### 1.2 Document Approval
 
-| **Role**          | **Name**        | **Date**        | **Signature** |
-| ----------------- | --------------- | --------------- | ------------- |
-| Project Manager   | Maxime CARON    | 14th March 2024 |               |
-| Program Manager   | Lucas AUBARD    | 14th March 2024 |               |
-| Technical Leader  | Alexis LASSELIN | 14th March 2024 |               |
-| Software Engineer | Wilfred PORTET  | 14th March 2024 |               |
-| Technical Writer  | Paul NOWAK      | 14th March 2024 |               |
-| Quality Assurance | Habi CAILLEAU   | 14th March 2024 |               |
+| **Role**          | **Name**        | **Date**        | **Signature**        |
+| ----------------- | --------------- | --------------- | -------------------- |
+| Project Manager   | Maxime CARON    | 14th March 2024 | <center>✅</center> |
+| Program Manager   | Lucas AUBARD    | 14th March 2024 | <center>✅</center> |
+| Technical Leader  | Alexis LASSELIN | 14th March 2024 | <center>✅</center> |
+| Software Engineer | Wilfred PORTET  | 14th March 2024 | <center>✅</center> |
+| Technical Writer  | Paul NOWAK      | 14th March 2024 | <center>✅</center> |
+| Quality Assurance | Habi CAILLEAU   | 14th March 2024 | <center>✅</center> |
 
 <details>
 <summary>Table of Contents</summary>
@@ -37,18 +37,21 @@
   - [3. Use Cases](#3-use-cases)
     - [3.1 Use Case 1: Purchase "SPORTSHIELD" Device](#31-use-case-1-purchase-sportshield-device)
     - [3.2 Use Case 2: Prevent Theft of Snowboard](#32-use-case-2-prevent-theft-of-snowboard)
-    - [3.3 Use Case 3: Locate Lost Sport Equipment Using GPS Functionality](#33-use-case-3-locate-lost-sport-equipment-using-gps-functionality)
+    - [3.3 Use Case 3: Locate Lost Sports Equipment Using GPS Functionality](#33-use-case-3-locate-lost-sports-equipment-using-gps-functionality)
   - [4. Constraints](#4-constraints)
   - [5. Targeted Features](#5-targeted-features)
         - [6. Acceptance Criteria](#6-acceptance-criteria)
-    - [6.1 Must have](#61-must-have)
-      - [6.1.1 Battery Optimisation](#611-battery-optimisation)
-      - [6.1.2 NFC Management](#612-nfc-management)
-      - [6.1.3 Shock detection](#613-shock-detection)
-    - [6.2 Should Have](#62-should-have)
-      - [6.2.1 Battery low level management](#621-battery-low-level-management)
-      - [6.2.2 Manage simultaneous actions](#622-manage-simultaneous-actions)
-      - [6.3.3 Alarm management](#633-alarm-management)
+      - [6.1 Must have](#61-must-have)
+        - [6.1.1 Battery Optimisation](#611-battery-optimisation)
+        - [6.1.2 NFC Management](#612-nfc-management)
+        - [6.1.3 Shock detection](#613-shock-detection)
+      - [6.2 Should Have](#62-should-have)
+        - [6.2.1 Battery low-level management](#621-battery-low-level-management)
+        - [6.2.2 Manage simultaneous actions](#622-manage-simultaneous-actions)
+      - [6.3 Could Have](#63-could-have)
+        - [6.3.1 Improve shock detection](#631-improve-shock-detection)
+        - [6.3.2 Bluetooth Secure](#632-bluetooth-secure)
+        - [6.3.3 Alarm management](#633-alarm-management)
   - [7. Non-Functional Requirements](#7-non-functional-requirements)
   - [8. Assumptions](#8-assumptions)
   - [9. Risks](#9-risks)
@@ -62,7 +65,7 @@
 
 ### 2.1 Project
 
-France is a premier destination for winter tourism, attracting an average of 40 million visitors to its ski resorts annually. The majority of these guests embark on their journey to skiing and snowboarding. While a portion of these visitors opts for rental equipment, a significant number arrive equipped with their personal skis and snowboards, an investment that often ranges from 300€ to over 1000€. CORIS Innovation introduces the SPORTSHIELD project, crafted to enhance the skiing experience, instilling a sense of freedom and confidence among winter sport enthusiasts. SPORTSHIELD is a connected anti-theft device for securing your equipment. It can be used on your skis, snowboard, or any other sports equipment.
+France is a premier destination for winter tourism, attracting an average of 40 million visitors to its ski resorts annually. The majority of these guests embark on their journey to skiing and snowboarding. While a portion of these visitors opt for rental equipment, a significant number arrive equipped with their skis and snowboards, an investment that often ranges from 300€ to over 1000€. CORIS Innovation introduces the SPORTSHIELD project, crafted to enhance the skiing experience, instilling a sense of freedom and confidence among winter sports enthusiasts. SPORTSHIELD is a connected anti-theft device for securing your equipment. It can be used on your skis, snowboard, or any other sports equipment.
 
 ### 2.2 Client
 
@@ -74,13 +77,13 @@ Several elements are given for this project:
 
 #### Hardware Material
 
-| Equipment         | Description                                                                                                                                                                         | Reference               | Brand            |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- | ---------------- |
-| Development board | Ultra-compact, ultra-low-power Bluetooth development board based on the Nordic nRF52840.                                                                                            | Seeed XIAO BLE nRF52840 | Seeed Studio     |
-| Battery           | Lithium-ion polymer rechargeable battery.                                                                                                                                           | LP603449                | EEMB             |
-| GPS module        | Module utilizes the MediaTek GNSS Chipset MT3333 that support various location and navigation applications, including autonomous GPS, GLONASS, GALILEO, QZSS, SBAS, DGPS, and AGPS. | CD-PA1010D              | CDtop Technology |
-| GSM module        | Miniature cellular module which allows for GPRS transmission.                                                                                                                       | SIM800L                 | SIMCom           |
-| NFC module        | NFC, RFID antenna.                                                                                                                                                                  | 146236                  | Molex            |
+| Equipment         | Description                                                                                                                                                                          | Reference               | Brand            |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------- | ---------------- |
+| Development board | Ultra-compact, ultra-low-power Bluetooth development board based on the Nordic nRF52840.                                                                                             | Seeed XIAO BLE nRF52840 | Seeed Studio     |
+| Battery           | Lithium-ion polymer rechargeable battery.                                                                                                                                            | LP603449                | EEMB             |
+| GPS module        | Module utilizes the MediaTek GNSS Chipset MT3333 that supports various location and navigation applications, including autonomous GPS, GLONASS, GALILEO, QZSS, SBAS, DGPS, and AGPS. | CD-PA1010D              | CDtop Technology |
+| GSM module        | Miniature cellular module which allows for GPRS transmission.                                                                                                                        | SIM800L                 | SIMCom           |
+| NFC module        | NFC, RFID antenna.                                                                                                                                                                   | 146236                  | Molex            |
 
 #### Software
 
@@ -90,7 +93,7 @@ An Arduino code is provided, which is the prototype version of the project's cod
 
 ### 3.1 Use Case 1: Purchase "SPORTSHIELD" Device
 
-- **Description:** John, a 35-year-old avid skier, is devastated when he discovers one morning that his beloved skis have been stolen from his garage. Determined to prevent such incidents in the future, he decides to invest in a sport protection device. After researching online, he comes across the "SPORTSHIELD" device and decides to purchase it.
+- **Description:** John, a 35-year-old avid skier, is devastated when he discovers one morning that his beloved skis have been stolen from his garage. Determined to prevent such incidents in the future, he decides to invest in a sports protection device. After researching online, he comes across the "SPORTSHIELD" device and decides to purchase it.
 - **Actors:**
   - John: A passionate skier who values the safety and security of his equipment.
 - **Pre-conditions:**
@@ -135,7 +138,7 @@ An Arduino code is provided, which is the prototype version of the project's cod
   - If Sarah is unable to intervene, nearby individuals may be alerted by the audible alarm and take action to prevent the theft.
 - **Priority:** High
 
-### 3.3 Use Case 3: Locate Lost Sport Equipment Using GPS Functionality
+### 3.3 Use Case 3: Locate Lost Sports Equipment Using GPS Functionality
 
 - **Description:** Michael, a 40-year-old enthusiastic skier and outdoor enthusiast, realizes after leaving a restaurant that he has misplaced his skis. He uses the GPS functionality in the "SPORTSHIELD" app to locate his lost equipment.
 - **Actors:**
@@ -159,12 +162,12 @@ An Arduino code is provided, which is the prototype version of the project's cod
 
 ## 4. Constraints
 
-The "SPORTSHIELD" device and app offer valuable features to enhance the security and protection of sport equipment. However, several constraints must be considered to ensure the successful implementation and utilization of the product:
+The "SPORTSHIELD" device and app offer valuable features to enhance the security and protection of sports equipment. However, several constraints must be considered to ensure the successful implementation and utilization of the product:
 
 - **Battery Life:** The device's battery life is limited and must be optimized to ensure long-term functionality without frequent recharging.
-- **Technical Compatibility:** The device and app must be compatible with various types of sport equipment and operating systems to accommodate a wide range of users.
+- **Technical Compatibility:** The device and app must be compatible with various types of sports equipment and operating systems to accommodate a wide range of users.
 - **User Interface:** The app's user interface should be intuitive and user-friendly, providing easy access to essential features and settings.
-- **Cost:** The cost of the device and app should be reasonable, making it accessible to a broad audience of sport enthusiasts.
+- **Cost:** The cost of the device and app should be reasonable, making it accessible to a broad audience of sports enthusiasts.
 - **Regulatory Compliance:** The device and app must comply with relevant regulations and standards governing the use of wireless communication and tracking technologies.
 
 ## 5. Targeted Features
@@ -172,81 +175,80 @@ The "SPORTSHIELD" device and app offer valuable features to enhance the security
 The "SPORTSHIELD" project aims to deliver the following key features to meet the needs and expectations of sport enthusiasts:
 
 - **Long Battery Life:** The device features a rechargeable battery with extended battery life, ensuring reliable operation without frequent recharging. Current battery life is 3 days and the goal is to reach a minimum of 7 days with at least 6 hours of active mode and 18 hours of standby mode.
-- **Anti-Theft Protection:** The device detects unauthorized movement or tampering of sport equipment and activates an alarm to deter theft. The alarm need to make 3 short sounds when the device detects a small movement and 5 long sounds when the device detects a strong movement.
-- **GPS Tracking:** The device is equipped with GPS functionality, allowing users to track the location of their sport equipment in real-time using a mobile app. The device need to send the GPS location and the battery level to a server using HTTPs requests every 15 minutes when the device is in active mode.
-- **Bluetooth Connectivity:** The device communicates with a mobile app via Bluetooth connection, enabling users to configure settings and receive notifications. Or using 2G/GSM network to send the GPS location and the battery level to a server if the device is to far from the smartphone.s
-- **User-Friendly App:** The mobile app provides a user-friendly interface for accessing device settings, tracking sport equipment, and receiving alerts if the device detects unauthorized movement or tampering.
+- **Anti-Theft Protection:** The device detects unauthorized movement or tampering of sports equipment and activates an alarm to deter theft. The alarm needs to make 3 short sounds when the device detects a small movement and 5 long sounds when the device detects a strong movement.
+- **GPS Tracking:** The device is equipped with GPS functionality, allowing users to track the location of their sports equipment in real-time using a mobile app. The device needs to send the GPS location and the battery level to a server using HTTP requests every 15 minutes when the device is in active mode.
+- **Bluetooth Connectivity:** The device communicates with a mobile app via Bluetooth connection, enabling users to configure settings and receive notifications. Or using a 2G/GSM network to send the GPS location and the battery level to a server if the device is too far from the smartphone.s
+- **User-Friendly App:** The mobile app provides a user-friendly interface for accessing device settings, tracking sports equipment, and receiving alerts if the device detects unauthorized movement or tampering.
 - **NFC Integration:** The device integrates Near Field Communication (NFC) technology, allowing users to activate and deactivate anti-theft protection using NFC cards or smartphones.
 
 ##### 6. Acceptance Criteria
 
-### 6.1 Must have
+Below are the acceptance criteria for each targeted feature, outlined in a measurable and understandable format:
 
-These are the critical acceptance criteria that absolutely must be met for the project to be considered successful. They represent the core functionalities or features without which the project cannot proceed. These criteria should be the highest priority and receive the most attention during development and testing. They are composed of :
+#### 6.1 Must have
 
-#### 6.1.1 Battery Optimisation
+##### 6.1.1 Battery Optimisation
 
-1. Improve energy efficiency of the system:
+1. **Improve energy efficiency of the system:**
 
-   - Components must be activated only when necessary to conserve battery power.
+   - Measure and ensure that components are activated only when necessary, achieving at least a 90% reduction in power consumption during standby mode compared to active mode.
 
-2. Increase the battery lifespan:
+2. **Increase the battery lifespan:**
+   - Verify that the system limits battery charging to a maximum of 80% of its maximum capacity (Vmax) to prolong battery lifespan.
+   - Confirm that the device maintains a minimum battery charge threshold of 20% to prevent deep discharge cycles.
+   - Test the device's ability to operate for at least 7 days without recharging, with a minimum of 6 hours of active mode and 18 hours of standby mode.
 
-   - Implement measures to limit battery charging to a maximum of 80% of its maximum capacity (Vmax) to prolong battery lifespan.
+##### 6.1.2 NFC Management
 
-   - Enforce a minimum battery charge threshold of 20% to prevent deep discharge cycles that could degrade the battery's health over time.
+1. **NFC activation of the anti-theft system and cable unlocking:**
 
-   - Ensure that the device can operate for at least 7 days without recharging, with a minimum of 6 hours of active mode and 18 hours of standby mode.
+   - Ensure that users can activate and deactivate the anti-theft system and unlock the cable using NFC technology with their smartphones or NFC cards, achieving a success rate of at least 95%.
 
-#### 6.1.2 NFC Management
+2. **Integration with Bluetooth via smartphone and 2G/GSM network:**
+   - Verify seamless integration with Bluetooth, allowing users to manage device functions through their smartphones with a success rate of at least 90%.
+   - Ensure that the device can connect to the server using the 2G/GSM network, with successful HTTP requests for sending GPS location and battery level at least 80% of the time.
 
-1. NFC activation of anti-theft system and cable unlocking:
+##### 6.1.3 Shock detection
 
-   - Users should be able to activate and deactivate the anti-theft system and unlock the cable using NFC technology with their smartphones or NFC cards.
+- Confirm that the device detects a shock with a minimum accuracy of 99% under various conditions and environments.
 
-2. Integration with Bluetooth via smartphone:
+#### 6.2 Should Have
 
-   - The system should seamlessly integrate with the Blutooth, allowing users to manage device functions through their smartphones.
-   - The users should also be able to connect the device to the server using the 2G/GSM network.
-   - At least 80% of the time, the device should be able to send the GPS location and the battery level to the server using HTTPs requests every 15 minutes.
+##### 6.2.1 Battery low-level management
 
-#### 6.1.3 Shock detection
+- Ensure that critical safety features are prioritized over non-essential functions when the battery is low.
+- Implement fail-safe measures to prevent unsafe situations, such as ensuring that the electromagnet cannot be powered to release the cable when the battery is critically low.
+- Verify that the device enters sleep mode when the battery reaches 30% of its capacity to conserve power.
 
-- The device should be able to detect a shock with a minimum of 99% accuracy and trigger the alarm accordingly.
+##### 6.2.2 Manage simultaneous actions
 
-### 6.2 Should Have
+1. **Alarm ringing while sending HTTP notification to the server:**
 
-These acceptance criteria are important for the overall success of the project but are not as critical as the "Must Have" criteria. They represent functionalities or features that are highly desirable and should be included if possible. However, the project can still move forward if some of these criteria are not fully met.
+   - Confirm that the system allows the alarm to continue ringing while simultaneously sending an HTTP notification to the server.
 
-#### 6.2.1 Battery low level management
+2. **Improved management of interruptions:**
+   - Ensure better management of interruptions to maintain system functionality, allowing users to stop the alarm manually, even if the ringing cycle is not finished.
 
-- Management of a low battery situation:
+#### 6.3 Could Have
 
-  - Ensure that critical safety features such as ski securing mechanisms are prioritized over non-essential functions when the battery is low.
+##### 6.3.1 Improve shock detection
 
-  - Implement fail-safe measures to prevent unsafe situations, such as ensuring that the electromagnet cannot be powered to release the cable when the battery is critically low.
-  - The device should enter a sleep mode when the battery reaches 30% of its capacity to conserve power and extend battery life.
+- Research and implement advanced algorithms to enhance shock detection accuracy to achieve 100% accuracy.
 
-#### 6.2.2 Manage simultaneous actions
+##### 6.3.2 Bluetooth Secure
 
-1. Alarm ringing while sending HTTP notification to the server:
+- Implement stronger encryption protocols for Bluetooth communication to ensure secure data transmission between devices.
+- Allow users to create a whitelist of trusted Bluetooth devices for enhanced security.
 
-   - The system should allow the alarm to continue ringing while simultaneously sending a HTTP notification to the server.
+##### 6.3.3 Alarm management
 
-2. Improved management of interruptions:
+- Implement the option for users to stop the alarm manually, even if the ringing cycle is not finished, achieving a success rate of at least 98% for simultaneous alarm ringing and HTTP requests.
 
-   - Implement better management of interruptions to ensure that simultaneous actions do not interfere with each other. The user should be able to stop the alarm manually, even if the ringing cycle is not finished.
-
-   - Prioritize critical actions such as alarm ringing and HTTP notifications, while appropriately handling other interruptions to maintain system functionality.
-
-#### 6.3.3 Alarm management
-
-- Implement the option for users to stop the alarm manually, even if the ringing cycle is not finished. This feature provides users with more control over the alarm system, allowing them to silence the alarm promptly if necessary.
-- 98% the alarm should be able to ring and send a HTTPs request at the same time.
+Acceptance criteria are a detailed and measurable list of conditions that must be met for a project element to be considered complete and acceptable. They play an essential role in communicating expectations between stakeholders and in ensuring the quality of the final product.
 
 ## 7. Non-Functional Requirements
 
-Description of the performance,reliability, or other non-functional aspects expected from the solution
+Description of the performance, reliability, or other non-functional aspects expected from the solution
 
 - **User friendly** :
 
@@ -274,27 +276,27 @@ The system must be operational and accessible via NFC and the SportShield applic
 
 ## 8. Assumptions
 
-| **Assumption**                                  | **Impact**                                                                                                    | **Mitigation**                                                                                         |
-| :---------------------------------------------- | :------------------------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------------------------------------- |
-| Implementation of energy-efficient strategies   | These strategies could extend the battery life and enhance the user experience                                | Making research about battery alimentation                                                             |
-| Electronic measures requirements                | To check if the device respect the expected nominal voltage, we need to make some measurements                | We should use a multimeter, and perhaps a breadboard for electronic tests                              |
-| Sleep mode triggering at low battery            | When it reaches 20% of battery, it could enter in a sleep mode similar to cellphones to economize the battery | Testing about sleep mode and checking how much time the battery can handle                             |
-| Simultaneous actions could consume more battery | Allowing a device to do several actions at the time might increase the battery consumption                    | Simultaneous actions might be limited, and we should monitor the tension depending on the actions used |
-| New HTTP server creation                        | We have to get used to send HTTPs requests to get familiarized with the base device                           | We should train ourselves sending and receiving HTTPs requests with simple programs                    |
-| NFC integration improving interactivity         | The user interaction with the device and the system's usability will be enhanced                              | Make sure the customer will be able to use the NFC card without trouble                                |
+| **Assumption**                                  | **Impact**                                                                                                 | **Mitigation**                                                                                         |
+| :---------------------------------------------- | :--------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------- |
+| Implementation of energy-efficient strategies   | These strategies could extend the battery life and enhance the user experience                             | Research battery alimentation                                                                          |
+| Electronic measures requirements                | To check if the device respects the expected nominal voltage, we need to make some measurements            | We should use a multimeter, and perhaps a breadboard for electronic tests                              |
+| Sleep mode triggering at low battery            | When it reaches 20% of battery, it could enter a sleep mode similar to cellphones to economize the battery | Testing about sleep mode and checking how much time the battery can handle                             |
+| Simultaneous actions could consume more battery | Allowing a device to do several actions at a time might increase the battery consumption                   | Simultaneous actions might be limited, and we should monitor the tension depending on the actions used |
+| New HTTP server creation                        | We have to get used to sending HTTP requests to get familiarized with the base device                      | We should train ourselves to send and receive HTTP requests with simple programs                       |
+| NFC integration improving interactivity         | The user interaction with the device and the system's usability will be enhanced                           | Make sure the customer will be able to use the NFC card without trouble                                |
 
 ## 9. Risks
 
-| **Risk**                          | **Impact**                                                                                                                                                     | **Mitigation**                                                                                                                  |
-| :-------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------ |
-| Battery insufficient power        | The battery might not be able to power up the microprocessor implemented with the new code                                                                     | Study what components are used for the code, compare with different batteries, and choose the one most adapted to the situation |
-| Obsolete battery                  | After an excessive use, the LiPo battery won't have any voltage anymore to power up our device                                                                 | Simply take another LiPo battery                                                                                                |
-| Battery lifespan inaccuracy       | A bad management of the lifespan can lead to premature battery degradation or failure                                                                          | Checking and monitoring the evolution of the first battery's voltage.                                                           |
-| Alarm manual deactivation failure | Depending on some circumstances, the HTTPs requests sent by the user could have trouble being detected by the device, hindering remote monitoring and response | Proceeding with tests of sending HTTPs requests and/or improving the sending speed                                              |
-| Alarm management conflicts        | The alarm interruptions and conflicts could lead to system instability or inconsistent behavior                                                                | Adding limitations of alarm desactivation, like a waiting time                                                                  |
-| NFC smartphones brands issues     | The user could experience some issues with the NFC communication due to using a different smartphone                                                           | Making the NFC buffer type always the same regardless of the smartphone type                                                    |
-| NFC malfunctions                  | The NFC cards can provoke software bugs, affection activation/desactivations, and potentially unlock the cable at the wrong time                               | Creating a valuable test environment for NFC communication                                                                      |
-| Data privacy breaches             | Through NFC communication, private user data could be exposed due to a wrongful use of a NFC card                                                              | The NFC cards should just send information to the device instead of receiving.                                                  |
+| **Risk**                          | **Impact**                                                                                                                                                    | **Mitigation**                                                                                                                  |
+| :-------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------ |
+| Battery insufficient power        | The battery might not be able to power up the microprocessor implemented with the new code                                                                    | Study what components are used for the code, compare with different batteries, and choose the one most adapted to the situation |
+| Obsolete battery                  | After excessive use, the LiPo battery won't have any voltage anymore to power up our device                                                                   | Simply take another LiPo battery                                                                                                |
+| Battery lifespan inaccuracy       | A bad management of the lifespan can lead to premature battery degradation or failure                                                                         | Checking and monitoring the evolution of the first battery's voltage.                                                           |
+| Alarm manual deactivation failure | Depending on some circumstances, the HTTP requests sent by the user could have trouble being detected by the device, hindering remote monitoring and response | Proceeding with tests of sending HTTP requests and/or improving the sending speed                                               |
+| Alarm management conflicts        | The alarm interruptions and conflicts could lead to system instability or inconsistent behaviour                                                              | Adding limitations of alarm deactivation, like a waiting time                                                                   |
+| NFC smartphone brands issues      | The user could experience some issues with the NFC communication due to using a different smartphone                                                          | Making the NFC buffer type always the same regardless of the smartphone type                                                    |
+| NFC malfunctions                  | The NFC cards can provoke software bugs, affection activation/deactivation, and potentially unlock the cable at the wrong time                                | Creating a valuable test environment for NFC communication                                                                      |
+| Data privacy breaches             | Through NFC communication, private user data could be exposed due to wrongful use of an NFC card                                                              | The NFC cards should just send information to the device instead of receiving it.                                               |
 
 ## 10. Testing Ways
 
@@ -328,7 +330,7 @@ Below are the testing methods that will be employed to ensure the robustness and
 
    _Why:_ Because the system's performance is a priority to the client, performance testing is essential to ensure that the system can handle different scenarios and loads.
 
-   _Example:_ Performance tests will assess the system's responsiveness under normal and low temperature to ensure consistent performance.
+   _Example:_ Performance tests will assess the system's responsiveness under normal and low temperatures to ensure consistent performance.
 
 6. **Security Testing**: Security testing aims to identify vulnerabilities and ensure the system is resilient against unauthorized access or attacks.
 
@@ -340,12 +342,12 @@ By employing these testing methodologies, we aim to deliver a reliable and robus
 
 ## 11. Future Improvements
 
-The SPORTSHIELD project is designed to provide essential anti-theft and tracking functionalities for sport equipment. However, there are several areas for future improvements and enhancements to further elevate the system's capabilities and user experience:
+The SPORTSHIELD project is designed to provide essential anti-theft and tracking functionalities for sports equipment. However, there are several areas for future improvements and enhancements to further elevate the system's capabilities and user experience:
 
 1. **Enhanced Shock Detection**: Implement advanced algorithms and sensors to improve the accuracy and sensitivity of shock detection, allowing the system to detect and respond to subtle movements or impacts.
 2. **Bluetooth Secure**: Integrate stronger encryption protocols for Bluetooth communication to ensure secure data transmission between devices, enhancing the system's security and privacy.
 3. **Led Light Indicators**: Integrate LED light indicators on the device to provide visual feedback to users, such as battery status, alarm activation, and system status.
-4. **Secure Charge Cable**: Improve the charge cable to be sure that an unauthorized person cannot unlock the cable and steal the equipment by using his computer to change the code in the device.
+4. **Secure Charge Cable**: Improve the charging cable to be sure that an unauthorized person cannot unlock the cable and steal the equipment by using his computer to change the code in the device.
 5. **Alarm Management**: Implement the option for users to stop the alarm manually, even if the ringing cycle is not finished. This feature provides users with more control over the alarm system, allowing them to silence the alarm promptly if necessary.
 
 ## 12. Glossary
