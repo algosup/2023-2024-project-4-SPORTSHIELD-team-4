@@ -349,10 +349,9 @@ The SPORTSHIELD project is designed to provide essential anti-theft and tracking
 
 1. **Enhanced Shock Detection**: Implement advanced algorithms and sensors to improve the accuracy and sensitivity of shock detection, allowing the system to detect and respond to subtle movements or impacts.
 2. **Bluetooth Secure**: Integrate stronger encryption protocols for Bluetooth communication to ensure secure data transmission between devices, enhancing the system's security and privacy.
-3. **User Interface Enhancements**: Continuously improve the user interface of the SPORTSHIELD app to enhance user experience and accessibility, making it more intuitive and user-friendly.
-4. **Led Light Indicators**: Integrate LED light indicators on the device to provide visual feedback to users, such as battery status, alarm activation, and system status.
-5. **Secure Charge Cable**: Improve the charge cable to be sure that an unauthorized person cannot unlock the cable and steal the equipment by using his computer to change the code in the device.
-6. **Alarm Management**: Implement the option for users to stop the alarm manually, even if the ringing cycle is not finished. This feature provides users with more control over the alarm system, allowing them to silence the alarm promptly if necessary.
+3. **Led Light Indicators**: Integrate LED light indicators on the device to provide visual feedback to users, such as battery status, alarm activation, and system status.
+4. **Secure Charge Cable**: Improve the charge cable to be sure that an unauthorized person cannot unlock the cable and steal the equipment by using his computer to change the code in the device.
+5. **Alarm Management**: Implement the option for users to stop the alarm manually, even if the ringing cycle is not finished. This feature provides users with more control over the alarm system, allowing them to silence the alarm promptly if necessary.
 
 ## 12. Glossary
 
