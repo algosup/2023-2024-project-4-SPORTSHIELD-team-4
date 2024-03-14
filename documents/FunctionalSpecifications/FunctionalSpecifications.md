@@ -8,6 +8,7 @@
 | ----------- | --------------- | ------------ | -------------------------------------- |
 | 0.1         | 13th March 2024 | Lucas AUBARD | Initial Draft                          |
 | 0.2         | 14th March 2024 | Lucas AUBARD | Add Glossary and document informations |
+| 1.0         | 14th March 2024 | Lucas AUBARD | Final version                          |
 
 ### 1.2 Document Approval
 
@@ -297,9 +298,9 @@ The system must be operational and accessible via NFC and the SportShield applic
 | Obsolete battery                  | After an excessive use, the LiPo battery won't have any voltage anymore to power up our device                                                                 | Simply take another LiPo battery                                                                                                |
 | Battery lifespan inaccuracy       | A bad management of the lifespan can lead to premature battery degradation or failure                                                                          | Checking and monitoring the evolution of the first battery's voltage.                                                           |
 | Alarm manual deactivation failure | Depending on some circumstances, the HTTPs requests sent by the user could have trouble being detected by the device, hindering remote monitoring and response | Proceeding with tests of sending HTTPs requests and/or improving the sending speed                                              |
-| Alarm management conflicts        | The alarm interruptions and conflicts could lead to system instability or inconsistent behavior                                                                 | Adding limitations of alarm desactivation, like a waiting time                                                                   |
+| Alarm management conflicts        | The alarm interruptions and conflicts could lead to system instability or inconsistent behavior                                                                | Adding limitations of alarm desactivation, like a waiting time                                                                  |
 | NFC smartphones brands issues     | The user could experience some issues with the NFC communication due to using a different smartphone                                                           | Making the NFC buffer type always the same regardless of the smartphone type                                                    |
-| NFC malfunctions                  | The NFC cards can provoke software bugs, affection activation/desactivations, and potentially unlock the cable at the wrong time                                | Creating a valuable test environment for NFC communication                                                                      |
+| NFC malfunctions                  | The NFC cards can provoke software bugs, affection activation/desactivations, and potentially unlock the cable at the wrong time                               | Creating a valuable test environment for NFC communication                                                                      |
 | Data privacy breaches             | Through NFC communication, private user data could be exposed due to a wrongful use of a NFC card                                                              | The NFC cards should just send information to the device instead of receiving.                                                  |
 
 ## 10. Testing Ways
