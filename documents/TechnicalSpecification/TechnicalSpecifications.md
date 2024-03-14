@@ -11,43 +11,40 @@
   - [Table of Contents](#table-of-contents)
   - [I. Introduction](#i-introduction)
     - [1. Overview](#1-overview)
-    - [2. Glossary](#2-glossary)
-    - [3. Context](#3-context)
-    - [4. Goals and Objectives](#4-goals-and-objectives)
-    - [5. Out of Scope](#5-out-of-scope)
-    - [6. Future Goals](#6-future-goals)
-    - [7. Assumptions](#7-assumptions)
+    - [2. Context](#2-context)
+    - [3. Goals and Objectives](#3-goals-and-objectives)
+    - [4. Out of Scope](#4-out-of-scope)
+    - [7. Future Goals](#7-future-goals)
+    - [8. Assumptions](#8-assumptions)
   - [II. Solutions](#ii-solutions)
-    - [1. Current Solution](#1-current-solution)
+    - [1. Current Product](#1-current-product)
       - [Pros](#pros)
       - [Cons](#cons)
-    - [2. Suggested Solution](#2-suggested-solution)
+    - [2. Suggested Solutions](#2-suggested-solutions)
+      - [A. Battery Life Improvement \& Low Level Management](#a-battery-life-improvement--low-level-management)
+      - [B. NFC Functionality](#b-nfc-functionality)
+      - [C. Simultaneous Actions Management](#c-simultaneous-actions-management)
+      - [D. Bluetooth Security](#d-bluetooth-security)
+      - [E. Alarm Management](#e-alarm-management)
     - [3. Test Plan](#3-test-plan)
     - [4. Monitoring and Alerting Plan](#4-monitoring-and-alerting-plan)
     - [5. Rollout Plan](#5-rollout-plan)
     - [6. Rollback Plan](#6-rollback-plan)
     - [7. Alternate Solutions](#7-alternate-solutions)
   - [III. Further Considerations](#iii-further-considerations)
-    - [1. Impact on Other Teams](#1-impact-on-other-teams)
-    - [2. Third-Party Services](#2-third-party-services)
-    - [3. Considerations](#3-considerations)
+    - [1. Constraints and Impact](#1-constraints-and-impact)
+    - [2. Considerations](#2-considerations)
       - [A. Security Considerations](#a-security-considerations)
       - [B. Privacy Considerations](#b-privacy-considerations)
-      - [C. Regional Considerations](#c-regional-considerations)
-      - [D. Accessibility Considerations](#d-accessibility-considerations)
-      - [E. Operational Considerations](#e-operational-considerations)
-      - [F. Risks](#f-risks)
-      - [G. Support Considerations](#g-support-considerations)
+      - [C. Risks](#c-risks)
   - [IV. Success Evaluation](#iv-success-evaluation)
-    - [1. Impact](#1-impact)
-    - [2. Metrics](#2-metrics)
     - [V. Work](#v-work)
       - [1. Work Estimates and Timelines](#1-work-estimates-and-timelines)
       - [2. Prioritization](#2-prioritization)
       - [3. Milestones](#3-milestones)
       - [4. Future Work](#4-future-work)
-  - [VI. Conclusion](#vi-conclusion)
-  - [VII. References](#vii-references)
+  - [VII. Glossary](#vii-glossary)
+  - [VIII. References](#viii-references)
 
 </details>
 
@@ -59,21 +56,11 @@
 
 A French company named CORIS Innovation asked us to improve their product named SPORTSHIELD. The product is a device that serves as a lock for all sorts of sports equipment. The device is connected to a mobile application that allows the user to lock and unlock the equipment. The company has been facing a lot of issues with the current solution and has asked us to come up with a new solution that will solve the issues they are facing. The stakeholders are the company and the users of the product.
 
-### 2. Glossary
-
-<!--
-New terms you come across as you research your design or terms you may suspect your readers/stakeholders not to know.
--->
-
-| Term | Definition                                                                                                                                                                                                                           | Source                                                              |
-| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
-| NFC  | NFC, or near-field communication, is a short-range wireless technology that allows your phone to act as a transit pass or credit card, quickly transfer data, or instantly pair with Bluetooth devices like headphones and speakers. | [Wikipedia](https://en.wikipedia.org/wiki/Near-field_communication) |
-
-### 3. Context
+### 2. Context
 
 The decision for the company to seek improvement for their product stems from numerous issues within the current solution. These include limitations such as the device's autonomy, the lack of user notification during alarm activation, and the inability to halt the alarm once the ringing cycle initiates.
 
-### 4. Goals and Objectives
+### 3. Goals and Objectives
 
 Fortunately, the company has provided us with a comprehensive list of requirements for the new solution:
 
@@ -82,7 +69,7 @@ Fortunately, the company has provided us with a comprehensive list of requiremen
 - Introduce multi-action capability, such as sending user notifications when the alarm activates.
 - Enhance security protocols for accessing key system features like lock/unlock and alarm management.
 
-### 5. Out of Scope
+### 4. Out of Scope
 
 Several requirements fall outside the scope of this project and will not be addressed:
 
@@ -90,14 +77,14 @@ Several requirements fall outside the scope of this project and will not be addr
 - Addressing security concerns related to charging.
 - Further enhancements to shock detection.
 
-### 6. Future Goals
+### 7. Future Goals
 
 Certain requirements have been identified for future iterations:
 
 - Securing the Bluetooth connection between the device and the mobile application.
 - Enhancing alarm management to allow users to halt the alarm once the ringing cycle commences.
 
-### 7. Assumptions
+### 8. Assumptions
 
 We are operating under the following assumptions:
 
@@ -107,7 +94,7 @@ We are operating under the following assumptions:
 
 ## II. Solutions
 
-### 1. Current Solution
+### 1. Current Product
 
 The current solution is still in the development phase and encompasses the following features:
 
@@ -131,41 +118,57 @@ The current solution is still in the development phase and encompasses the follo
 - Reliance on Bluetooth connectivity may result in connectivity issues or limitations in range.
 - The alarm system's simplicity may not adequately address all potential security concerns or user preferences.
 
-### 2. Suggested Solution
+### 2. Suggested Solutions
 
-<!--
-External components that the solution will interact with and that it will alter
-Dependencies of the current solution
-Pros and cons of the proposed solution
-**Data Model / Schema Changes**
-  Schema definitions
-  New data models
-  Modified data models
-  Data validation methods
-**Business Logic**
-  API changes
-  Pseudocode
-  Flowcharts
-  Error states
-  Failure scenarios
-  Conditions that lead to errors and failures
-  Limitations
-**Presentation Layer**
-  User requirements
-  UX changes
-  UI changes
-  Wireframes with descriptions
-  Links to UI/UX designer’s work
-  Mobile concerns
-  Web concerns
-  UI states
-  Error handling
-**Other questions to answer**
-  How will the solution scale?
-  What are the limitations of the solution?
-  How will it recover in the event of a failure?
-  How will it cope with future requirements?
--->
+#### A. Battery Life Improvement & Low Level Management
+
+To address the issue of limited battery life, the following improvements will be implemented:
+
+**Objective**: Extend the device's battery life to 7 days with up to 6 hours of active use per day by optimizing power consumption and implementing efficient battery management.
+
+- **How To Implement**:
+  - Optimize power consumption through software and hardware adjustments.
+  - Implement efficient battery management algorithms to regulate power usage.
+  - Limit the charge to 80% of the battery's capacity to extend its lifespan.
+
+![Battery Manager](./Images/BatteryFlow.png)
+
+- **Acceptance Criteria**:
+  - The device's battery life will be extended to 7 days under optimal conditions, with up to 6 hours of active use per day.
+  - Charging will be limited to 80% of the battery's capacity to prolong its lifespan.
+
+#### B. NFC Functionality
+
+To expand the device's capabilities, NFC functionality will be incorporated to facilitate device locking and unlocking:
+
+**Objective**: Integrate NFC functionality to enable users to lock/unlock the device using their mobile phones.
+
+- **How To Implement**:
+
+  - Utilize the NFC tag M24LR6E library from Seed Studio to implement NFC functionality.
+  - Employ the library to enable reading data from the NFC tag, which will be utilized for device locking and unlocking.
+
+- **Acceptance Criteria**:
+  - The device will support locking/unlocking via the mobile application using NFC functionality.
+  - Testing of NFC functionality will be conducted using the NFC tag of a smartphone, as access to the mobile application is unavailable for testing purposes.
+
+#### C. Simultaneous Actions Management
+
+- How To Implement
+
+- Acceptance Criteria
+
+#### D. Bluetooth Security
+
+- How To Implement
+
+- Acceptance Criteria
+
+#### E. Alarm Management
+
+- How To Implement
+
+- Acceptance Criteria
 
 ### 3. Test Plan
 
@@ -215,23 +218,13 @@ Migration plan to next best alternative in case the proposed solution falls thro
 
 ## III. Further Considerations
 
-### 1. Impact on Other Teams
+### 1. Constraints and Impact
 
 <!--
 How will this increase the work of other people?
 -->
 
-### 2. Third-Party Services
-
-<!--
-Is it really worth it compared to building the service in-house?
-What are some of the security and privacy concerns associated with the services/platforms?
-How much will it cost?
-How will it scale?
-What possible future issues are anticipated?
--->
-
-### 3. Considerations
+### 2. Considerations
 
 #### A. Security Considerations
 
@@ -249,33 +242,7 @@ How does the solution protect users’ data privacy?
 What are some of the tradeoffs between personalization and privacy in the solution?
 -->
 
-#### C. Regional Considerations
-
-<!--
-What is the impact of internationalization and localization on the solution?
-What are the latency issues?
-What are the legal concerns?
-What is the state of service availability?
-How will data transfer across regions be achieved and what are the concerns here?
--->
-
-#### D. Accessibility Considerations
-
-<!--
-How accessible is the solution?
-What tools will you use to evaluate its accessibility?
--->
-
-#### E. Operational Considerations
-
-<!--
-Does this solution cause adverse aftereffects?
-How will data be recovered in case of failure?
-How will the solution recover in case of a failure?
-How will operational costs be kept low while delivering increased value to the users?
--->
-
-#### F. Risks
+#### C. Risks
 
 <!--
 What risks are being undertaken with this solution?
@@ -283,32 +250,7 @@ Are there risks that once taken can’t be walked back?
 What is the cost-benefit analysis of taking these risks?
 -->
 
-#### G. Support Considerations
-
-<!--
-How will the support team get across information to users about common issues they may face while interacting with the changes?
-How will we ensure that the users are satisfied with the solution and can interact with it with minimal support?
-Who is responsible for the maintenance of the solution?
-How will knowledge transfer be accomplished if the project owner is unavailable?
--->
-
 ## IV. Success Evaluation
-
-### 1. Impact
-
-<!--
-Security impact
-Performance impact
-Cost impact
-Impact on other components and services
--->
-
-### 2. Metrics
-
-<!--
-List of metrics to capture
-Tools to capture and measure metrics
--->
 
 ### V. Work
 
@@ -339,13 +281,19 @@ Metrics to indicate the passing of the milestone
 List of tasks that will be completed in the future
 -->
 
-## VI. Conclusion
+## VII. Glossary
 
 <!--
-Summary of the solution
+New terms you come across as you research your design or terms you may suspect your readers/stakeholders not to know.
 -->
 
-## VII. References
+| Term | Definition                                                                                                                                                                                                                           | Source                                                              |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
+| NFC  | NFC, or near-field communication, is a short-range wireless technology that allows your phone to act as a transit pass or credit card, quickly transfer data, or instantly pair with Bluetooth devices like headphones and speakers. | [Wikipedia](https://en.wikipedia.org/wiki/Near-field_communication) |
+|      |                                                                                                                                                                                                                                      |                                                                     |
+|      |                                                                                                                                                                                                                                      |                                                                     |
+
+## VIII. References
 
 <!--
 Links to documents and resources that you used when coming up with your design and wish to credit.
