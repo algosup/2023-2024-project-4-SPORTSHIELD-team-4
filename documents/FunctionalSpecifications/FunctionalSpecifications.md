@@ -4,10 +4,10 @@
 
 ### 1.1 Version History
 
-| **Version** | **Date**        | **Author**   | **Description** |
-| ----------- | --------------- | ------------ | --------------- |
-| 0.1         | 13th March 2024 | Lucas AUBARD | Initial Draft   |
-| 0.2         | 14th March 2024 | Lucas AUBARD | Add Glossary    |
+| **Version** | **Date**        | **Author**   | **Description**                        |
+| ----------- | --------------- | ------------ | -------------------------------------- |
+| 0.1         | 13th March 2024 | Lucas AUBARD | Initial Draft                          |
+| 0.2         | 14th March 2024 | Lucas AUBARD | Add Glossary and document informations |
 
 ### 1.2 Document Approval
 
