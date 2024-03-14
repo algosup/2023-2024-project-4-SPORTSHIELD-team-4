@@ -19,6 +19,8 @@
     - [7. Assumptions](#7-assumptions)
   - [II. Solutions](#ii-solutions)
     - [1. Current Solution](#1-current-solution)
+      - [Pros](#pros)
+      - [Cons](#cons)
     - [2. Suggested Solution](#2-suggested-solution)
     - [3. Test Plan](#3-test-plan)
     - [4. Monitoring and Alerting Plan](#4-monitoring-and-alerting-plan)
@@ -36,19 +38,16 @@
       - [E. Operational Considerations](#e-operational-considerations)
       - [F. Risks](#f-risks)
       - [G. Support Considerations](#g-support-considerations)
-    - [IV. Success Evaluation](#iv-success-evaluation)
-      - [1. Impact](#1-impact)
-      - [2. Metrics](#2-metrics)
+  - [IV. Success Evaluation](#iv-success-evaluation)
+    - [1. Impact](#1-impact)
+    - [2. Metrics](#2-metrics)
     - [V. Work](#v-work)
       - [1. Work Estimates and Timelines](#1-work-estimates-and-timelines)
       - [2. Prioritization](#2-prioritization)
       - [3. Milestones](#3-milestones)
       - [4. Future Work](#4-future-work)
-    - [VI. Deliberations](#vi-deliberations)
-      - [1. Discussion](#1-discussion)
-      - [2. Open Questions](#2-open-questions)
-    - [VII. Conclusion](#vii-conclusion)
-    - [VIII. References](#viii-references)
+  - [VI. Conclusion](#vi-conclusion)
+  - [VII. References](#vii-references)
 
 </details>
 
@@ -85,10 +84,6 @@ Fortunately, the company has provided us with a comprehensive list of requiremen
 
 ### 5. Out of Scope
 
-<!--
-Product and technical requirements that will be disregarded
--->
-
 Several requirements fall outside the scope of this project and will not be addressed:
 
 - Implementing LED blinking to indicate device functionality.
@@ -97,20 +92,12 @@ Several requirements fall outside the scope of this project and will not be addr
 
 ### 6. Future Goals
 
-<!--
-Product and technical requirements slated for a future time
--->
-
 Certain requirements have been identified for future iterations:
 
 - Securing the Bluetooth connection between the device and the mobile application.
 - Enhancing alarm management to allow users to halt the alarm once the ringing cycle commences.
 
 ### 7. Assumptions
-
-<!--
-Conditions and resources that need to be present and accessible for the solution to work as described.
--->
 
 We are operating under the following assumptions:
 
@@ -122,10 +109,27 @@ We are operating under the following assumptions:
 
 ### 1. Current Solution
 
-<!--
-Current solution description
-Pros and cons of the current solution
--->
+The current solution is still in the development phase and encompasses the following features:
+
+- The device functions as a lock for various sports equipment.
+- It is paired with a mobile application that enables users to lock and unlock the equipment remotely.
+- The device typically has a battery life of 3 days under optimal conditions.
+- Bluetooth connectivity facilitates communication between the device and the mobile application.
+- An alarm is triggered upon detecting a shock, emitting 3 light sounds for minor shocks and 5 long high sounds for significant shocks.
+- Locking and unlocking of the device can be performed via the mobile application.
+- The mobile application provides geo-location functionality for tracking the device's location.
+
+#### Pros
+
+- Provides remote locking and unlocking capabilities, enhancing convenience for users.
+- Offers shock detection functionality to alert users of potential tampering or unauthorized access.
+- Incorporates geo-location features to assist users in tracking misplaced or stolen equipment.
+
+#### Cons
+
+- Limited battery life may necessitate frequent recharging, potentially leading to user inconvenience.
+- Reliance on Bluetooth connectivity may result in connectivity issues or limitations in range.
+- The alarm system's simplicity may not adequately address all potential security concerns or user preferences.
 
 ### 2. Suggested Solution
 
@@ -288,9 +292,9 @@ Who is responsible for the maintenance of the solution?
 How will knowledge transfer be accomplished if the project owner is unavailable?
 -->
 
-### IV. Success Evaluation
+## IV. Success Evaluation
 
-#### 1. Impact
+### 1. Impact
 
 <!--
 Security impact
@@ -299,7 +303,7 @@ Cost impact
 Impact on other components and services
 -->
 
-#### 2. Metrics
+### 2. Metrics
 
 <!--
 List of metrics to capture
@@ -335,27 +339,13 @@ Metrics to indicate the passing of the milestone
 List of tasks that will be completed in the future
 -->
 
-### VI. Deliberations
-
-#### 1. Discussion
-
-<!--
-Elements of the solution that members of the team do not agree on and need to be debated further to reach a consensus.
--->
-
-#### 2. Open Questions
-
-<!--
-Questions about things you do not know the answers to or are unsure that you pose to the team and stakeholders for their input. These may include aspects of the problem you don’t know how to resolve yet.
--->
-
-### VII. Conclusion
+## VI. Conclusion
 
 <!--
 Summary of the solution
 -->
 
-### VIII. References
+## VII. References
 
 <!--
 Links to documents and resources that you used when coming up with your design and wish to credit.
