@@ -183,13 +183,13 @@ Acceptance criteria are a detailed and measurable list of conditions that must b
 
 ### 6.1 Must have
 
-These are the critical acceptance criteria that absolutely must be met for the project to be considered successful. They represent the core functionalities or features without which the project cannot proceed. These criteria should be the highest priority and receive the most attention during development and testing. Theay are composed of :
+These are the critical acceptance criteria that absolutely must be met for the project to be considered successful. They represent the core functionalities or features without which the project cannot proceed. These criteria should be the highest priority and receive the most attention during development and testing. They are composed of :
 
 #### 6.1.1 Battery Optimisation :
 
 1. Improve energy efficiency of the system:
 
-   - Components msut be activated only when necessary to conserve battery power.
+   - Components must be activated only when necessary to conserve battery power.
 
 2. Increase the battery lifespan:
 
@@ -223,7 +223,7 @@ These acceptance criteria are important for the overall success of the project b
 
 1. Alarm ringing while sending HTTP notification to the server:
 
-   - The system should allow the alarm to continue ringing while simultaneously sending an HTTP notification to the server.
+   - The system should allow the alarm to continue ringing while simultaneously sending a HTTP notification to the server.
 
 2. Improved management of interruptions:
 
@@ -233,7 +233,7 @@ These acceptance criteria are important for the overall success of the project b
 
 ### 6.3 Could Have
 
-These acceptance criteria are optional and represent functionalities or features that would enhance the project but are not essential for its success. They can be included if time and resources permit, but their absence would not significantly impact the project's overall outcome.
+These acceptance criterias are optional and represent functionalities or features that would enhance the project but are not essential for its success. They can be included if time and resources permit, but their absence would not significantly impact the project's overall outcome.
 
 #### 6.3.1 Improve shock detection
 
@@ -250,7 +250,7 @@ These acceptance criteria are optional and represent functionalities or features
 
 ## 7. Non-Functional Requirements
 
-Description of the performance,reliability, or other non-functionalaspects expected from the solution
+Description of the performance,reliability, or other non-functional aspects expected from the solution
 
 - **User friendly** :
 
@@ -284,7 +284,7 @@ The system must be operational and accessible via NFC and the SportShield applic
 | Electronic measures requirements                | To check if the device respect the expected nominal voltage, we need to make some measurements                | We should use a multimeter, and perhaps a breadboard for electronic tests                              |
 | Sleep mode triggering at low battery            | When it reaches 20% of battery, it could enter in a sleep mode similar to cellphones to economize the battery | Testing about sleep mode and checking how much time the battery can handle                             |
 | Simultaneous actions could consume more battery | Allowing a device to do several actions at the time might increase the battery consumption                    | Simultaneous actions might be limited, and we should monitor the tension depending on the actions used |
-| New HTTP server creation                        | We have to get used to send HTTPs request to get familiarized with the base device                            | We should train ourselves sending and receiving HTTPs requests with simple programs                    |
+| New HTTP server creation                        | We have to get used to send HTTPs requests to get familiarized with the base device                           | We should train ourselves sending and receiving HTTPs requests with simple programs                    |
 | NFC integration improving interactivity         | The user interaction with the device and the system's usability will be enhanced                              | Make sure the customer will be able to use the NFC card without trouble                                |
 
 ## 9. Risks
@@ -295,9 +295,9 @@ The system must be operational and accessible via NFC and the SportShield applic
 | Obsolete battery                  | After an excessive use, the LiPo battery won't have any voltage anymore to power up our device                                                                 | Simply take another LiPo battery                                                                                                |
 | Battery lifespan inaccuracy       | A bad management of the lifespan can lead to premature battery degradation or failure                                                                          | Checking and monitoring the evolution of the first battery's voltage.                                                           |
 | Alarm manual deactivation failure | Depending on some circumstances, the HTTPs requests sent by the user could have trouble being detected by the device, hindering remote monitoring and response | Proceeding with tests of sending HTTPs requests and/or improving the sending speed                                              |
-| Alarm management conflicts        | The alarm interruptions and conflict could lead to system instability or inconsistent behavior                                                                 | Adding limitations of alarm deactivation, like a waiting time                                                                   |
+| Alarm management conflicts        | The alarm interruptions and conflicts could lead to system instability or inconsistent behavior                                                                 | Adding limitations of alarm desactivation, like a waiting time                                                                   |
 | NFC smartphones brands issues     | The user could experience some issues with the NFC communication due to using a different smartphone                                                           | Making the NFC buffer type always the same regardless of the smartphone type                                                    |
-| NFC malfunctions                  | The NFC cards can provoke software bugs, affection activation/deactivations, and potentially unlock the cable at the wrong time                                | Creating a valuable test environment for NFC communication                                                                      |
+| NFC malfunctions                  | The NFC cards can provoke software bugs, affection activation/desactivations, and potentially unlock the cable at the wrong time                                | Creating a valuable test environment for NFC communication                                                                      |
 | Data privacy breaches             | Through NFC communication, private user data could be exposed due to a wrongful use of a NFC card                                                              | The NFC cards should just send information to the device instead of receiving.                                                  |
 
 ## 10. Testing Ways
@@ -306,7 +306,7 @@ Below are the testing methods that will be employed to ensure the robustness and
 
 1. **Unit Testing**: This phase will involve testing each system's module in isolation to verify its functionality.
 
-   _Why:_ Unit testing is essential to identify and address any defects in the individual components before they are integrated into the system.
+   _Why:_ Unit testing is essential to identify and address any defect in the individual components before they are integrated into the system.
 
    _Example:_ We will conduct unit tests by activating the alarm system and verifying if the alarm responds appropriately.
 
@@ -340,7 +340,7 @@ Below are the testing methods that will be employed to ensure the robustness and
 
    _Example:_ Security tests will try to bypass the system's security measures to modify or disable the alarm, and verify if the system can protect against such attempts.
 
-By employing these testing methodologies, we aim to deliver a reliable and robust Sport Shield system that meets the highest standards of performance, security, and user satisfaction.
+By employing these testing methodologies, we aim to deliver a reliable and robust SPORTSHIELD system that meets the highest standards of performance, security, and user satisfaction.
 
 ## 11. Glossary
 
