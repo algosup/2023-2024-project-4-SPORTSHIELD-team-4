@@ -41,15 +41,15 @@
   - [5. Targeted Features](#5-targeted-features)
   - [6. Acceptance Criteria](#6-acceptance-criteria)
     - [6.1 Must have](#61-must-have)
-      - [6.1.1 Battery Optimization](#611-battery-optimization)
-      - [6.1.2 NFC Management](#612-nfc-management)
+      - [6.1.1 Battery Optimisation :](#611-battery-optimisation-)
+      - [6.1.2 NFC Management :](#612-nfc-management-)
     - [6.2 Should Have](#62-should-have)
-      - [6.2.1 Battery Low-Level Management](#621-battery-low-level-management)
-      - [6.2.2 Manage Simultaneous Actions](#622-manage-simultaneous-actions)
+      - [6.2.1 Battery low level management](#621-battery-low-level-management)
+      - [6.2.2 Manage simultaneous actions](#622-manage-simultaneous-actions)
     - [6.3 Could Have](#63-could-have)
-      - [6.3.1 Improve Shock Detection](#631-improve-shock-detection)
+      - [6.3.1 Improve shock detection](#631-improve-shock-detection)
       - [6.3.2 Bluetooth Secure](#632-bluetooth-secure)
-      - [6.3.3 Alarm Management](#633-alarm-management)
+      - [6.3.3 Alarm management](#633-alarm-management)
   - [7. Non-Functional Requirements](#7-non-functional-requirements)
   - [8. Assumptions](#8-assumptions)
   - [9. Risks](#9-risks)
@@ -179,73 +179,168 @@ The "SPORTSHIELD" project aims to deliver the following key features to meet the
 
 ## 6. Acceptance Criteria
 
+Acceptance criteria are a detailed and measurable list of conditions that must be met for a project element to be considered complete and acceptable. They play an essential role in communicating expectations between stakeholders and in ensuring the quality of the final product.
+
 ### 6.1 Must have
 
-#### 6.1.1 Battery Optimization
+These are the critical acceptance criteria that absolutely must be met for the project to be considered successful. They represent the core functionalities or features without which the project cannot proceed. These criteria should be the highest priority and receive the most attention during development and testing. Theay are composed of :
 
-- The device's battery life must exceed 30 days under normal usage conditions.
+#### 6.1.1 Battery Optimisation :
 
-#### 6.1.2 NFC Management
+1. Improve energy efficiency of the system:
 
-- The device must support NFC pairing for easy setup and configuration.
+   - Components msut be activated only when necessary to conserve battery power.
+
+2. Increase the battery lifespan:
+
+   - Implement measures to limit battery charging to a maximum of 80% of its maximum capacity (Vmax) to prolong battery lifespan.
+
+   - Enforce a minimum battery charge threshold of 20% to prevent deep discharge cycles that could degrade the battery's health over time.
+
+#### 6.1.2 NFC Management :
+
+1. NFC activation of anti-theft system and cable unlocking:
+
+   - Users should be able to activate and deactivate the anti-theft system and unlock the cable using NFC technology with Bluetooth.
+
+2. Integration with Bluetooth via smartphone:
+
+   - The system should seamlessly integrate with the Blutooth, allowing users to manage device functions through their smartphones.
 
 ### 6.2 Should Have
 
-#### 6.2.1 Battery Low-Level Management
+These acceptance criteria are important for the overall success of the project but are not as critical as the "Must Have" criteria. They represent functionalities or features that are highly desirable and should be included if possible. However, the project can still move forward if some of these criteria are not fully met.
 
-- The app must notify users when the device's battery level is low, indicating the need for recharging.
+#### 6.2.1 Battery low level management
 
-#### 6.2.2 Manage Simultaneous Actions
+- Management of a low battery situation:
 
-- The device must handle multiple simultaneous actions, such as tracking location while detecting movement.
+  - Ensure that critical safety features such as ski securing mechanisms are prioritized over non-essential functions when the battery is low.
+
+  - Implement fail-safe measures to prevent unsafe situations, such as ensuring that the electromagnet cannot be powered to release the cable when the battery is critically low.
+
+#### 6.2.2 Manage simultaneous actions
+
+1. Alarm ringing while sending HTTP notification to the server:
+
+   - The system should allow the alarm to continue ringing while simultaneously sending an HTTP notification to the server.
+
+2. Improved management of interruptions:
+
+   - Implement better management of interruptions to ensure that simultaneous actions do not interfere with each other.
+
+   - Prioritize critical actions such as alarm ringing and HTTP notifications, while appropriately handling other interruptions to maintain system functionality.
 
 ### 6.3 Could Have
 
-#### 6.3.1 Improve Shock Detection
+These acceptance criteria are optional and represent functionalities or features that would enhance the project but are not essential for its success. They can be included if time and resources permit, but their absence would not significantly impact the project's overall outcome.
 
-- The device could enhance shock detection sensitivity to detect subtle movements indicative of tampering.
+#### 6.3.1 Improve shock detection
+
+- Explore and implement advanced algorithms to enhance the accuracy and sensitivity of shock detection.
 
 #### 6.3.2 Bluetooth Secure
 
-- The device could implement additional security measures for Bluetooth communication to prevent unauthorized access.
+- Implement stronger encryption protocols for Bluetooth communication to ensure secure data transmission between devices.
+- Allow users to create a whitelist of trusted Bluetooth devices that are permitted to connect to the system.
 
-#### 6.3.3 Alarm Management
+#### 6.3.3 Alarm management
 
-- The app could allow users to customize alarm settings, such as volume and duration.
+- Implement the option for users to stop the alarm manually, even if the ringing cycle is not finished. This feature provides users with more control over the alarm system, allowing them to silence the alarm promptly if necessary.
 
 ## 7. Non-Functional Requirements
 
-The "SPORTSHIELD" device and app must meet the following non-functional requirements to ensure optimal performance and user satisfaction:
+Description of the performance,reliability, or other non-functionalaspects expected from the solution
 
-- **Reliability:** The device and app must operate reliably under various environmental conditions, including extreme temperatures and physical stress.
-- **Security:** The device and app must implement robust security measures to protect user data and prevent unauthorized access.
-- **Scalability:** The device and app must be scalable to accommodate future updates and expansions, including additional features and device compatibility.
-- **Performance:** The device and app must deliver high performance with minimal latency, ensuring responsive user interaction and real-time tracking capabilities.
-- **Usability:** The device and app must be user-friendly, with intuitive interfaces and clear instructions for setup and operation.
-- **Accessibility:** The device and app must be accessible to users with disabilities, complying with relevant accessibility standards and guidelines.
+- **User friendly** :
+
+The anti-theft system must offer an intuitive user interface and a quick locking process, minimizing the steps required to activate and deactivate protection. Given that the primary users will be mountain vacationers, regulars and locals, who want to quickly secure their winter sports equipment during their breaks, the user experience must be fluid and frictionless. It's imperative that users can secure their skis or snowboard with confidence and return to their activities without undue concern for the safety of their equipment.
+
+- **Energy savings and autonomy** :
+
+The anti-theft system must be optimized for minimum energy consumption, allowing continuous use over a period of one week without the need for recharging. This means that the device must be able to operate for 6 hours a day in active mode and 18 hours in standby mode. This autonomy enables users to enjoy their mountain vacations without the worry of recharging the device, ensuring an uninterrupted user experience and constant equipment security.
+
+- **Compatibility**:
+
+The system should be compatible with different smartphone models and versions of mobile operating systems to ensure a consistent user experience.
+
+- **Reliability**:
+
+The system must operate reliably and consistently, with effective management of low-battery situations to avoid failure due to power loss.
+
+- **Performance**:
+
+The system should be able to handle anti-theft activation/deactivation and cable unlocking quickly, with minimal response time to avoid delaying the user.
+
+- **Availability**:
+
+The system must be operational and accessible via NFC and the SportShield application at all times, guaranteeing close to 100% availability. guidelines.
 
 ## 8. Assumptions
 
-- Users have basic knowledge of operating smartphones and mobile applications.
-- The "SPORTSHIELD" device is compatible with a wide range of sport equipment, including skis, snowboards, bicycles, and hiking gear.
-- The GPS functionality of the "SPORTSHIELD" device relies on satellite signals and may experience limitations in areas with poor signal reception or obstructed views of the sky.
+| **Assumption**                                  | **Impact**                                                                                                    | **Mitigation**                                                                                         |
+| :---------------------------------------------- | :------------------------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------------------------------------- |
+| Implementation of energy-efficient strategies   | These strategies could extend the battery life and enhance the user experience                                | Making research about battery alimentation                                                             |
+| Electronic measures requirements                | To check if the device respect the expected nominal voltage, we need to make some measurements                | We should use a multimeter, and perhaps a breadboard for electronic tests                              |
+| Sleep mode triggering at low battery            | When it reaches 20% of battery, it could enter in a sleep mode similar to cellphones to economize the battery | Testing about sleep mode and checking how much time the battery can handle                             |
+| Simultaneous actions could consume more battery | Allowing a device to do several actions at the time might increase the battery consumption                    | Simultaneous actions might be limited, and we should monitor the tension depending on the actions used |
+| New HTTP server creation                        | We have to get used to send HTTPs request to get familiarized with the base device                            | We should train ourselves sending and receiving HTTPs requests with simple programs                    |
+| NFC integration improving interactivity         | The user interaction with the device and the system's usability will be enhanced                              | Make sure the customer will be able to use the NFC card without trouble                                |
 
 ## 9. Risks
 
-- Technical challenges may arise during the development and implementation of GPS tracking and anti-theft functionalities.
-- The device's battery life may be shorter than expected under certain usage conditions, leading to user dissatisfaction.
-- Regulatory changes or legal requirements may impact the deployment and operation of the "SPORTSHIELD" device and app in specific regions or jurisdictions.
+| **Risk**                          | **Impact**                                                                                                                                                     | **Mitigation**                                                                                                                  |
+| :-------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------ |
+| Battery insufficient power        | The battery might not be able to power up the microprocessor implemented with the new code                                                                     | Study what components are used for the code, compare with different batteries, and choose the one most adapted to the situation |
+| Obsolete battery                  | After an excessive use, the LiPo battery won't have any voltage anymore to power up our device                                                                 | Simply take another LiPo battery                                                                                                |
+| Battery lifespan inaccuracy       | A bad management of the lifespan can lead to premature battery degradation or failure                                                                          | Checking and monitoring the evolution of the first battery's voltage.                                                           |
+| Alarm manual deactivation failure | Depending on some circumstances, the HTTPs requests sent by the user could have trouble being detected by the device, hindering remote monitoring and response | Proceeding with tests of sending HTTPs requests and/or improving the sending speed                                              |
+| Alarm management conflicts        | The alarm interruptions and conflict could lead to system instability or inconsistent behavior                                                                 | Adding limitations of alarm deactivation, like a waiting time                                                                   |
+| NFC smartphones brands issues     | The user could experience some issues with the NFC communication due to using a different smartphone                                                           | Making the NFC buffer type always the same regardless of the smartphone type                                                    |
+| NFC malfunctions                  | The NFC cards can provoke software bugs, affection activation/deactivations, and potentially unlock the cable at the wrong time                                | Creating a valuable test environment for NFC communication                                                                      |
+| Data privacy breaches             | Through NFC communication, private user data could be exposed due to a wrongful use of a NFC card                                                              | The NFC cards should just send information to the device instead of receiving.                                                  |
 
 ## 10. Testing Ways
 
-The "SPORTSHIELD" device and app will undergo rigorous testing to ensure they meet the specified requirements and performance standards. Testing methods will include:
+Below are the testing methods that will be employed to ensure the robustness and reliability of the system:
 
-- Functional Testing: Verifying that all features and functionalities perform as expected under normal and edge case scenarios.
-- Usability Testing: Evaluating the user interface and experience to ensure ease of use and intuitive operation.
-- Performance Testing: Assessing the device and app's performance metrics, including battery life, responsiveness, and tracking accuracy.
-- Security Testing: Identifying and addressing potential vulnerabilities and security risks to protect user data and prevent unauthorized access.
-- Compatibility Testing: Testing the device and app across various platforms, devices, and operating systems to ensure broad compatibility and interoperability.
-- Regulatory Compliance Testing: Ensuring that the device and app comply with relevant regulations and standards governing wireless communication, tracking technologies, and user privacy.
+1. **Unit Testing**: This phase will involve testing each system's module in isolation to verify its functionality.
+
+   _Why:_ Unit testing is essential to identify and address any defects in the individual components before they are integrated into the system.
+
+   _Example:_ We will conduct unit tests by activating the alarm system and verifying if the alarm responds appropriately.
+
+2. **Integration Testing**: Integration testing will focus on validating the interactions between different modules when they are integrated into the system.
+
+   _Why:_ Integration testing is crucial to ensure that the components work together as intended and that the system's functionality is not compromised.
+
+   _Example:_ Integration tests will involve connecting the alarm with the sensor and confirming if the alarm is triggered upon detection of a strong shock.
+
+3. **System Testing**: This comprehensive testing phase evaluates the system as a whole to ensure all components work together seamlessly.
+
+   _Why:_ System testing is essential to validate the system's overall functionality and performance, including user interactions and system responses.
+
+   _Example:_ System tests will include subjecting the sensor to a strong shock and verifying if the alarm is triggered while also checking if the system sends an alert to the user.
+
+4. **Regression Testing**: Whenever changes are made to the system, regression testing will be performed to ensure that existing functionalities are not adversely affected.
+
+   _Why:_ Regression testing is necessary to confirm that new changes do not introduce defects or issues that impact the system's existing functionality.
+
+   _Example:_ After modifying the alarm system, regression tests will be conducted to confirm that the alarm still functions correctly in response to sensor triggers.
+
+5. **Performance Testing**: This phase evaluates the system's performance under various conditions to ensure optimal operation.
+
+   _Why:_ Because the system's performance is a priority to the client, performance testing is essential to ensure that the system can handle different scenarios and loads.
+
+   _Example:_ Performance tests will assess the system's responsiveness under normal and low temperature to ensure consistent performance.
+
+6. **Security Testing**: Security testing aims to identify vulnerabilities and ensure the system is resilient against unauthorized access or attacks.
+
+   _Why:_ Security testing is critical to safeguard the system from potential threats and breaches.
+
+   _Example:_ Security tests will try to bypass the system's security measures to modify or disable the alarm, and verify if the system can protect against such attempts.
+
+By employing these testing methodologies, we aim to deliver a reliable and robust Sport Shield system that meets the highest standards of performance, security, and user satisfaction.
 
 ## 11. Glossary
 
