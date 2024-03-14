@@ -32,8 +32,8 @@
     - [2.1 Project](#21-project)
     - [2.2 Client](#22-client)
     - [2.3 Material](#23-material)
-      - [Hardware Material:](#hardware-material)
-      - [Software:](#software)
+      - [Hardware Material](#hardware-material)
+      - [Software](#software)
   - [3. Use Cases](#3-use-cases)
     - [3.1 Use Case 1: Purchase "SPORTSHIELD" Device](#31-use-case-1-purchase-sportshield-device)
     - [3.2 Use Case 2: Prevent Theft of Snowboard](#32-use-case-2-prevent-theft-of-snowboard)
@@ -42,8 +42,8 @@
   - [5. Targeted Features](#5-targeted-features)
   - [6. Acceptance Criteria](#6-acceptance-criteria)
     - [6.1 Must have](#61-must-have)
-      - [6.1.1 Battery Optimisation :](#611-battery-optimisation-)
-      - [6.1.2 NFC Management :](#612-nfc-management-)
+      - [6.1.1 Battery Optimisation](#611-battery-optimisation)
+      - [6.1.2 NFC Management](#612-nfc-management)
     - [6.2 Should Have](#62-should-have)
       - [6.2.1 Battery low level management](#621-battery-low-level-management)
       - [6.2.2 Manage simultaneous actions](#622-manage-simultaneous-actions)
@@ -74,7 +74,7 @@ The main customer for this project is CORIS Innovation, but it is also indirectl
 
 Several elements are given for this project:
 
-#### Hardware Material:
+#### Hardware Material
 
 | Equipment         | Description                                                                                                                                                                         | Reference               | Brand            |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- | ---------------- |
@@ -84,7 +84,7 @@ Several elements are given for this project:
 | GSM module        | Miniature cellular module which allows for GPRS transmission.                                                                                                                       | SIM800L                 | SIMCom           |
 | NFC module        | NFC, RFID antenna.                                                                                                                                                                  | 146236                  | Molex            |
 
-#### Software:
+#### Software
 
 An Arduino code is provided, which is the prototype version of the project's code and contains features already developed.
 
@@ -188,7 +188,7 @@ Acceptance criteria are a detailed and measurable list of conditions that must b
 
 These are the critical acceptance criteria that absolutely must be met for the project to be considered successful. They represent the core functionalities or features without which the project cannot proceed. These criteria should be the highest priority and receive the most attention during development and testing. They are composed of :
 
-#### 6.1.1 Battery Optimisation :
+#### 6.1.1 Battery Optimisation 
 
 1. Improve energy efficiency of the system:
 
@@ -200,7 +200,7 @@ These are the critical acceptance criteria that absolutely must be met for the p
 
    - Enforce a minimum battery charge threshold of 20% to prevent deep discharge cycles that could degrade the battery's health over time.
 
-#### 6.1.2 NFC Management :
+#### 6.1.2 NFC Management 
 
 1. NFC activation of anti-theft system and cable unlocking:
 
