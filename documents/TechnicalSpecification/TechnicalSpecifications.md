@@ -16,7 +16,16 @@
     - [4. Out of Scope](#4-out-of-scope)
     - [7. Future Goals](#7-future-goals)
     - [8. Assumptions](#8-assumptions)
-  - [II. Solutions](#ii-solutions)
+  - [II. Hardware](#ii-hardware)
+    - [1. Development Board\*\*](#1-development-board)
+    - [2. Battery](#2-battery)
+    - [3. GPS Module](#3-gps-module)
+    - [4. GSM Module](#4-gsm-module)
+    - [5. NFC Module](#5-nfc-module)
+    - [6. Electromagnet](#6-electromagnet)
+    - [7. Piezoelectric Buzzer](#7-piezoelectric-buzzer)
+    - [8 . Electronic Configuration](#8--electronic-configuration)
+  - [III. Solutions](#iii-solutions)
     - [1. Current Product](#1-current-product)
       - [Pros](#pros)
       - [Cons](#cons)
@@ -25,26 +34,24 @@
       - [B. NFC Functionality](#b-nfc-functionality)
       - [C. Simultaneous Actions Management](#c-simultaneous-actions-management)
       - [D. Bluetooth Security](#d-bluetooth-security)
-      - [E. Alarm Management](#e-alarm-management)
     - [3. Test Plan](#3-test-plan)
     - [4. Monitoring and Alerting Plan](#4-monitoring-and-alerting-plan)
     - [5. Rollout Plan](#5-rollout-plan)
     - [6. Rollback Plan](#6-rollback-plan)
     - [7. Alternate Solutions](#7-alternate-solutions)
-  - [III. Further Considerations](#iii-further-considerations)
+  - [IV. Further Considerations](#iv-further-considerations)
     - [1. Constraints and Impact](#1-constraints-and-impact)
     - [2. Considerations](#2-considerations)
       - [A. Security Considerations](#a-security-considerations)
       - [B. Privacy Considerations](#b-privacy-considerations)
       - [C. Risks](#c-risks)
-  - [IV. Success Evaluation](#iv-success-evaluation)
-    - [V. Work](#v-work)
-      - [1. Work Estimates and Timelines](#1-work-estimates-and-timelines)
-      - [2. Prioritization](#2-prioritization)
-      - [3. Milestones](#3-milestones)
-      - [4. Future Work](#4-future-work)
-  - [VII. Glossary](#vii-glossary)
-  - [VIII. References](#viii-references)
+  - [V. Work](#v-work)
+    - [1. Work Estimates and Timelines](#1-work-estimates-and-timelines)
+    - [2. Prioritization](#2-prioritization)
+    - [3. Milestones](#3-milestones)
+    - [4. Future Work](#4-future-work)
+  - [VI. Glossary](#vi-glossary)
+  - [VII. References](#vii-references)
 
 </details>
 
@@ -92,7 +99,71 @@ We are operating under the following assumptions:
 - Access to the current solution will be granted to facilitate understanding of its functionality and encountered issues.
 - The company will furnish us with requisite documentation and assistance to comprehend the current solution and its associated challenges.
 
-## II. Solutions
+## II. Hardware
+
+The SPORTSHIELD device comprises various hardware components carefully selected for optimal performance and functionality:
+
+### 1. Development Board\*\*
+
+- **Description:** An ultra-compact, ultra-low-power Bluetooth development board based on the Nordic nRF52840.
+- **Reference:** Seeed XIAO BLE nRF52840
+- **Brand:** Seeed Studio
+
+![Development Board](./Images/XiaoBLE.png)
+
+### 2. Battery
+
+- **Description:** Lithium-ion polymer rechargeable battery.
+- **Reference:** LP603449
+- **Brand:** EEMB
+
+![Battery](./Images/Battery.png)
+
+### 3. GPS Module
+
+- **Description:** Utilizes the MediaTek GNSS Chipset MT3333, supporting various location and navigation applications, including autonomous GPS, GLONASS, GALILEO, QZSS, SBAS, DGPS, and AGPS.
+- **Reference:** CD-PA1010D
+- **Brand:** CDtop Technology
+
+![GPS Module](./Images/ModuleGPS-removebg-preview.png)
+
+### 4. GSM Module
+
+- **Description:** A miniature cellular module enabling GPRS transmission.
+- **Reference:** SIM800L
+- **Brand:** SIMCom
+
+![GSM Module](./Images/Sim.png)
+
+### 5. NFC Module
+
+- **Description:** NFC and RFID antenna.
+- **Reference:** 146236
+- **Brand:** Molex
+
+![NFC Module](./Images/NFCReader.png)
+
+### 6. Electromagnet
+
+- **Description:** Electromagnet with specifications of 12V and 500mA.
+- **Dimensions:** 2.7 x 1.6 x 1.3 cm
+
+![Electromagnet](./Images/Electromagnet.png)
+
+### 7. Piezoelectric Buzzer
+
+- **Description:** Piezoelectric buzzer with oscillator control circuit.
+- **Specifications:** Operates at 12V, producing a sound intensity of approximately 90-100 dB.
+
+![Piezoelectric Buzzer](./Images/Buzzer.png)
+
+### 8 . Electronic Configuration
+
+This is how the electronic configuration of the device looks like:
+
+![Electronic Configuration](./Images/ElectronicConfiguration.png)
+
+## III. Solutions
 
 ### 1. Current Product
 
@@ -154,24 +225,33 @@ To expand the device's capabilities, NFC functionality will be incorporated to f
 
 #### C. Simultaneous Actions Management
 
-- How To Implement
-  <!-- TODO -->
+**Objective**: Implement a system for managing simultaneous actions, particularly focusing on notifying the user when the alarm is activated.
 
-- Acceptance Criteria
-  If we are able to implement the simultaneous actions management, the user will be notified when the alarm is activated.
+- **How To Implement**:
+
+  - Develop a mechanism to detect simultaneous actions such as shock detection triggering the alarm.
+  - Integrate a notification system within the mobile application to alert the user when the alarm activates.
+  - Ensure seamless coordination between the device and the mobile application to deliver real-time notifications.
+
+- **Acceptance Criteria**:
+  - The system successfully detects and manages simultaneous actions, particularly the activation of the alarm.
+  - Users receive timely notifications on their mobile devices when the alarm is activated.
+  - The notification system operates efficiently, providing real-time alerts without significant delays.
 
 #### D. Bluetooth Security
 
-- How To Implement
+**Objective**: Enhance the security protocols governing Bluetooth connectivity between the device and the mobile application.
 
-- Acceptance Criteria
+- **How To Implement**:
 
-#### E. Alarm Management
+  - Implement encryption protocols to secure data transmission over Bluetooth.
+  - Utilize secure pairing mechanisms to establish a trusted connection between the device and the mobile application.
+  - Integrate authentication measures to verify the identity of both the device and the mobile application during the pairing process.
 
-- How To Implement
-  To implement the alarm management, we will have to add a function linked to the NFC tag that will allow the user to halt the alarm once the ringing cycle initiates, something similar to the stop button on a fire alarm.
-- Acceptance Criteria
-  If the user is able to halt the alarm once the ringing cycle initiates, then the alarm management will be considered a success.
+- **Acceptance Criteria**:
+  - Data transmitted over Bluetooth is encrypted, ensuring confidentiality and integrity.
+  - Secure pairing mechanisms are employed, preventing unauthorized devices from connecting to the SPORTSHIELD device.
+  - Authentication measures successfully validate the identity of both the device and the mobile application, reducing the risk of unauthorized access.
 
 ### 3. Test Plan
 
@@ -219,7 +299,7 @@ Ways in which alternatives were inferior to the proposed solution
 Migration plan to next best alternative in case the proposed solution falls through
 -->
 
-## III. Further Considerations
+## IV. Further Considerations
 
 ### 1. Constraints and Impact
 
@@ -269,11 +349,9 @@ There is a lot of risk that we will describe in the table below:
 | The battery is not charging properly                                   | The device will not respect the battery life and will not fill the client's requirements.                   |
 | The device is not able to connect to the mobile application            | The user will not be able to lock or unlock the device.                                                     |
 
-## IV. Success Evaluation
+## V. Work
 
-### V. Work
-
-#### 1. Work Estimates and Timelines
+### 1. Work Estimates and Timelines
 
 <!--
 List of specific, measurable, and time-bound tasks
@@ -281,26 +359,26 @@ Resources needed to finish each task
 Time estimates for how long each task needs to be completed
 -->
 
-#### 2. Prioritization
+### 2. Prioritization
 
 <!--
 Categorization of tasks by urgency and impact
 -->
 
-#### 3. Milestones
+### 3. Milestones
 
 <!--
 Dated checkpoints when significant chunks of work will have been completed
 Metrics to indicate the passing of the milestone
 -->
 
-#### 4. Future Work
+### 4. Future Work
 
 <!--
 List of tasks that will be completed in the future
 -->
 
-## VII. Glossary
+## VI. Glossary
 
 <!--
 New terms you come across as you research your design or terms you may suspect your readers/stakeholders not to know.
@@ -310,7 +388,7 @@ New terms you come across as you research your design or terms you may suspect y
 | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
 | NFC  | NFC, or near-field communication, is a short-range wireless technology that allows your phone to act as a transit pass or credit card, quickly transfer data, or instantly pair with Bluetooth devices like headphones and speakers. | [Wikipedia](https://en.wikipedia.org/wiki/Near-field_communication) |
 
-## VIII. References
+## VII. References
 
 <!--
 Links to documents and resources that you used when coming up with your design and wish to credit.
