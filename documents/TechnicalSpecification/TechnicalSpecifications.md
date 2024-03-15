@@ -74,7 +74,7 @@ Fortunately, the company has provided us with a comprehensive list of requiremen
 Several requirements fall outside the scope of this project and will not be addressed:
 
 - Implementing LED blinking to indicate device functionality.
-- Addressing security concerns related to charging.
+- Addressing security concerns related to charging. (Blocking the insertion of code into the device's firmware during charging.)
 - Further enhancements to shock detection.
 
 ### 7. Future Goals
@@ -155,8 +155,10 @@ To expand the device's capabilities, NFC functionality will be incorporated to f
 #### C. Simultaneous Actions Management
 
 - How To Implement
+  <!-- TODO -->
 
 - Acceptance Criteria
+  If we are able to implement the simultaneous actions management, the user will be notified when the alarm is activated.
 
 #### D. Bluetooth Security
 
@@ -167,8 +169,9 @@ To expand the device's capabilities, NFC functionality will be incorporated to f
 #### E. Alarm Management
 
 - How To Implement
-
+  To implement the alarm management, we will have to add a function linked to the NFC tag that will allow the user to halt the alarm once the ringing cycle initiates, something similar to the stop button on a fire alarm.
 - Acceptance Criteria
+  If the user is able to halt the alarm once the ringing cycle initiates, then the alarm management will be considered a success.
 
 ### 3. Test Plan
 
@@ -224,6 +227,8 @@ Migration plan to next best alternative in case the proposed solution falls thro
 How will this increase the work of other people?
 -->
 
+Because we're adding a lot of features in the device such as the alarm management or the NFC functionality, the team that is in charge of the mobile application will have to update the application to support these new features. This will increase their workload. They are those who will be most impacted by the changes we are making.
+
 ### 2. Considerations
 
 #### A. Security Considerations
@@ -242,6 +247,8 @@ How does the solution protect users’ data privacy?
 What are some of the tradeoffs between personalization and privacy in the solution?
 -->
 
+Because we're only working on the device and not on how the data is handled, we don't have to worry about the privacy of the users' data. The company is in charge of the data and how it is handled. However, there is still a risk that the data could be compromised if the device is stolen. We will have to make sure that the device is secure enough to prevent this from happening.
+
 #### C. Risks
 
 <!--
@@ -249,6 +256,18 @@ What risks are being undertaken with this solution?
 Are there risks that once taken can’t be walked back?
 What is the cost-benefit analysis of taking these risks?
 -->
+
+The main risk we are taking is that we are adding a lot of features to the device. This could lead to the device being more complex and therefore more prone to bugs. We will have to make sure that we test the device thoroughly to prevent this from happening.
+
+There is a lot of risk that we will describe in the table below:
+
+| Risk                                                                   | Impact                                                                                                      |
+| ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| The device is locked and there is an issue with the battery thresholds | The user will not be able to unlock the device and will have to wait the charge of the device to unlock it. |
+| The device is stolen while the alarm is deactivated                    | The user will not be notified and will not be able to track the device.                                     |
+| The device's components are broken                                     | The device will not work properly and the user will not be able to use it.                                  |
+| The battery is not charging properly                                   | The device will not respect the battery life and will not fill the client's requirements.                   |
+| The device is not able to connect to the mobile application            | The user will not be able to lock or unlock the device.                                                     |
 
 ## IV. Success Evaluation
 
@@ -290,8 +309,6 @@ New terms you come across as you research your design or terms you may suspect y
 | Term | Definition                                                                                                                                                                                                                           | Source                                                              |
 | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
 | NFC  | NFC, or near-field communication, is a short-range wireless technology that allows your phone to act as a transit pass or credit card, quickly transfer data, or instantly pair with Bluetooth devices like headphones and speakers. | [Wikipedia](https://en.wikipedia.org/wiki/Near-field_communication) |
-|      |                                                                                                                                                                                                                                      |                                                                     |
-|      |                                                                                                                                                                                                                                      |                                                                     |
 
 ## VIII. References
 

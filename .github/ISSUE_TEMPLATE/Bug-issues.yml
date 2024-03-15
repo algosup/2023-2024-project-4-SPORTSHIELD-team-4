@@ -1,40 +1,47 @@
-name: 👾 Bug Report 
-descrption: Report a bug.
+name: "👾 Bug Report"
+description: "Report a bug."
 title: ""
-labels: ["Bug"]
-assignees: ["PortetWilfried"]
+labels:
+  - "Bug"
+assignees:
+  - "PortetWilfried"
+
 body:
   - type: markdown
-  attributes:
-  value: |
-    Please fill out the sections below to help the team to fix the bug.
+    attributes:
+      value: |
+        Please fill out the sections below to help the team to fix the bug.
+
   - type: textarea
     id: description
     attributes:
-      label: Describe your issue 
+      label: Describe your issue
       placeholder: Please describe the problem ?
     validations:
       required: true
+
   - type: input
     id: date
     attributes:
       label: Date
       placeholder: The date in "dd/mm/yyyy"
+
   - type: textarea
     id: Path
     attributes:
       label: Steps to reproduce
-      placeholder: 
-      1. Go to X 
-      2. click here
-      3. click there
+      placeholder: 1. Go to X
+        2. Click here
+        3. Click there
+
   - type: textarea
     id: changes
     attributes:
       label: What was the expected result ?
       placeholder: I expected X to happen
     validations:
-      required: true 
+      required: true
+
   - type: dropdown
     id: importance
     attributes:
@@ -46,16 +53,16 @@ body:
         - 4 - Low Priority 😎
         - 5 - Informational 🛈
     validations:
-      required: true 
+      required: true
+
   - type: checkboxes
     id: terms
     attributes:
-    label: Extra Field
-    options:
-      - I want to work on this issue
-  - type: markdown 
-    attributes:
-      value : |
-        Thanks for reporting this issue ! The team will try to solve the problem.
+      label: Extra Field
+      options:
+        - I want to work on this issue
 
-        
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting this issue ! The team will try to solve the problem.
