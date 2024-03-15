@@ -1,8 +1,8 @@
-name: "📝 Documentation Report"
-description: "Report an error in the documentation."
+name: 📝 Documentation Report
+description: Report an error in the documentation.
 title: "Put the title here"
 labels: [Documentation","Error"]
-assignees: ["AlexisLasselin"]
+assignees: [AlexisLasselin]
 body:
   - type: markdown
     attributes:
