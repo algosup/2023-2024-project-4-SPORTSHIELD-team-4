@@ -1,4 +1,4 @@
-name: 🗎 Documentation Report 
+name: 📝 Documentation Report 
 descrption: Report an error in the documentation.
 title: ""
 labels: ["Documentation","Error"]
@@ -20,18 +20,6 @@ body:
     attributes:
       label: Date
       placeholder: The date in "dd/mm/yyyy"
-  - type: dropdown
-    id: importance
-    attributes:
-      label: "Importance"
-      options:
-        - 1 - Urgent
-        - 2 - High Priority
-        - 3 - Normal Priority
-        - 4 - Low Priority
-        - 5 - Informational
-    validations:
-      required: true
   - type: textarea
     id: reason
     attributes:
@@ -42,6 +30,19 @@ body:
     attributes:
       label: Proposed Changes
       placeholder: Provide specific details on the changes to be made. This could include adding new sections, updating existing content, or removing outdated information.
+  - type: dropdown
+    id: importance
+    attributes:
+      label: Importance
+      options:
+        - 1 - Urgent 🚨
+        - 2 - High Priority ❗
+        - 3 - Normal Priority 🆗
+        - 4 - Low Priority 😎
+        - 5 - Informational 🛈
+    validations:
+      required: true
+
   - type: checkboxes
     id: terms
     attributes:
