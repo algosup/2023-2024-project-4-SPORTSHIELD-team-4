@@ -1,8 +1,7 @@
-name: 👾 Bug Report
-description: Report a bug.
+name: "👾 Bug Report"
+description: "Report a bug."
 title: "Put the title here"
 labels: ["Bug"]
-assignees: [PortetWilfried]
 body:
   - type: markdown
     attributes:
