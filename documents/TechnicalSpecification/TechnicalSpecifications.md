@@ -29,11 +29,12 @@
     - [1. Current Product](#1-current-product)
       - [Pros](#pros)
       - [Cons](#cons)
-    - [2. Suggested Solutions](#2-suggested-solutions)
-      - [A. Battery Life Improvement \& Low Level Management](#a-battery-life-improvement--low-level-management)
-      - [B. NFC Functionality](#b-nfc-functionality)
-      - [C. Simultaneous Actions Management](#c-simultaneous-actions-management)
-      - [D. Bluetooth Security](#d-bluetooth-security)
+    - [2. Proposed Solutions](#2-proposed-solutions)
+      - [A. Battery Life Enhancement \& Management](#a-battery-life-enhancement--management)
+      - [B. NFC Integration](#b-nfc-integration)
+      - [C. Simultaneous Actions Handling](#c-simultaneous-actions-handling)
+      - [D. Bluetooth Security Enhancement](#d-bluetooth-security-enhancement)
+      - [E. Alarm Control Enhancement](#e-alarm-control-enhancement)
     - [3. Test Plan](#3-test-plan)
     - [4. Monitoring and Alerting Plan](#4-monitoring-and-alerting-plan)
     - [5. Rollout Plan](#5-rollout-plan)
@@ -97,7 +98,7 @@ We are operating under the following assumptions:
 
 - All essential hardware and software components required for development and testing will be readily available.
 - Access to the current solution will be granted to facilitate understanding of its functionality and encountered issues.
-- The company will furnish us with requisite documentation and assistance to comprehend the current solution and its associated challenges.
+- The company will furnish us with the requisite documentation and assistance to comprehend the current solution and its associated challenges.
 
 ## II. Hardware
 
@@ -189,115 +190,212 @@ The current solution is still in the development phase and encompasses the follo
 - Reliance on Bluetooth connectivity may result in connectivity issues or limitations in range.
 - The alarm system's simplicity may not adequately address all potential security concerns or user preferences.
 
-### 2. Suggested Solutions
+### 2. Proposed Solutions
 
-#### A. Battery Life Improvement & Low Level Management
+#### A. Battery Life Enhancement & Management
 
-To address the issue of limited battery life, the following improvements will be implemented:
+To address the challenge of limited battery life, we propose the following enhancements:
 
-**Objective**: Extend the device's battery life to 7 days with up to 6 hours of active use per day by optimizing power consumption and implementing efficient battery management.
+**Objective**: Extend the device's battery life to 7 days with up to 6 hours of active use per day by optimizing power consumption and implementing efficient battery management techniques.
 
-- **How To Implement**:
-  - Optimize power consumption through software and hardware adjustments.
-  - Implement efficient battery management algorithms to regulate power usage.
-  - Limit the charge to 80% of the battery's capacity to extend its lifespan.
+- **Implementation Strategy**:
+  - Optimize power consumption through a combination of software and hardware adjustments.
+  - Employ efficient battery management algorithms to regulate power usage effectively.
+  - Implement a charging limit of 80% of the battery's capacity to prolong its lifespan.
 
 ![Battery Manager](./Images/BatteryFlow.png)
 
 - **Acceptance Criteria**:
-  - The device's battery life will be extended to 7 days under optimal conditions, with up to 6 hours of active use per day.
-  - Charging will be limited to 80% of the battery's capacity to prolong its lifespan.
+  - The device's battery life will be extended to 7 days under optimal conditions, allowing for up to 6 hours of active use per day.
+  - Charging will be restricted to 80% of the battery's capacity to enhance longevity.
 
-#### B. NFC Functionality
+#### B. NFC Integration
 
-To expand the device's capabilities, NFC functionality will be incorporated to facilitate device locking and unlocking:
+To expand the device's functionality, we propose integrating NFC capabilities to facilitate device locking and unlocking:
 
-**Objective**: Integrate NFC functionality to enable users to lock/unlock the device using their mobile phones.
+**Objective**: Incorporate NFC functionality to enable users to lock/unlock the device using their mobile phones.
 
-- **How To Implement**:
+- **Implementation Approach**:
 
-  - Utilize the NFC tag M24LR6E library from Seed Studio to implement NFC functionality.
-  - Employ the library to enable reading data from the NFC tag, which will be utilized for device locking and unlocking.
+  - Utilize the NFC tag M24LR6E library from Seed Studio to implement NFC functionality seamlessly.
+  - Employ the library to facilitate data exchange with NFC tags for device locking and unlocking purposes.
 
 - **Acceptance Criteria**:
   - The device will support locking/unlocking via the mobile application using NFC functionality.
-  - Testing of NFC functionality will be conducted using the NFC tag of a smartphone, as access to the mobile application is unavailable for testing purposes.
+  - NFC functionality will be validated using a smartphone's NFC tag for testing purposes.
 
-#### C. Simultaneous Actions Management
+#### C. Simultaneous Actions Handling
 
-**Objective**: Implement a system for managing simultaneous actions, particularly focusing on notifying the user when the alarm is activated.
+**Objective**: Develop a system for managing simultaneous actions, with a specific focus on notifying the user when the alarm is triggered.
 
-- **How To Implement**:
+- **Implementation Strategy**:
 
-  - Develop a mechanism to detect simultaneous actions such as shock detection triggering the alarm.
-  - Integrate a notification system within the mobile application to alert the user when the alarm activates.
-  - Ensure seamless coordination between the device and the mobile application to deliver real-time notifications.
+  - Develop a mechanism to identify simultaneous actions, such as shock detection triggering the alarm.
+  - Integrate a notification system within the mobile application to promptly inform users when the alarm activates.
+  - Ensure seamless coordination between the device and the mobile application for real-time notifications.
 
 - **Acceptance Criteria**:
-  - The system successfully detects and manages simultaneous actions, particularly the activation of the alarm.
-  - Users receive timely notifications on their mobile devices when the alarm is activated.
-  - The notification system operates efficiently, providing real-time alerts without significant delays.
+  - The system effectively identifies and manages simultaneous actions, especially the activation of the alarm.
+  - Users receive timely notifications on their mobile devices when the alarm is triggered.
+  - The notification system operates efficiently, delivering real-time alerts without delays.
 
-#### D. Bluetooth Security
+#### D. Bluetooth Security Enhancement
 
-**Objective**: Enhance the security protocols governing Bluetooth connectivity between the device and the mobile application.
+**Objective**: Strengthen the security protocols governing Bluetooth connectivity between the device and the mobile application.
 
-- **How To Implement**:
+- **Implementation Approach**:
 
-  - Implement encryption protocols to secure data transmission over Bluetooth.
+  - Implement robust encryption protocols to secure data transmission over Bluetooth.
   - Utilize secure pairing mechanisms to establish a trusted connection between the device and the mobile application.
-  - Integrate authentication measures to verify the identity of both the device and the mobile application during the pairing process.
+  - Integrate authentication measures to validate the identities of the device and the mobile application during pairing.
 
 - **Acceptance Criteria**:
-  - Data transmitted over Bluetooth is encrypted, ensuring confidentiality and integrity.
-  - Secure pairing mechanisms are employed, preventing unauthorized devices from connecting to the SPORTSHIELD device.
-  - Authentication measures successfully validate the identity of both the device and the mobile application, reducing the risk of unauthorized access.
+  - Data transmitted over Bluetooth will be encrypted to ensure confidentiality and integrity.
+  - Secure pairing mechanisms will prevent unauthorized devices from connecting to the SPORTSHIELD device.
+  - Authentication measures will successfully validate the identities of the device and the mobile application, mitigating the risk of unauthorized access.
+
+#### E. Alarm Control Enhancement
+
+**Objective**: Improve the alarm management system to enable users to stop the alarm once the ringing cycle begins.
+
+- **Implementation Strategy**:
+
+  - Develop a mechanism allowing users to halt the alarm once activated.
+  - Enable seamless coordination between the device and the mobile application for remote alarm control.
+
+- **Acceptance Criteria**:
+  - Users can stop the alarm once the ringing cycle starts, either through the mobile application or the device itself.
 
 ### 3. Test Plan
 
-<!--
-Explanations of how the tests will make sure user requirements are met
-Unit tests
-Integrations tests
-QA
--->
+The following tests will be conducted to ensure that the new solution meets the user requirements:
+
+- **Battery Life Improvement & Low Level Management**:
+
+  - Unit tests will be conducted to verify the effectiveness of power consumption optimization and battery management algorithms.
+  - Integration tests will be performed to assess the device's battery life under various usage scenarios.
+  - Quality assurance (QA) testing will be carried out to validate the device's battery life and charging management.
+
+- **NFC Functionality**:
+
+  - Unit tests will be conducted to evaluate the implementation of NFC functionality for device locking and unlocking.
+  - Integration tests will be performed to ensure seamless integration between the device and the mobile application for NFC-based locking/unlocking.
+  - QA testing will be carried out to validate the device's NFC functionality and its compatibility with the mobile application.
+
+- **Simultaneous Actions Management**:
+
+  - Unit tests will be conducted to verify the system's ability to detect and manage simultaneous actions, particularly the activation of the alarm.
+  - Integration tests will be performed to assess the notification system's performance and real-time alert delivery.
+  - QA testing will be carried out to validate the system's ability to manage simultaneous actions and deliver timely notifications to users.
+
+- **Bluetooth Security**:
+  - Unit tests will be conducted to evaluate the implementation of encryption protocols, secure pairing mechanisms, and authentication measures for Bluetooth security.
+  - Integration tests will be performed to assess the security of data transmission and the establishment of trusted connections between the device and the mobile application.
+  - QA testing will be carried out to validate the effectiveness of Bluetooth security measures and their ability to prevent unauthorized access.
 
 ### 4. Monitoring and Alerting Plan
 
-<!--
-Logging plan and tools
-Monitoring plan and tools
-Metrics to be used to measure health
-How to ensure observability
-Alerting plan and tools
--->
+The following monitoring and alerting plan will be implemented to ensure the health and observability of the new solution:
+
+- **Metrics for Health Measurement**:
+
+  - Battery life: Monitoring the device's battery life and charging status to ensure optimal performance.
+  - NFC functionality: Observing the usage and performance of NFC functionality for device locking and unlocking.
+  - Simultaneous actions management: Tracking the system's ability to detect and manage simultaneous actions, particularly the activation of the alarm.
+  - Bluetooth security: Monitoring the security of data transmission and the establishment of trusted connections between the device and the mobile application.
+
+- **Alerting Plan**:
+
+  - Battery life: Alerts will be triggered when the device's battery life falls below a predefined threshold, indicating the need for recharging.
+  - NFC functionality: Alerts will be generated in case of NFC functionality issues, such as failure to lock/unlock the device using NFC.
+  - Simultaneous actions management: Alerts will be raised if the system fails to detect and manage simultaneous actions, particularly the activation of the alarm.
+  - Bluetooth security: Alerts will be triggered in the event of security breaches or unauthorized access attempts over Bluetooth.
 
 ### 5. Rollout Plan
 
-<!--
-Deployment architecture
-Deployment environments
-Phased roll-out plan e.g. using feature flags
-Plan outlining how to communicate changes to the users, for example, with release notes
--->
+- **Deployment Architecture**:
+
+  - The new solution will be deployed using a phased roll-out approach, allowing for gradual implementation and testing of each feature.
+  - Deployment environments will include development, testing, staging, and production environments to facilitate thorough testing and validation.
+
+- **Phased Roll-out Plan**:
+- **Phase 1**:
+  - Battery life improvement & low-level management: Implement power consumption optimization and battery management algorithms.
+  - NFC functionality: Integrate NFC functionality for device locking and unlocking.
+- **Phase 2**:
+  - Simultaneous actions management: Develop a system for managing simultaneous actions, particularly the activation of the alarm.
+  - Bluetooth security: Enhance the security protocols governing Bluetooth connectivity between the device and the mobile application.
+
+Each phase will involve thorough testing and validation before proceeding to the next phase.
+
+To communicate with the client about the different phases, we will use the resume summary of each feature. This will allow the client to understand the progress of the project and to give feedback on the different features.
 
 ### 6. Rollback Plan
 
 <!--
 Detailed and specific liabilities
 Plan to reduce liabilities
-Plan describing how to prevent other components, services, and systems from being affected
+Plan to describe how to prevent other components, services, and systems from being affected
 -->
+
+In the event of any issues or failures during the roll-out of the new solution, the following rollback plan will be implemented:
+
+- **Liabilities**:
+
+  - Battery life improvement & low-level management: Potential issues may arise with power consumption optimization and battery management algorithms, leading to reduced battery life or charging problems.
+  - NFC functionality: Failures in the implementation of NFC functionality may result in issues with device locking/unlocking using NFC.
+  - Simultaneous actions management: System failures may occur in detecting and managing simultaneous actions, particularly the activation of the alarm.
+  - Bluetooth security: Security breaches or unauthorized access attempts over Bluetooth may pose significant liabilities.
+
+- **Liability Reduction Plan**:
+
+  - Battery life improvement & low level management: Thorough testing and validation will be conducted to identify and address any issues related to power consumption optimization and battery management algorithms.
+  - NFC functionality: Extensive testing will be carried out to ensure the seamless integration of NFC functionality for device locking and unlocking.
+  - Simultaneous actions management: Rigorous testing and validation will be performed to verify the system's ability to detect and manage simultaneous actions, particularly the activation of the alarm.
+  - Bluetooth security: Comprehensive testing and validation will be conducted to identify and address any security breaches or unauthorized access attempts over Bluetooth.
 
 ### 7. Alternate Solutions
 
 <!--
-Short summary statement for each alternative solution
+Summary statement for each alternative solution
 Pros and cons for each alternative
 Reasons why each solution couldn’t work
 Ways in which alternatives were inferior to the proposed solution
 Migration plan to next best alternative in case the proposed solution falls through
 -->
+
+The following alternate solutions were considered but ultimately deemed inferior to the proposed solution:
+
+- **Alternative Solution 1**:
+
+  - **Summary**: Implement a more powerful battery to extend the device's battery life.
+  - **Pros**: Potential for significantly extended battery life.
+  - **Cons**: Increased cost and complexity, the potential impact on device size and weight.
+  - **Reasons**: The proposed solution offers a more cost-effective and efficient approach to extending battery life without significant changes to the device's hardware.
+  - **Migration Plan**: If the proposed solution falls through, the next best alternative would be to explore more powerful battery options and their impact on the device's design and performance.
+
+- **Alternative Solution 2**:
+
+  - **Summary**: Develop a separate device for NFC functionality, eliminating the need to integrate it into the SPORTSHIELD device.
+  - **Pros**: Simplified device design and development, potential for reduced cost and complexity.
+  - **Cons**: Additional hardware and maintenance requirements, potential impact on user experience and convenience.
+  - **Reasons**: The proposed solution offers a more integrated and user-friendly approach to incorporating NFC functionality into the SPORTSHIELD device, enhancing its capabilities and convenience for users.
+  - **Migration Plan**: If the proposed solution falls through, the next best alternative would be to explore the development of a separate device for NFC functionality and its integration with the SPORTSHIELD device.
+
+- **Alternative Solution 3**:
+
+  - **Summary**: Focus on enhancing the device's shock detection capabilities to address security concerns.
+  - **Pros**: Improved security and tamper detection, potential for enhanced user confidence.
+  - **Cons**: Limited impact on battery life and user convenience, potential for increased complexity and cost.
+  - **Reasons**: The proposed solution offers a more comprehensive and user-centric approach to addressing multiple user requirements, including battery life improvement, NFC functionality, and simultaneous actions management.
+  - **Migration Plan**: If the proposed solution falls through, the next best alternative would be to explore the enhancement of the device's shock detection capabilities and their impact on security and user experience.
+
+- **Alternative Solution 4**:
+  - **Summary**: Focus on enhancing the device's Bluetooth connectivity and security features.
+  - **Pros**: Improved data transmission security, potential for enhanced user privacy and protection.
+  - **Cons**: Limited impact on battery life and user convenience, potential for increased complexity and cost.
+  - **Reasons**: The proposed solution offers a more comprehensive and user-centric approach to addressing multiple user requirements, including battery life improvement, NFC functionality, and simultaneous actions management.
+  - **Migration Plan**: If the proposed solution falls through, the next best alternative would be to explore the enhancement of the device's Bluetooth connectivity and security features and their impact on data transmission and user privacy.
 
 ## IV. Further Considerations
 
@@ -307,7 +405,7 @@ Migration plan to next best alternative in case the proposed solution falls thro
 How will this increase the work of other people?
 -->
 
-Because we're adding a lot of features in the device such as the alarm management or the NFC functionality, the team that is in charge of the mobile application will have to update the application to support these new features. This will increase their workload. They are those who will be most impacted by the changes we are making.
+Because we're adding a lot of features to the device such as the alarm management or the NFC functionality, the team that is in charge of the mobile application will have to update the application to support these new features. This will increase their workload. They are those who will be most impacted by the changes we are making.
 
 ### 2. Considerations
 
@@ -318,6 +416,12 @@ What are the potential threats?
 How will they be mitigated?
 How will the solution affect the security of other components, services, and systems?
 -->
+
+There are two main threats that we will have to mitigate:
+
+- **Unauthorized Access**: The device is connected to the mobile application via Bluetooth. This means that if the Bluetooth connection is not secure, an attacker could connect to the device and unlock it. We will have to make sure that the Bluetooth connection is secure enough to prevent this from happening.
+  The device may also be "infected" with a virus if the device is connected to a computer via the charging cable. We will have to make sure that the device is secure enough to prevent this from happening.
+- **Stolen Device**: If the device is stolen, the thief could unlock it and steal the equipment. We will have to make sure that the device is secure enough to prevent this from happening.
 
 #### B. Privacy Considerations
 
@@ -339,31 +443,46 @@ What is the cost-benefit analysis of taking these risks?
 
 The main risk we are taking is that we are adding a lot of features to the device. This could lead to the device being more complex and therefore more prone to bugs. We will have to make sure that we test the device thoroughly to prevent this from happening.
 
-There is a lot of risk that we will describe in the table below:
+There are a lot of risks that we will describe in the table below:
 
-| Risk                                                                   | Impact                                                                                                      |
-| ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| The device is locked and there is an issue with the battery thresholds | The user will not be able to unlock the device and will have to wait the charge of the device to unlock it. |
-| The device is stolen while the alarm is deactivated                    | The user will not be notified and will not be able to track the device.                                     |
-| The device's components are broken                                     | The device will not work properly and the user will not be able to use it.                                  |
-| The battery is not charging properly                                   | The device will not respect the battery life and will not fill the client's requirements.                   |
-| The device is not able to connect to the mobile application            | The user will not be able to lock or unlock the device.                                                     |
+| Risk                                                                   | Impact                                                                                                          |
+| ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| The device is locked and there is an issue with the battery thresholds | The user will not be able to unlock the device and will have to wait for the charge of the device to unlock it. |
+| The device is stolen while the alarm is deactivated                    | The user will not be notified and will not be able to track the device.                                         |
+| The device's components are broken                                     | The device will not work properly and the user will not be able to use it.                                      |
+| The battery is not charging properly                                   | The device will not respect the battery life and will not fulfil the client's requirements.                     |
+| The device is not able to connect to the mobile application            | The user will not be able to lock or unlock the device.                                                         |
 
 ## V. Work
 
 ### 1. Work Estimates and Timelines
 
-<!--
-List of specific, measurable, and time-bound tasks
-Resources needed to finish each task
-Time estimates for how long each task needs to be completed
--->
+| Task                                        | Resources Needed                  | Time Estimate   |
+| ------------------------------------------- | --------------------------------- | --------------- |
+| Solution A.1: Battery Life Improvement      | The complete hardware             | 2 weeks         |
+| Solution A.2: Battery Low Level Management  | The complete hardware             | To Define       |
+| Solution B: NFC Functionality               | The complete hardware + NFC Tools | 2 week and half |
+| Solution C: Simultaneous Actions Management | The complete hardware             | To Define       |
+
+All the tasks will be done in parallel to reduce the time of the project.
 
 ### 2. Prioritization
 
 <!--
 Categorization of tasks by urgency and impact
 -->
+
+As written in the MoSCoW method, we will prioritize the tasks as follows:
+
+- **Must Have**:
+  - Solution A.1: Battery Life Improvement
+  - Solution B: NFC Functionality
+- **Should Have**:
+  - Solution A.2: Battery Low-Level Management
+  - Solution C: Simultaneous Actions Management
+- **Could Have**:
+  - Solution D: Bluetooth Security
+  - Solution E: Alarm Management
 
 ### 3. Milestones
 
@@ -384,9 +503,11 @@ List of tasks that will be completed in the future
 New terms you come across as you research your design or terms you may suspect your readers/stakeholders not to know.
 -->
 
-| Term | Definition                                                                                                                                                                                                                           | Source                                                              |
-| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
-| NFC  | NFC, or near-field communication, is a short-range wireless technology that allows your phone to act as a transit pass or credit card, quickly transfer data, or instantly pair with Bluetooth devices like headphones and speakers. | [Wikipedia](https://en.wikipedia.org/wiki/Near-field_communication) |
+| Term | Definition                                                                                                                                                                                                                           | Source                                                                                               |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
+| GPS  | GPS, or Global Positioning System, is a satellite-based navigation system that allows users to determine their approximate location (latitude, longitude, and altitude) anywhere on Earth.                                           | [Wikipedia](https://fr.wikipedia.org/wiki/Global_Positioning_System)                                 |
+| GSM  | GSM (Global System for Mobile Communication) is a digital mobile network that is widely used by mobile phone users in Europe and other parts of the world.                                                                           | [Techopedia](https://www.techopedia.com/definition/5062/global-system-for-mobile-communications-gsm) |
+| NFC  | NFC, or near-field communication, is a short-range wireless technology that allows your phone to act as a transit pass or credit card, quickly transfer data, or instantly pair with Bluetooth devices like headphones and speakers. | [Wikipedia](https://en.wikipedia.org/wiki/Near-field_communication)                                  |
 
 ## VII. References
 
