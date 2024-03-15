@@ -17,7 +17,7 @@
     - [7. Future Goals](#7-future-goals)
     - [8. Assumptions](#8-assumptions)
   - [II. Hardware](#ii-hardware)
-    - [1. Development Board\*\*](#1-development-board)
+    - [1. Development Board](#1-development-board)
     - [2. Battery](#2-battery)
     - [3. GPS Module](#3-gps-module)
     - [4. GSM Module](#4-gsm-module)
@@ -104,7 +104,7 @@ We are operating under the following assumptions:
 
 The SPORTSHIELD device comprises various hardware components carefully selected for optimal performance and functionality:
 
-### 1. Development Board\*\*
+### 1. Development Board
 
 - **Description:** An ultra-compact, ultra-low-power Bluetooth development board based on the Nordic nRF52840.
 - **Reference:** Seeed XIAO BLE nRF52840
