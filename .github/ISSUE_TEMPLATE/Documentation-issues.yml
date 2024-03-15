@@ -1,17 +1,12 @@
 name: "📝 Documentation Report"
 description: "Report an error in the documentation."
-title: ""
-labels:
-  - "Documentation"
-  - "Error"
-assignees:
-  - "AlexisLasselin"
-
+title: "Put the title here"
+labels: [Documentation","Error"]
+assignees: ["AlexisLasselin"]
 body:
   - type: markdown
     attributes:
-      value: |
-        Please fill out the sections below to help the team to fix what's wrong.
+      value: "Please fill out the sections below to help the team to fix what's wrong."
   - type: textarea
     id: description
     attributes:
@@ -55,5 +50,4 @@ body:
         - I want to work on this issue
   - type: markdown
     attributes:
-      value: |
-        Thanks for reporting this issue ! The team will try to solve the problem.
+      value: "Thanks for reporting this issue ! The team will try to solve the problem."

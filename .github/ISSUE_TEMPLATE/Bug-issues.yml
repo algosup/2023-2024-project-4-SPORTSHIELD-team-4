@@ -1,16 +1,12 @@
 name: "👾 Bug Report"
 description: "Report a bug."
-title: ""
-labels:
-  - "Bug"
-assignees:
-  - "PortetWilfried"
-
+title: "Put the title here"
+labels: ["Bug"]
+assignees: ["PortetWilfried"]
 body:
   - type: markdown
     attributes:
-      value: |
-        Please fill out the sections below to help the team to fix the bug.
+      value: "Please fill out the sections below to help the team to fix the bug."
 
   - type: textarea
     id: description
@@ -64,5 +60,4 @@ body:
 
   - type: markdown
     attributes:
-      value: |
-        Thanks for reporting this issue ! The team will try to solve the problem.
+      value: "Thanks for reporting this issue ! The team will try to solve the problem."
