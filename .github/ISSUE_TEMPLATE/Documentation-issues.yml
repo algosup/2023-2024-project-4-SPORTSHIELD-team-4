@@ -1,13 +1,17 @@
-name: 📝 Documentation Report 
-descrption: Report an error in the documentation.
+name: "📝 Documentation Report"
+description: "Report an error in the documentation."
 title: ""
-labels: ["Documentation","Error"]
-assignees: ["AlexisLasselin"]
+labels:
+  - "Documentation"
+  - "Error"
+assignees:
+  - "AlexisLasselin"
+
 body:
   - type: markdown
-  attributes:
-  value: |
-    Please fill out the sections below to help the team to fix what's wrong.
+    attributes:
+      value: |
+        Please fill out the sections below to help the team to fix what's wrong.
   - type: textarea
     id: description
     attributes:
@@ -46,10 +50,10 @@ body:
   - type: checkboxes
     id: terms
     attributes:
-    label: Extra Field
-    options:
-      - I want to work on this issue 
-  - type: markdown 
+      label: Extra Field
+      options:
+        - I want to work on this issue
+  - type: markdown
     attributes:
-      value : |
+      value: |
         Thanks for reporting this issue ! The team will try to solve the problem.
