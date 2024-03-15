@@ -98,7 +98,7 @@ We are operating under the following assumptions:
 
 - All essential hardware and software components required for development and testing will be readily available.
 - Access to the current solution will be granted to facilitate understanding of its functionality and encountered issues.
-- The company will furnish us with requisite documentation and assistance to comprehend the current solution and its associated challenges.
+- The company will furnish us with the requisite documentation and assistance to comprehend the current solution and its associated challenges.
 
 ## II. Hardware
 
@@ -320,7 +320,7 @@ The following monitoring and alerting plan will be implemented to ensure the hea
 
 - **Phased Roll-out Plan**:
 - **Phase 1**:
-  - Battery life improvement & low level management: Implement power consumption optimization and battery management algorithms.
+  - Battery life improvement & low-level management: Implement power consumption optimization and battery management algorithms.
   - NFC functionality: Integrate NFC functionality for device locking and unlocking.
 - **Phase 2**:
   - Simultaneous actions management: Develop a system for managing simultaneous actions, particularly the activation of the alarm.
@@ -335,14 +335,14 @@ To communicate with the client about the different phases, we will use the resum
 <!--
 Detailed and specific liabilities
 Plan to reduce liabilities
-Plan describing how to prevent other components, services, and systems from being affected
+Plan to describe how to prevent other components, services, and systems from being affected
 -->
 
 In the event of any issues or failures during the roll-out of the new solution, the following rollback plan will be implemented:
 
 - **Liabilities**:
 
-  - Battery life improvement & low level management: Potential issues may arise with power consumption optimization and battery management algorithms, leading to reduced battery life or charging problems.
+  - Battery life improvement & low-level management: Potential issues may arise with power consumption optimization and battery management algorithms, leading to reduced battery life or charging problems.
   - NFC functionality: Failures in the implementation of NFC functionality may result in issues with device locking/unlocking using NFC.
   - Simultaneous actions management: System failures may occur in detecting and managing simultaneous actions, particularly the activation of the alarm.
   - Bluetooth security: Security breaches or unauthorized access attempts over Bluetooth may pose significant liabilities.
@@ -357,7 +357,7 @@ In the event of any issues or failures during the roll-out of the new solution, 
 ### 7. Alternate Solutions
 
 <!--
-Short summary statement for each alternative solution
+Summary statement for each alternative solution
 Pros and cons for each alternative
 Reasons why each solution couldn’t work
 Ways in which alternatives were inferior to the proposed solution
@@ -370,7 +370,7 @@ The following alternate solutions were considered but ultimately deemed inferior
 
   - **Summary**: Implement a more powerful battery to extend the device's battery life.
   - **Pros**: Potential for significantly extended battery life.
-  - **Cons**: Increased cost and complexity, potential impact on device size and weight.
+  - **Cons**: Increased cost and complexity, the potential impact on device size and weight.
   - **Reasons**: The proposed solution offers a more cost-effective and efficient approach to extending battery life without significant changes to the device's hardware.
   - **Migration Plan**: If the proposed solution falls through, the next best alternative would be to explore more powerful battery options and their impact on the device's design and performance.
 
@@ -405,7 +405,7 @@ The following alternate solutions were considered but ultimately deemed inferior
 How will this increase the work of other people?
 -->
 
-Because we're adding a lot of features in the device such as the alarm management or the NFC functionality, the team that is in charge of the mobile application will have to update the application to support these new features. This will increase their workload. They are those who will be most impacted by the changes we are making.
+Because we're adding a lot of features to the device such as the alarm management or the NFC functionality, the team that is in charge of the mobile application will have to update the application to support these new features. This will increase their workload. They are those who will be most impacted by the changes we are making.
 
 ### 2. Considerations
 
@@ -443,15 +443,15 @@ What is the cost-benefit analysis of taking these risks?
 
 The main risk we are taking is that we are adding a lot of features to the device. This could lead to the device being more complex and therefore more prone to bugs. We will have to make sure that we test the device thoroughly to prevent this from happening.
 
-There is a lot of risk that we will describe in the table below:
+There are a lot of risks that we will describe in the table below:
 
-| Risk                                                                   | Impact                                                                                                      |
-| ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| The device is locked and there is an issue with the battery thresholds | The user will not be able to unlock the device and will have to wait the charge of the device to unlock it. |
-| The device is stolen while the alarm is deactivated                    | The user will not be notified and will not be able to track the device.                                     |
-| The device's components are broken                                     | The device will not work properly and the user will not be able to use it.                                  |
-| The battery is not charging properly                                   | The device will not respect the battery life and will not fill the client's requirements.                   |
-| The device is not able to connect to the mobile application            | The user will not be able to lock or unlock the device.                                                     |
+| Risk                                                                   | Impact                                                                                                          |
+| ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| The device is locked and there is an issue with the battery thresholds | The user will not be able to unlock the device and will have to wait for the charge of the device to unlock it. |
+| The device is stolen while the alarm is deactivated                    | The user will not be notified and will not be able to track the device.                                         |
+| The device's components are broken                                     | The device will not work properly and the user will not be able to use it.                                      |
+| The battery is not charging properly                                   | The device will not respect the battery life and will not fulfil the client's requirements.                     |
+| The device is not able to connect to the mobile application            | The user will not be able to lock or unlock the device.                                                         |
 
 ## V. Work
 
@@ -478,7 +478,7 @@ As written in the MoSCoW method, we will prioritize the tasks as follows:
   - Solution A.1: Battery Life Improvement
   - Solution B: NFC Functionality
 - **Should Have**:
-  - Solution A.2: Battery Low Level Management
+  - Solution A.2: Battery Low-Level Management
   - Solution C: Simultaneous Actions Management
 - **Could Have**:
   - Solution D: Bluetooth Security
@@ -506,7 +506,7 @@ New terms you come across as you research your design or terms you may suspect y
 | Term | Definition                                                                                                                                                                                                                           | Source                                                                                               |
 | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
 | GPS  | GPS, or Global Positioning System, is a satellite-based navigation system that allows users to determine their approximate location (latitude, longitude, and altitude) anywhere on Earth.                                           | [Wikipedia](https://fr.wikipedia.org/wiki/Global_Positioning_System)                                 |
-| GSM  | GSM (Global System for Mobile communication) is a digital mobile network that is widely used by mobile phone users in Europe and other parts of the world.                                                                           | [Techopedia](https://www.techopedia.com/definition/5062/global-system-for-mobile-communications-gsm) |
+| GSM  | GSM (Global System for Mobile Communication) is a digital mobile network that is widely used by mobile phone users in Europe and other parts of the world.                                                                           | [Techopedia](https://www.techopedia.com/definition/5062/global-system-for-mobile-communications-gsm) |
 | NFC  | NFC, or near-field communication, is a short-range wireless technology that allows your phone to act as a transit pass or credit card, quickly transfer data, or instantly pair with Bluetooth devices like headphones and speakers. | [Wikipedia](https://en.wikipedia.org/wiki/Near-field_communication)                                  |
 
 ## VII. References
