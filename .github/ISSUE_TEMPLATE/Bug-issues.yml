@@ -43,11 +43,11 @@ body:
     attributes:
       label: Importance
       options:
-        - 1 - Urgent 🚨
-        - 2 - High Priority ❗
-        - 3 - Normal Priority 🆗
-        - 4 - Low Priority 😎
-        - 5 - Informational 🛈
+        "1 - Urgent 🚨": "1"
+        "2 - High Priority ❗": "2"
+        "3 - Normal Priority 🆗": "3"
+        "4 - Low Priority 😎": "4"
+        "5 - Informational 🛈": "5"
     validations:
       required: true
 
