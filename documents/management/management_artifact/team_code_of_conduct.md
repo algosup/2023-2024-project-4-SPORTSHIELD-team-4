@@ -1,5 +1,17 @@
 # Team 4 code of conduct
 ## Summary
+<details>
+    <summary>Click to expand!</summary>
+    
+- [Team 4 code of conduct](#team-4-code-of-conduct)
+  - [Summary](#summary)
+  - [Purpose](#purpose)
+  - [1. English](#1-english)
+  - [2. Absence and Lateness](#2-absence-and-lateness)
+  - [3. Professionalism](#3-professionalism)
+  - [4. In case of fire](#4-in-case-of-fire)
+  - [5. Warning System](#5-warning-system)
+</details>
 
 ## Purpose
 The purpose of this code of conduct is to provide guidelines for the behavior of all team members. This code of conduct is designed to ensure that all team members are treated with respect and dignity. It is also designed to ensure that all team members are able to work in a safe and comfortable environment.
@@ -14,7 +26,7 @@ Any delays or absences should be promptly communicated to the project manager. I
 Every team member is anticipated to uphold professional and respectful conduct. This entails:
 - Demonstrating respect towards fellow colleagues.
 - Maintaining a proactive approach to tasks.
-- Refraining from utilizing project time for activities unrelated to the project (except with prior approval from the project manager).
+- Refraining from utilizing project time for activities unrelated to the project (Except with prior approval from the project manager.).
 - Restricting phone usage to essential matters only.
 - Minimizing movements outside the designated area to essential requirements.
 
@@ -29,4 +41,4 @@ In case of a fire, please follow the steps outlined below:
 The warning system operates as follows:
 - First warning: Issuance of a written warning.
 - Second warning: Written notification and email sent to Franck.
-- Third warning: Written notification, followed by a meeting involving Franck, the project manager, and the individual receiving the warning.
+- Third warning: Written notification, followed by a meeting involving Franck, the project manager and the individual receiving the warning.
