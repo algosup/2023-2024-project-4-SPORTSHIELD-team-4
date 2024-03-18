@@ -27,8 +27,8 @@
     - [8 . Electronic Configuration](#8--electronic-configuration)
   - [III. Solutions](#iii-solutions)
     - [1. Current Product](#1-current-product)
-      - [Pros](#pros)
-      - [Cons](#cons)
+      - [A. Pros](#a-pros)
+      - [B. Cons](#b-cons)
     - [2. Proposed Solutions](#2-proposed-solutions)
       - [A. Battery Improvement](#a-battery-improvement)
         - [a. Battery Management](#a-battery-management)
@@ -179,13 +179,13 @@ The current solution is still in the development phase and encompasses the follo
 - Locking and unlocking of the device can be performed via the mobile application.
 - The mobile application provides geo-location functionality for tracking the device's location.
 
-#### Pros
+#### A. Pros
 
 - Provides remote locking and unlocking capabilities, enhancing convenience for users.
 - Offers shock detection functionality to alert users of potential tampering or unauthorized access.
 - Incorporates geo-location features to assist users in tracking misplaced or stolen equipment.
 
-#### Cons
+#### B. Cons
 
 - Limited battery life may necessitate frequent recharging, potentially leading to user inconvenience.
 - Reliance on Bluetooth connectivity may result in connectivity issues or limitations in range.
@@ -209,6 +209,8 @@ To address the challenge of limited battery life, we propose the following enhan
   One of the most consuming parts of the device is the GPS module. That's why, instead of sending the GPS data every 5 minutes, we send it only if the device feels a shock. This will allow us to save a lot of battery.
 
   ![GPS Management](./Images/GPSFlow.png)
+
+  If we wanted to save even more battery, once we're in low battery mode, we could stop the GPS module but it would mean that the device would not be able to send its location to the mobile application.
 
 ##### b. Battery Life Enhancement
 
