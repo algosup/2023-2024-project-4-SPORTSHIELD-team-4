@@ -228,8 +228,8 @@ To expand the device's functionality, we propose integrating NFC capabilities to
 
 - **Implementation Approach**:
 
-  - Utilize the NFC tag M24LR6E library from Seed Studio to implement NFC functionality seamlessly.
-  - Employ the library to facilitate data exchange with NFC tags for device locking and unlocking purposes.
+  - Utilize a library compatible with the device's development board to enable NFC functionality. This will allow the device to communicate with the mobile application using NFC.
+    Unfortunately, we don't have the library that we will use to implement the NFC functionality.
 
 - **Acceptance Criteria**:
   - The device will support locking/unlocking via the mobile application using NFC functionality.
@@ -241,7 +241,7 @@ To expand the device's functionality, we propose integrating NFC capabilities to
 
 - **Implementation Strategy**:
 
-  - Instead of doing the actions in parallel, we will do them in series, allowing us to save a lot of battery and to avoid the device to be overwhelmed by the actions.
+  - Instead of doing the actions in parallel, we will do them in series, allowing us to save a lot of battery and to avoid the device being overwhelmed by the actions.
 
   Here is the flow of the actions:
 
@@ -263,9 +263,12 @@ To expand the device's functionality, we propose integrating NFC capabilities to
   - Integrate authentication measures to validate the identities of the device and the mobile application during pairing.
 
 - **Acceptance Criteria**:
+
   - Data transmitted over Bluetooth will be encrypted to ensure confidentiality and integrity.
   - Secure pairing mechanisms will prevent unauthorized devices from connecting to the SPORTSHIELD device.
   - Authentication measures will successfully validate the identities of the device and the mobile application, mitigating the risk of unauthorized access.
+
+  Unfortunately, we don't have the actual implementation of the Bluetooth security, leading to the fact that we can't provide a flow for this feature.
 
 #### E. Alarm Control Enhancement
 
@@ -273,8 +276,13 @@ To expand the device's functionality, we propose integrating NFC capabilities to
 
 - **Implementation Strategy**:
 
-  - Develop a mechanism allowing users to halt the alarm once activated.
-  - Enable seamless coordination between the device and the mobile application for remote alarm control.
+  - Develop a mechanism allowing users to halt the alarm once activated, as an example, if the device is moved accidentally and starts ringing. The user will have two ways to stop the alarm:
+    - The first way is to stop the alarm using the mobile application, Bluetooth. This will allow the user to stop the alarm from a distance.
+    - The second way is to stop the alarm using the NFC functionality. This will allow the user to stop the alarm without the need to run the mobile application.
+
+  You can see the flow of the alarm management below:
+
+  ![Alarm Management](./Images/AlarmManagementFlow.png)
 
 - **Acceptance Criteria**:
   - Users can stop the alarm once the ringing cycle starts, either through the mobile application or the device itself.
@@ -305,6 +313,10 @@ The following tests will be conducted to ensure that the new solution meets the 
   - Unit tests will be conducted to evaluate the implementation of encryption protocols, secure pairing mechanisms, and authentication measures for Bluetooth security.
   - Integration tests will be performed to assess the security of data transmission and the establishment of trusted connections between the device and the mobile application.
   - QA testing will be carried out to validate the effectiveness of Bluetooth security measures and their ability to prevent unauthorized access.
+- **Alarm Control Enhancement**:
+  - Unit tests will be conducted to verify the implementation of the alarm management system, including the ability to stop the alarm once the ringing cycle begins.
+  - Integration tests will be performed to assess the user's ability to stop the alarm using the Bluetooth and NFC functionality.
+  - QA testing will be carried out to validate the effectiveness of the alarm control enhancement and the user's ability to halt the alarm.
 
 ### 4. Monitoring and Alerting Plan
 
@@ -362,7 +374,7 @@ In the event of any issues or failures during the roll-out of the new solution, 
 
 - **Liability Reduction Plan**:
 
-  - Battery life improvement & low level management: Thorough testing and validation will be conducted to identify and address any issues related to power consumption optimization and battery management algorithms.
+  - Battery life improvement & low-level management: Thorough testing and validation will be conducted to identify and address any issues related to power consumption optimization and battery management algorithms.
   - NFC functionality: Extensive testing will be carried out to ensure the seamless integration of NFC functionality for device locking and unlocking.
   - Simultaneous actions management: Rigorous testing and validation will be performed to verify the system's ability to detect and manage simultaneous actions, particularly the activation of the alarm.
   - Bluetooth security: Comprehensive testing and validation will be conducted to identify and address any security breaches or unauthorized access attempts over Bluetooth.
@@ -444,7 +456,7 @@ How does the solution protect users’ data privacy?
 What are some of the tradeoffs between personalization and privacy in the solution?
 -->
 
-Because we're only working on the device and not on how the data is handled, we don't have to worry about the privacy of the users' data. The company is in charge of the data and how it is handled. However, there is still a risk that the data could be compromised if the device is stolen. We will have to make sure that the device is secure enough to prevent this from happening.
+Because we're only working on the device and not on how the data is handled, we don't have to worry about the privacy of the users' data. The company is in charge of the data and how it is handled. However, there is still a risk that the data could be compromised if the device is stolen.
 
 #### C. Risks
 
@@ -508,11 +520,48 @@ Dated checkpoints when significant chunks of work will have been completed
 Metrics to indicate the passing of the milestone
 -->
 
+The following milestones will be established to track the progress of the project:
+
+- **Milestone 1**:
+
+  - Completion of Solution A.1: Battery Life Improvement
+  - Metrics: The device's battery life is extended to 7 days under optimal conditions, allowing for up to 6 hours of active use per day.
+
+- **Milestone 2**:
+- Completion of Solution B: NFC Functionality
+
+  - Metrics: The device supports locking/unlocking via the mobile application using NFC functionality.
+
+- **Milestone 3**:
+- Completion of Solution A.2: Battery Low-Level Management
+
+  - Metrics: Charging is restricted to 80% of the battery's capacity to enhance longevity.
+
+- **Milestone 4**:
+- Completion of Solution C: Simultaneous Actions Management
+
+  - Metrics: The system effectively identifies and manages simultaneous actions, especially the activation of the alarm.
+
+- **Milestone 5**:
+- Completion of Solution E: Alarm Management
+
+  - Metrics: Users can stop the alarm once the ringing cycle starts, either through the mobile application or the device itself.
+
+- **Milestone 6**:
+- Completion of Solution D: Bluetooth Security
+  - Metrics: Data transmitted over Bluetooth encrypted to ensure confidentiality and integrity.
+
 ### 4. Future Work
 
 <!--
 List of tasks that will be completed in the future
 -->
+
+The following tasks have been identified for future iterations:
+
+- **Working LED Blinking**: Implement LED blinking to indicate device functionality.
+- **Charging Security**: Address security concerns related to charging, such as blocking the insertion of code into the device's firmware during charging.
+- **Shock Detection Enhancement**: Further enhancements to shock detection to improve security and tamper detection.
 
 ## VI. Glossary
 
@@ -524,4 +573,6 @@ New terms you come across as you research your design or terms you may suspect y
 | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
 | GPS  | GPS, or Global Positioning System, is a satellite-based navigation system that allows users to determine their approximate location (latitude, longitude, and altitude) anywhere on Earth.                                           | [Wikipedia](https://fr.wikipedia.org/wiki/Global_Positioning_System)                                 |
 | GSM  | GSM (Global System for Mobile Communication) is a digital mobile network that is widely used by mobile phone users in Europe and other parts of the world.                                                                           | [Techopedia](https://www.techopedia.com/definition/5062/global-system-for-mobile-communications-gsm) |
+| LED  | A light-emitting diode (LED) is a semiconductor light source that emits light when current flows through it. LEDs are used in a variety of applications, including displays, lighting, and automotive lighting.                      | [Wikipedia](https://en.wikipedia.org/wiki/Light-emitting_diode)                                      |
 | NFC  | NFC, or near-field communication, is a short-range wireless technology that allows your phone to act as a transit pass or credit card, quickly transfer data, or instantly pair with Bluetooth devices like headphones and speakers. | [Wikipedia](https://en.wikipedia.org/wiki/Near-field_communication)                                  |
+| RFID | RFID, or radio-frequency identification, uses electromagnetic fields to automatically identify and track tags attached to objects. The tags contain electronically stored information. RFID tags are used in many industries.        | [Wikipedia](https://en.wikipedia.org/wiki/Radio-frequency_identification)                            |
