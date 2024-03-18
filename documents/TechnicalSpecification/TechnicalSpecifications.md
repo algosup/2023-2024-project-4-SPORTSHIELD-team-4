@@ -30,7 +30,9 @@
       - [Pros](#pros)
       - [Cons](#cons)
     - [2. Proposed Solutions](#2-proposed-solutions)
-      - [A. Battery Life Enhancement \& Management](#a-battery-life-enhancement--management)
+      - [A. Battery Improvement](#a-battery-improvement)
+        - [a. Battery Management](#a-battery-management)
+        - [b. Battery Life Enhancement](#b-battery-life-enhancement)
       - [B. NFC Integration](#b-nfc-integration)
       - [C. Simultaneous Actions Handling](#c-simultaneous-actions-handling)
       - [D. Bluetooth Security Enhancement](#d-bluetooth-security-enhancement)
@@ -191,22 +193,30 @@ The current solution is still in the development phase and encompasses the follo
 
 ### 2. Proposed Solutions
 
-#### A. Battery Life Enhancement & Management
+#### A. Battery Improvement
 
 To address the challenge of limited battery life, we propose the following enhancements:
 
 **Objective**: Extend the device's battery life to 7 days with up to 6 hours of active use per day by optimizing power consumption and implementing efficient battery management techniques.
 
+- **Acceptance Criteria**:
+  - The device's battery life will be extended to 7 days under optimal conditions, allowing for up to 6 hours of active use per day.
+  - Charging will be restricted to 80% of the battery's capacity to enhance longevity.
+
+##### a. Battery Management
+
 - **Implementation Strategy**:
-  - Optimize power consumption through a combination of software and hardware adjustments.
+  One of the most consuming parts of the device is the GPS module. That's why, instead of sending the GPS data every 5 minutes, we send it only if the device feels a shock. This will allow us to save a lot of battery.
+
+  ![GPS Management](./Images/GPSFlow.png)
+
+##### b. Battery Life Enhancement
+
+- **Implementation Strategy**:
   - Employ efficient battery management algorithms to regulate power usage effectively.
   - Implement a charging limit of 80% of the battery's capacity to prolong its lifespan.
 
 ![Battery Manager](./Images/BatteryFlow.png)
-
-- **Acceptance Criteria**:
-  - The device's battery life will be extended to 7 days under optimal conditions, allowing for up to 6 hours of active use per day.
-  - Charging will be restricted to 80% of the battery's capacity to enhance longevity.
 
 #### B. NFC Integration
 
@@ -229,9 +239,11 @@ To expand the device's functionality, we propose integrating NFC capabilities to
 
 - **Implementation Strategy**:
 
-  - Develop a mechanism to identify simultaneous actions, such as shock detection triggering the alarm.
-  - Integrate a notification system within the mobile application to promptly inform users when the alarm activates.
-  - Ensure seamless coordination between the device and the mobile application for real-time notifications.
+  - Instead of doing the actions in parallel, we will do them in series, allowing us to save a lot of battery and to avoid the device to be overwhelmed by the actions.
+
+  Here is the flow of the actions:
+
+  ![Simultaneous Actions](./Images/SimultaneousActionsFlow.png)
 
 - **Acceptance Criteria**:
   - The system effectively identifies and manages simultaneous actions, especially the activation of the alarm.
