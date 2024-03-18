@@ -24,7 +24,7 @@
     - [5. NFC Module](#5-nfc-module)
     - [6. Electromagnet](#6-electromagnet)
     - [7. Piezoelectric Buzzer](#7-piezoelectric-buzzer)
-    - [8 . Electronic Configuration](#8--electronic-configuration)
+    - [8. Electronic Configuration](#8-electronic-configuration)
   - [III. Solutions](#iii-solutions)
     - [1. Current Product](#1-current-product)
       - [A. Pros](#a-pros)
@@ -63,27 +63,27 @@
 
 ### 1. Overview
 
-A French company named CORIS Innovation asked us to improve their product named SPORTSHIELD. The product is a device that serves as a lock for all sorts of sports equipment. The device is connected to a mobile application that allows the user to lock and unlock the equipment. The company has been facing a lot of issues with the current solution and has asked us to come up with a new solution that will solve the issues they are facing. The stakeholders are the company and the users of the product.
+CORIS Innovation, a French company, has tasked us with enhancing their product, SPORTSHIELD. SPORTSHIELD is a device used as a lock for sports equipment, integrated with a mobile application for locking and unlocking functionality. The current solution faces several issues prompting the need for improvement.
 
 ### 2. Context
 
-The decision for the company to seek improvement for their product stems from numerous issues within the current solution. These include limitations such as the device's autonomy, the lack of user notification during alarm activation, and the inability to halt the alarm once the ringing cycle initiates.
+Challenges with the existing solution include limited device autonomy, lack of user notifications during alarm activation, and the inability to halt the alarm once activated.
 
 ### 3. Goals and Objectives
 
-Fortunately, the company has provided us with a comprehensive list of requirements for the new solution:
+The primary objectives for the new solution are:
 
-- Ensure the device maintains a battery life of at least 7 days, allowing for up to 6 hours of active use per day.
+- Maintain a minimum 7-day battery life with up to 6 hours of active use daily.
 - Implement NFC functionality for device unlocking.
-- Introduce multi-action capability, such as sending user notifications when the alarm activates.
-- Enhance security protocols for accessing key system features like lock/unlock and alarm management.
+- Enable multi-action capability, including user notifications during alarm activation.
+- Enhance security protocols for key system features such as lock/unlock and alarm management.
 
 ### 4. Out of Scope
 
-Several requirements fall outside the scope of this project and will not be addressed:
+The following requirements are not within the scope of this project:
 
-- Implementing LED blinking to indicate device functionality.
-- Addressing security concerns related to charging. (Blocking the insertion of code into the device's firmware during charging.)
+- Implementing LED blinking for device functionality indication.
+- Addressing security concerns related to charging, such as preventing firmware insertion during charging.
 - Further enhancements to shock detection.
 
 ### 7. Future Goals
@@ -103,44 +103,37 @@ We are operating under the following assumptions:
 
 ## II. Hardware
 
-The SPORTSHIELD device comprises various hardware components carefully selected for optimal performance and functionality:
-
 ### 1. Development Board
 
-- **Description:** An ultra-compact, ultra-low-power Bluetooth development board based on the Nordic nRF52840.
-- **Reference:** Seeed XIAO BLE nRF52840
+- **Description:** Seeed XIAO BLE nRF52840, an ultra-compact, ultra-low-power Bluetooth development board.
 - **Brand:** Seeed Studio
 
 ![Development Board](./Images/XiaoBLE.png)
 
 ### 2. Battery
 
-- **Description:** Lithium-ion polymer rechargeable battery.
-- **Reference:** LP603449
+- **Description:** EEMB LP603449, a lithium-ion polymer rechargeable battery.
 - **Brand:** EEMB
 
 ![Battery](./Images/Battery.png)
 
 ### 3. GPS Module
 
-- **Description:** Utilizes the MediaTek GNSS Chipset MT3333, supporting various location and navigation applications, including autonomous GPS, GLONASS, GALILEO, QZSS, SBAS, DGPS, and AGPS.
-- **Reference:** CD-PA1010D
+- **Description:** CDtop Technology CD-PA1010D, utilizing the MediaTek GNSS Chipset MT3333.
 - **Brand:** CDtop Technology
 
 ![GPS Module](./Images/ModuleGPS-removebg-preview.png)
 
 ### 4. GSM Module
 
-- **Description:** A miniature cellular module enabling GPRS transmission.
-- **Reference:** SIM800L
+- **Description:** SIMCom SIM800L, is a miniature cellular module enabling GPRS transmission.
 - **Brand:** SIMCom
 
 ![GSM Module](./Images/Sim.png)
 
 ### 5. NFC Module
 
-- **Description:** NFC and RFID antenna.
-- **Reference:** 146236
+- **Description:** Molex 146236, an NFC and RFID antenna.
 - **Brand:** Molex
 
 ![NFC Module](./Images/NFCReader.png)
@@ -154,12 +147,11 @@ The SPORTSHIELD device comprises various hardware components carefully selected 
 
 ### 7. Piezoelectric Buzzer
 
-- **Description:** Piezoelectric buzzer with oscillator control circuit.
-- **Specifications:** Operates at 12V, producing a sound intensity of approximately 90-100 dB.
+- **Description:** Piezoelectric buzzer operating at 12V, producing a sound intensity of approximately 90-100 dB.
 
 ![Piezoelectric Buzzer](./Images/Buzzer.png)
 
-### 8 . Electronic Configuration
+### 8. Electronic Configuration
 
 This is how the electronic configuration of the device looks like:
 
