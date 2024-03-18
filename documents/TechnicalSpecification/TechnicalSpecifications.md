@@ -105,49 +105,51 @@ We are operating under the following assumptions:
 
 ### 1. Development Board
 
-- **Description:** Seeed XIAO BLE nRF52840, an ultra-compact, ultra-low-power Bluetooth development board.
+- **Description:** The Seeed XIAO BLE nRF52840 is an ultra-compact, ultra-low-power Bluetooth development board. It features the Nordic Semiconductor nRF52840 system-on-chip (SoC) which supports Bluetooth 5.0, Bluetooth Low Energy (BLE), and various other wireless protocols. The board is designed for IoT applications and provides ample computing power and connectivity options in a small form factor.
 - **Brand:** Seeed Studio
 
 ![Development Board](./Images/XiaoBLE.png)
 
 ### 2. Battery
 
-- **Description:** EEMB LP603449, a lithium-ion polymer rechargeable battery.
+- **Description:** he EEMB LP603449 is a lithium-ion polymer rechargeable battery. It is designed for portable electronic devices and offers high energy density, lightweight construction, and long cycle life. The LP603449 has a specific capacity of 1100mAh and provides reliable power for extended periods
 - **Brand:** EEMB
 
 ![Battery](./Images/Battery.png)
 
 ### 3. GPS Module
 
-- **Description:** CDtop Technology CD-PA1010D, utilizing the MediaTek GNSS Chipset MT3333.
+- **Description:** The CDtop Technology CD-PA1010D is a GPS module utilizing the MediaTek GNSS Chipset MT3333. It offers high-accuracy positioning and supports multiple satellite navigation systems including GPS, GLONASS, and BeiDou. The module is compact and suitable for various tracking and navigation applications.
 - **Brand:** CDtop Technology
 
-![GPS Module](./Images/ModuleGPS-removebg-preview.png)
+![GPS Module](./Images/ModuleGPS.png)
 
 ### 4. GSM Module
 
-- **Description:** SIMCom SIM800L, is a miniature cellular module enabling GPRS transmission.
+- **Description:** The SIMCom SIM800L is a miniature cellular module enabling GPRS transmission. It provides GSM/GPRS communication capabilities in a small form factor, making it suitable for IoT and M2M applications requiring cellular connectivity. The SIM800L supports quad-band GSM/GPRS operation and offers features such as SMS and GPRS data transmission.
 - **Brand:** SIMCom
 
 ![GSM Module](./Images/Sim.png)
 
 ### 5. NFC Module
 
-- **Description:** Molex 146236, an NFC and RFID antenna.
+- **Description:** The Molex 146236 is an NFC and RFID antenna module. It enables near-field communication (NFC) and RFID tag reading/writing functionality. The module is compact and provides reliable performance for applications such as contactless payment, access control, and inventory tracking.
 - **Brand:** Molex
 
 ![NFC Module](./Images/NFCReader.png)
 
 ### 6. Electromagnet
 
-- **Description:** Electromagnet with specifications of 12V and 500mA.
+- **Description:** The electromagnet has specifications of 12V and 500mA. It is designed to generate a magnetic field when current flows through it. It is compact and suitable for various applications requiring magnetic attraction or control.
 - **Dimensions:** 2.7 x 1.6 x 1.3 cm
 
-![Electromagnet](./Images/Electromagnet.png)
+![Electromagnet](./Images/ElectroMagnet.png)
 
 ### 7. Piezoelectric Buzzer
 
-- **Description:** Piezoelectric buzzer operating at 12V, producing a sound intensity of approximately 90-100 dB.
+- **Description:** The piezoelectric buzzer operates at 12V and produces a sound intensity of approximately 90-100 dB. It is commonly used for audible alerts and notifications in electronic devices. The buzzer generates sound through the piezoelectric effect and is compact and lightweight.
+- **Operating Voltage:** 12V
+- **Sound Intensity:** Approximately 90-100 dB
 
 ![Piezoelectric Buzzer](./Images/Buzzer.png)
 
@@ -191,9 +193,9 @@ To address the challenge of limited battery life, we propose the following enhan
 
 **Objective**: Extend the device's battery life to 7 days with up to 6 hours of active use per day by optimizing power consumption and implementing efficient battery management techniques.
 
-- **Acceptance Criteria**:
-  - The device's battery life will be extended to 7 days under optimal conditions, allowing for up to 6 hours of active use per day.
-  - Charging will be restricted to 80% of the battery's capacity to enhance longevity.
+- **Acceptance criteria**:
+  - Device battery life will be extended to 7 days for normal use, allowing up to 6 hours of active use per day.
+  - Charging will be limited to 80% of battery capacity to improve longevity.
 
 ##### a. Battery Management
 
@@ -561,10 +563,12 @@ The following tasks have been identified for future iterations:
 New terms you come across as you research your design or terms you may suspect your readers/stakeholders not to know.
 -->
 
-| Term | Definition                                                                                                                                                                                                                           | Source                                                                                               |
-| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
-| GPS  | GPS, or Global Positioning System, is a satellite-based navigation system that allows users to determine their approximate location (latitude, longitude, and altitude) anywhere on Earth.                                           | [Wikipedia](https://fr.wikipedia.org/wiki/Global_Positioning_System)                                 |
-| GSM  | GSM (Global System for Mobile Communication) is a digital mobile network that is widely used by mobile phone users in Europe and other parts of the world.                                                                           | [Techopedia](https://www.techopedia.com/definition/5062/global-system-for-mobile-communications-gsm) |
-| LED  | A light-emitting diode (LED) is a semiconductor light source that emits light when current flows through it. LEDs are used in a variety of applications, including displays, lighting, and automotive lighting.                      | [Wikipedia](https://en.wikipedia.org/wiki/Light-emitting_diode)                                      |
-| NFC  | NFC, or near-field communication, is a short-range wireless technology that allows your phone to act as a transit pass or credit card, quickly transfer data, or instantly pair with Bluetooth devices like headphones and speakers. | [Wikipedia](https://en.wikipedia.org/wiki/Near-field_communication)                                  |
-| RFID | RFID, or radio-frequency identification, uses electromagnetic fields to automatically identify and track tags attached to objects. The tags contain electronically stored information. RFID tags are used in many industries.        | [Wikipedia](https://en.wikipedia.org/wiki/Radio-frequency_identification)                            |
+| Term | Definition                                                                                                                                                                                                                               | Source                                                                                               |
+| ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| BLE  | BLE, or Bluetooth Low Energy, is a wireless personal area network technology designed and marketed by the Bluetooth Special Interest Group. It is used for short-range communication between devices.                                    | [Wikipedia](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy)                                      |
+| GPS  | GPS, or Global Positioning System, is a satellite-based navigation system that allows users to determine their approximate location (latitude, longitude, and altitude) anywhere on Earth.                                               | [Wikipedia](https://fr.wikipedia.org/wiki/Global_Positioning_System)                                 |
+| GSM  | GSM (Global System for Mobile Communication) is a digital mobile network that is widely used by mobile phone users in Europe and other parts of the world.                                                                               | [Techopedia](https://www.techopedia.com/definition/5062/global-system-for-mobile-communications-gsm) |
+| LED  | A light-emitting diode (LED) is a semiconductor light source that emits light when current flows through it. LEDs are used in a variety of applications, including displays, lighting, and automotive lighting.                          | [Wikipedia](https://en.wikipedia.org/wiki/Light-emitting_diode)                                      |
+| NFC  | NFC, or near-field communication, is a short-range wireless technology that allows your phone to act as a transit pass or credit card, quickly transfer data, or instantly pair with Bluetooth devices like headphones and speakers.     | [Wikipedia](https://en.wikipedia.org/wiki/Near-field_communication)                                  |
+| RFID | RFID, or radio-frequency identification, uses electromagnetic fields to automatically identify and track tags attached to objects. The tags contain electronically stored information. RFID tags are used in many industries.            | [Wikipedia](https://en.wikipedia.org/wiki/Radio-frequency_identification)                            |
+| SoC  | A system-on-a-chip (SoC) is an integrated circuit that integrates all or most components of a computer or other electronic system into a single chip. SoCs are used in a variety of applications, including smartphones and IoT devices. | [Wikipedia](https://en.wikipedia.org/wiki/System_on_a_chip)                                          |
