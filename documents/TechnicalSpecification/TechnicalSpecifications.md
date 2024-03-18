@@ -17,7 +17,7 @@
     - [7. Future Goals](#7-future-goals)
     - [8. Assumptions](#8-assumptions)
   - [II. Hardware](#ii-hardware)
-    - [1. Development Board\*\*](#1-development-board)
+    - [1. Development Board](#1-development-board)
     - [2. Battery](#2-battery)
     - [3. GPS Module](#3-gps-module)
     - [4. GSM Module](#4-gsm-module)
@@ -52,7 +52,6 @@
     - [3. Milestones](#3-milestones)
     - [4. Future Work](#4-future-work)
   - [VI. Glossary](#vi-glossary)
-  - [VII. References](#vii-references)
 
 </details>
 
@@ -104,7 +103,7 @@ We are operating under the following assumptions:
 
 The SPORTSHIELD device comprises various hardware components carefully selected for optimal performance and functionality:
 
-### 1. Development Board\*\*
+### 1. Development Board
 
 - **Description:** An ultra-compact, ultra-low-power Bluetooth development board based on the Nordic nRF52840.
 - **Reference:** Seeed XIAO BLE nRF52840
@@ -420,7 +419,7 @@ How will the solution affect the security of other components, services, and sys
 There are two main threats that we will have to mitigate:
 
 - **Unauthorized Access**: The device is connected to the mobile application via Bluetooth. This means that if the Bluetooth connection is not secure, an attacker could connect to the device and unlock it. We will have to make sure that the Bluetooth connection is secure enough to prevent this from happening.
-  The device may also be "infected" with a virus if the device is connected to a computer via the charging cable. We will have to make sure that the device is secure enough to prevent this from happening.
+  The device may also be "infected" with a virus if the device is connected to a computer via the charging cable but we will not address this issue in this project.
 - **Stolen Device**: If the device is stolen, the thief could unlock it and steal the equipment. We will have to make sure that the device is secure enough to prevent this from happening.
 
 #### B. Privacy Considerations
@@ -483,6 +482,10 @@ As written in the MoSCoW method, we will prioritize the tasks as follows:
 - **Could Have**:
   - Solution D: Bluetooth Security
   - Solution E: Alarm Management
+- **Won't Have**:
+  - Blinking LED to indicate device status
+  - Security concerns related to charging
+  - Further enhancements to shock detection
 
 ### 3. Milestones
 
@@ -508,11 +511,3 @@ New terms you come across as you research your design or terms you may suspect y
 | GPS  | GPS, or Global Positioning System, is a satellite-based navigation system that allows users to determine their approximate location (latitude, longitude, and altitude) anywhere on Earth.                                           | [Wikipedia](https://fr.wikipedia.org/wiki/Global_Positioning_System)                                 |
 | GSM  | GSM (Global System for Mobile Communication) is a digital mobile network that is widely used by mobile phone users in Europe and other parts of the world.                                                                           | [Techopedia](https://www.techopedia.com/definition/5062/global-system-for-mobile-communications-gsm) |
 | NFC  | NFC, or near-field communication, is a short-range wireless technology that allows your phone to act as a transit pass or credit card, quickly transfer data, or instantly pair with Bluetooth devices like headphones and speakers. | [Wikipedia](https://en.wikipedia.org/wiki/Near-field_communication)                                  |
-
-## VII. References
-
-<!--
-Links to documents and resources that you used when coming up with your design and wish to credit.
--->
-
----
