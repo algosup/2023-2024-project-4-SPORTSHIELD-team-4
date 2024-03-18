@@ -206,6 +206,8 @@ To address the challenge of limited battery life, we propose the following enhan
 
   If we wanted to save even more battery, once we're in low battery mode, we could stop the GPS module but it would mean that the device would not be able to send its location to the mobile application.
 
+  Another solution is to automatically stop the Bluetooth module if the device is connected to the user's phone but not used for a long time. Then, if the device isn't in anti-theft mode, the device will stop the Bluetooth module to save battery after 10 minutes of inactivity.
+
 ##### b. Battery Life Enhancement
 
 - **Implementation Strategy**:
