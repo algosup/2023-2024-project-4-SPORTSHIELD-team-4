@@ -206,7 +206,9 @@ To address the challenge of limited battery life, we propose the following enhan
 
   If we wanted to save even more battery, once we're in low battery mode, we could stop the GPS module but it would mean that the device would not be able to send its location to the mobile application.
 
-  Another solution is to automatically stop the Bluetooth module if the device is connected to the user's phone but not used for a long time. Then, if the device isn't in anti-theft mode, the device will stop the Bluetooth module to save battery after 10 minutes of inactivity.
+  Another solution is to automatically stop the Bluetooth module if the user is not interacting with the device since 5 minutes or if he is not in the range of the device.
+
+  ![Bluetooth Management](./Images/BluetoothFlow.png)
 
 ##### b. Battery Life Enhancement
 
@@ -427,6 +429,10 @@ How will this increase the work of other people?
 -->
 
 Because we're adding a lot of features to the device such as the alarm management or the NFC functionality, the team that is in charge of the mobile application will have to update the application to support these new features. This will increase their workload. They are those who will be most impacted by the changes we are making.
+
+We also planned to create an operator manual to help the software team to understand how our work will impact their work. This will allow them to anticipate the changes and to prepare for them.
+
+You'll be able to find the operator manual in the [Operator Manual](../OperatorManual/OperatorManual.md) document.
 
 ### 2. Considerations
 
