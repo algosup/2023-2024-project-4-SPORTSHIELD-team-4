@@ -60,6 +60,8 @@
 
 ---
 
+<div class="page"/>
+
 ## I. Introduction
 
 ### 1. Overview
@@ -102,6 +104,8 @@ We are operating under the following assumptions:
 - Access to the current solution will be granted to facilitate understanding of its functionality and encountered issues.
 - The company will furnish us with the requisite documentation and assistance to comprehend the current solution and its associated challenges.
 
+<div class="page"/>
+
 ## II. Hardware
 
 ### 1. Development Board
@@ -109,46 +113,52 @@ We are operating under the following assumptions:
 - **Description:** The Seeed XIAO BLE nRF52840 is an ultra-compact, ultra-low-power Bluetooth development board. It features the Nordic Semiconductor nRF52840 system-on-chip (SoC) which supports Bluetooth 5.0, Bluetooth Low Energy (BLE), and various other wireless protocols. The board is designed for IoT applications and provides ample computing power and connectivity options in a small form factor.
 - **Brand:** Seeed Studio
 
-![Development Board](./Images/XiaoBLE.png)
+<img src="./Images/XiaoBLE.png" alt="Development Board" width="300"/>
+
+<div class="page"/>
 
 ### 2. Battery
 
 - **Description:** he EEMB LP603449 is a lithium-ion polymer rechargeable battery. It is designed for portable electronic devices and offers high energy density, lightweight construction, and long cycle life. The LP603449 has a specific capacity of 1100mAh and provides reliable power for extended periods
 - **Brand:** EEMB
 
-![Battery](./Images/Battery.png)
+<img src="./Images/Battery.png" alt="Battery" width="300"/>
 
 ### 3. GPS Module
 
 - **Description:** The CDtop Technology CD-PA1010D is a GPS module utilizing the MediaTek GNSS Chipset MT3333. It offers high-accuracy positioning and supports multiple satellite navigation systems including GPS, GLONASS, and BeiDou. The module is compact and suitable for various tracking and navigation applications.
 - **Brand:** CDtop Technology
 
-![GPS Module](./Images/ModuleGPS.png)
+<img src="./Images/ModuleGPS.png" alt="GPS Module" width="300"/>
+
+<div class="page"/>
 
 ### 4. GSM Module
 
 - **Description:** The SIMCom SIM800L is a miniature cellular module enabling GPRS transmission. It provides GSM/GPRS communication capabilities in a small form factor, making it suitable for IoT and M2M applications requiring cellular connectivity. The SIM800L supports quad-band GSM/GPRS operation and offers features such as SMS and GPRS data transmission.
 - **Brand:** SIMCom
 
-![GSM Module](./Images/Sim.png)
+<img src="./Images/Sim.png" alt="GSM Module" width="300"/>
 
 ### 5. NFC Module
 
 - **Description:** The Molex 146236 is an NFC and RFID antenna module. It enables near-field communication (NFC) and RFID tag reading/writing functionality. The module is compact and provides reliable performance for applications such as contactless payment, access control, and inventory tracking.
 - **Brand:** Molex
 
-![NFC Module](./Images/NFCReader.png)
+<img src="./Images/NFCReader.png" alt="NFC Module" width="300"/>
 
 #### Warning
 
 There is no library existing for the development board that we are using. That's why, until the release of the library, we won't be able to implement the NFC functionality.
+
+<div class="page"/>
 
 ### 6. Electromagnet
 
 - **Description:** The electromagnet has specifications of 12V and 500mA. It is designed to generate a magnetic field when current flows through it. It is compact and suitable for various applications requiring magnetic attraction or control.
 - **Dimensions:** 2.7 x 1.6 x 1.3 cm
 
-![Electromagnet](./Images/ElectroMagnet.png)
+<img src="./Images/ElectroMagnet.png" alt="Electromagnet" width="300"/>
 
 ### 7. Piezoelectric Buzzer
 
@@ -156,13 +166,17 @@ There is no library existing for the development board that we are using. That's
 - **Operating Voltage:** 12V
 - **Sound Intensity:** Approximately 90-100 dB
 
-![Piezoelectric Buzzer](./Images/Buzzer.png)
+<img src="./Images/Buzzer.png" alt="Piezoelectric Buzzer" width="300"/>
+
+<div class="page"/>
 
 ### 8. Electronic Configuration
 
 This is how the electronic configuration of the device looks like:
 
 ![Electronic Configuration](./Images/ElectronicConfiguration.png)
+
+<div class="page"/>
 
 ## III. Solutions
 
@@ -425,6 +439,8 @@ The following alternate solutions were considered but ultimately deemed inferior
   - **Reasons**: The proposed solution offers a more comprehensive and user-centric approach to addressing multiple user requirements, including battery life improvement, NFC functionality, and simultaneous actions management.
   - **Migration Plan**: If the proposed solution falls through, the next best alternative would be to explore the enhancement of the device's Bluetooth connectivity and security features and their impact on data transmission and user privacy.
 
+<div class="page"/>
+
 ## IV. Further Considerations
 
 ### 1. Constraints and Impact
@@ -486,6 +502,8 @@ There are a lot of risks that we will describe in the table below:
 | The device's components are broken                                     | The device will not work properly and the user will not be able to use it.                                      |
 | The battery is not charging properly                                   | The device will not respect the battery life and will not fulfil the client's requirements.                     |
 | The device is not able to connect to the mobile application            | The user will not be able to lock or unlock the device.                                                         |
+
+<div class="page"/>
 
 ## V. Work
 
@@ -571,6 +589,8 @@ The following tasks have been identified for future iterations:
 - **Working LED Blinking**: Implement LED blinking to indicate device functionality.
 - **Charging Security**: Address security concerns related to charging, such as blocking the insertion of code into the device's firmware during charging.
 - **Shock Detection Enhancement**: Further enhancements to shock detection to improve security and tamper detection.
+
+<div class="page"/>
 
 ## VI. Glossary
 
