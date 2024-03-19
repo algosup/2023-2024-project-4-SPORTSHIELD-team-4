@@ -22,6 +22,7 @@
     - [3. GPS Module](#3-gps-module)
     - [4. GSM Module](#4-gsm-module)
     - [5. NFC Module](#5-nfc-module)
+      - [Warning](#warning)
     - [6. Electromagnet](#6-electromagnet)
     - [7. Piezoelectric Buzzer](#7-piezoelectric-buzzer)
     - [8. Electronic Configuration](#8-electronic-configuration)
@@ -33,7 +34,7 @@
       - [A. Battery Improvement](#a-battery-improvement)
         - [a. Battery Management](#a-battery-management)
         - [b. Battery Life Enhancement](#b-battery-life-enhancement)
-      - [B. NFC Integration](#b-nfc-integration)
+      - [B. NFC Integration (Won't be implemented until the release of the library)](#b-nfc-integration-wont-be-implemented-until-the-release-of-the-library)
       - [C. Simultaneous Actions Handling](#c-simultaneous-actions-handling)
       - [D. Bluetooth Security Enhancement](#d-bluetooth-security-enhancement)
       - [E. Alarm Control Enhancement](#e-alarm-control-enhancement)
@@ -138,6 +139,10 @@ We are operating under the following assumptions:
 
 ![NFC Module](./Images/NFCReader.png)
 
+#### Warning
+
+There is no library existing for the development board that we are using. That's why, until the release of the library, we won't be able to implement the NFC functionality.
+
 ### 6. Electromagnet
 
 - **Description:** The electromagnet has specifications of 12V and 500mA. It is designed to generate a magnetic field when current flows through it. It is compact and suitable for various applications requiring magnetic attraction or control.
@@ -218,7 +223,7 @@ To address the challenge of limited battery life, we propose the following enhan
 
 ![Battery Manager](./Images/BatteryFlow.png)
 
-#### B. NFC Integration
+#### B. NFC Integration (Won't be implemented until the release of the library)
 
 To expand the device's functionality, we propose integrating NFC capabilities to facilitate device locking and unlocking:
 
@@ -427,6 +432,8 @@ The following alternate solutions were considered but ultimately deemed inferior
 <!--
 How will this increase the work of other people?
 -->
+
+The first problem that we will encounter is that there is no NFC library existing for the development board that we are using. It means that we cannot implement the NFC functionality without the development of this library. That's why, to avoid losing time, we won't work on the NFC functionality until we have the library.
 
 Because we're adding a lot of features to the device such as the alarm management or the NFC functionality, the team that is in charge of the mobile application will have to update the application to support these new features. This will increase their workload. They are those who will be most impacted by the changes we are making.
 
