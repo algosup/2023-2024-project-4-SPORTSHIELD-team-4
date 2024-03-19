@@ -279,11 +279,11 @@ To expand the device's functionality, we propose integrating NFC capabilities to
 
 - **Implementation Strategy**:
 
-  - Develop a mechanism allowing users to halt the alarm once activated, as an example, if the device is moved accidentally and starts ringing. The user will have two ways to stop the alarm:
-    - The first way is to stop the alarm using the mobile application, Bluetooth. This will allow the user to stop the alarm from a distance.
-    - The second way is to stop the alarm using the NFC functionality. This will allow the user to stop the alarm without the need to run the mobile application.
+  - Develop a mechanism allowing users to halt the alarm once activated, for instance, if the device is accidentally moved and triggers the alarm. The user will have two methods to stop the alarm:
+    - The first method involves stopping the alarm using the mobile application via Bluetooth, enabling users to stop the alarm remotely.
+    - The second method involves stopping the alarm using NFC functionality, providing users with an alternative method to stop the alarm without relying on the mobile application.
 
-  You can see the flow of the alarm management below:
+  Refer to the flowchart below for the alarm management process:
 
   ![Alarm Management](./Images/AlarmManagementFlow.png)
 
@@ -377,10 +377,10 @@ In the event of any issues or failures during the roll-out of the new solution, 
 
 - **Liability Reduction Plan**:
 
-  - Battery life improvement & low-level management: Thorough testing and validation will be conducted to identify and address any issues related to power consumption optimization and battery management algorithms.
-  - NFC functionality: Extensive testing will be carried out to ensure the seamless integration of NFC functionality for device locking and unlocking.
-  - Simultaneous actions management: Rigorous testing and validation will be performed to verify the system's ability to detect and manage simultaneous actions, particularly the activation of the alarm.
-  - Bluetooth security: Comprehensive testing and validation will be conducted to identify and address any security breaches or unauthorized access attempts over Bluetooth.
+  - Battery life improvement & low-level management: Thorough testing and validation will be conducted to identify and address any issues related to power consumption optimization and battery management algorithms. Additionally, response time for addressing such issues will be minimized to ensure uninterrupted user experience.
+  - NFC functionality: Extensive testing will be carried out to ensure the seamless integration of NFC functionality for device locking and unlocking. Furthermore, ease of use will be a priority in NFC feature implementation.
+  - Simultaneous actions management: Rigorous testing and validation will be performed to verify the system's ability to detect and manage simultaneous actions, particularly the activation of the alarm. Moreover, real-time monitoring will be implemented to swiftly respond to any anomalies in simultaneous action management.
+  - Bluetooth security: Comprehensive testing and validation will be conducted to identify and address any security breaches or unauthorized access attempts over Bluetooth. Additionally, encryption protocols will be regularly updated to mitigate potential security risks.
 
 ### 7. Alternate Solutions
 
@@ -534,31 +534,31 @@ The following milestones will be established to track the progress of the projec
 - **Milestone 1**:
 
   - Completion of Solution A.1: Battery Life Improvement
-  - Metrics: The device's battery life is extended to 7 days under optimal conditions, allowing for up to 6 hours of active use per day.
+    - Metrics: The device's battery life is extended to 7 days under normal usage conditions, allowing for up to 6 hours of active use per day. Additionally, response time and ease of use are optimized for enhanced user experience.
 
 - **Milestone 2**:
-- Completion of Solution B: NFC Functionality
 
-  - Metrics: The device supports locking/unlocking via the mobile application using NFC functionality.
+  - Completion of Solution B: NFC Functionality
+    - Metrics: The device supports locking/unlocking via the mobile application using NFC functionality.
 
 - **Milestone 3**:
-- Completion of Solution A.2: Battery Low-Level Management
 
-  - Metrics: Charging is restricted to 80% of the battery's capacity to enhance longevity.
+  - Completion of Solution A.2: Battery Low-Level Management
+    - Metrics: Charging is restricted to 80% of the battery's capacity to enhance longevity. Furthermore, response time for battery level warnings and management is improved, ensuring ease of use.
 
 - **Milestone 4**:
-- Completion of Solution C: Simultaneous Actions Management
 
-  - Metrics: The system effectively identifies and manages simultaneous actions, especially the activation of the alarm.
+  - Completion of Solution C: Simultaneous Actions Management
+    - Metrics: The system effectively identifies and manages simultaneous actions, especially the activation of the alarm.
 
 - **Milestone 5**:
-- Completion of Solution E: Alarm Management
 
-  - Metrics: Users can stop the alarm once the ringing cycle starts, either through the mobile application or the device itself.
+  - Completion of Solution E: Alarm Management
+    - Metrics: Users can stop the alarm once the ringing cycle starts, either through the mobile application or the device itself.
 
 - **Milestone 6**:
-- Completion of Solution D: Bluetooth Security
-  - Metrics: Data transmitted over Bluetooth encrypted to ensure confidentiality and integrity.
+  - Completion of Solution D: Bluetooth Security
+    - Metrics: Data transmitted over Bluetooth encrypted to ensure confidentiality and integrity.
 
 ### 4. Future Work
 
