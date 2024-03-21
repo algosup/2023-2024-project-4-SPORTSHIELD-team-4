@@ -73,7 +73,7 @@ The team is composed of the following members:
 | Software Engineer  | Wilfried PORTET |<img src="./pictures/wilfried.png" width="100" height="100" />|
 
 ### Responsibilities
-For this project reposbilities are as follows:
+For this project responsibilities are as follows:
 | Letter | Responsibilities |
 | ------ | ---------------- |
 | R | Responsible |
@@ -111,11 +111,11 @@ As written in the milestones, we have to deliver the following deliverables :
 - Unit Tests
 - Weekly Reports and Management Planning
 
-And we will present the projet to the client on the 2024/04/19.
+And we will present the projet to the client on 2024/04/19.
 
 ## Resources and Constraints
 ### Resources
-The team will have access to the following material resources and their documentation:
+The team will have access to the entire already developed software and the documentation.
 | Equipment | Description |
 | --------- | ----------- |
 | Development board | Ultra-compact, ultra-low-power Bluetooth development board based on the Nordic nRF52840. |
