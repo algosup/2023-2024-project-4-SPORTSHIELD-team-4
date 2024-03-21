@@ -219,7 +219,7 @@ To address the challenge of limited battery life, we propose the following impro
 ##### a. Battery Management
 
 - **Implementation Strategy**:
-  One of the most energy consuming parts of the device is the GPS module. Instead of sending the GPS data every 5 minutes, it is only sent if the device feels a shock.
+  One of the most energy-consuming parts of the device is the GPS module. Instead of sending the GPS data every 5 minutes, it is only sent if the device feels a shock.
   This will save a lot of battery power.
 
 ![GPS Management](./Images/GPSFlow.png)
@@ -286,7 +286,7 @@ To expand the device's functionality, we propose integrating NFC capabilities to
   - Secure pairing mechanisms will prevent unauthorized devices from connecting to the SPORTSHIELD device.
   - Authentication measures will successfully validate the identities of the device and the mobile application, mitigating the risk of unauthorized access.
 
-  Unfortunately, we don't have the actual implementation of the Bluetooth security, so we cannot provide a flow for this feature.
+  Unfortunately, we don't have the actual implementation of Bluetooth security, so we cannot provide a flow for this feature.
 
 #### E. Alarm Control Enhancement
 
@@ -454,9 +454,9 @@ The first problem that we will encounter is that there is no NFC library existin
 
 Because we're adding a lot of features to the device such as the alarm management or the NFC functionality, the team that is in charge of the mobile application will have to update the application to support these new features. This will increase their workload. They will be most impacted by the changes we are making.
 
-We also planned to create an operator manual to help the software team understand how our work will impact them. This will allow them to anticipate the changes and to prepare for the changes.
+We also planned to create an operator manual to help the software team understand how our work would impact them. This will allow them to anticipate the changes and to prepare for the changes.
 
-You can to find the operator manual in the [Operator Manual](../OperatorManual/OperatorManual.md) document.
+You can find the operator manual in the [Operator Manual](../OperatorManual/OperatorManual.md) document.
 
 ### 2. Considerations
 
