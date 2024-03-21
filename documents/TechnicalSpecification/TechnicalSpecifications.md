@@ -42,7 +42,7 @@
     - [4. Monitoring and Alerting Plan](#4-monitoring-and-alerting-plan)
     - [5. Rollout Plan](#5-rollout-plan)
     - [6. Rollback Plan](#6-rollback-plan)
-    - [7. Alternate Solutions](#7-alternate-solutions)
+    - [7. Alternative Solutions](#7-alternative-solutions)
   - [IV. Further Considerations](#iv-further-considerations)
     - [1. Constraints and Impact](#1-constraints-and-impact)
     - [2. Considerations](#2-considerations)
@@ -66,7 +66,7 @@
 
 ### 1. Overview
 
-CORIS Innovation, a French company, has tasked us with enhancing their product, SPORTSHIELD. SPORTSHIELD is a device used as a lock for sports equipment, integrated with a mobile application for locking and unlocking functionality. The current solution faces several issues prompting the need for improvement.
+CORIS Innovation, a French company, has tasked us with enhancing their product, SPORTSHIELD. SPORTSHIELD is a device used as a lock for sports equipment, integrated with a mobile application for locking and unlocking functionalities. The current solution faces several issues prompting the need for improvement.
 
 ### 2. Context
 
@@ -74,7 +74,7 @@ Challenges with the existing solution include limited device autonomy, lack of u
 
 ### 3. Goals and Objectives
 
-The primary objectives for the new solution are:
+The primary objectives for the new solution are to:
 
 - Maintain a minimum 7-day battery life with up to 6 hours of active use daily.
 - Implement NFC functionality for device unlocking.
@@ -83,9 +83,9 @@ The primary objectives for the new solution are:
 
 ### 4. Out of Scope
 
-The following requirements are not within the scope of this project:
+The following is not within the scope of this project:
 
-- Implementing LED blinking for device functionality indication.
+- Implementing LED blinking to indicate device functionality indication.
 - Addressing security concerns related to charging, such as preventing firmware insertion during charging.
 - Further enhancements to shock detection.
 
@@ -102,7 +102,7 @@ We are operating under the following assumptions:
 
 - All essential hardware and software components required for development and testing will be readily available.
 - Access to the current solution will be granted to facilitate understanding of its functionality and encountered issues.
-- The company will furnish us with the requisite documentation and assistance to comprehend the current solution and its associated challenges.
+- The company will provide us with the requisite documentation and assistance to comprehend the current solution and its associated challenges.
 
 <div class="page"/>
 
@@ -135,7 +135,7 @@ We are operating under the following assumptions:
 
 ### 4. GSM Module
 
-- **Description:** The SIMCom SIM800L is a miniature cellular module enabling GPRS transmission. It provides GSM/GPRS communication capabilities in a small form factor, making it suitable for IoT and M2M applications requiring cellular connectivity. The SIM800L supports quad-band GSM/GPRS operation and offers features such as SMS and GPRS data transmission.
+- **Description:** The SIMCom SIM800L is a miniature cellular module enabling GPRS transmission. It provides GSM/GPRS communication capabilities in a small form, making it suitable for IoT and M2M applications requiring cellular connectivity. The SIM800L supports quad-band GSM/GPRS operation and offers features such as SMS and GPRS data transmission.
 - **Brand:** SIMCom
 
 <img src="./Images/Sim.png" alt="GSM Module" width="300"/>
@@ -172,7 +172,7 @@ There is no library existing for the development board that we are using. That's
 
 ### 8. Electronic Configuration
 
-This is how the electronic configuration of the device looks like:
+This is what the electronic configuration of the device looks like:
 
 ![Electronic Configuration](./Images/ElectronicConfiguration.png)
 
@@ -182,11 +182,11 @@ This is how the electronic configuration of the device looks like:
 
 ### 1. Current Product
 
-The current solution is still in the development phase and encompasses the following features:
+The current solution is still in its development phase and encompasses the following features:
 
-- The device functions as a lock for various sports equipment.
+- The device functions as a lock for different sports equipment.
 - It is paired with a mobile application that enables users to lock and unlock the equipment remotely.
-- The device typically has a battery life of 3 days under optimal conditions.
+- The device has a typical battery life of 3 days under optimal conditions.
 - Bluetooth connectivity facilitates communication between the device and the mobile application.
 - An alarm is triggered upon detecting a shock, emitting 3 light sounds for minor shocks and 5 long high sounds for significant shocks.
 - Locking and unlocking of the device can be performed via the mobile application.
@@ -194,7 +194,7 @@ The current solution is still in the development phase and encompasses the follo
 
 #### A. Pros
 
-- Provides remote locking and unlocking capabilities, enhancing convenience for users.
+- Provides remote locking and unlocking capabilities, improving convenience for users.
 - Offers shock detection functionality to alert users of potential tampering or unauthorized access.
 - Incorporates geo-location features to assist users in tracking misplaced or stolen equipment.
 
@@ -208,7 +208,7 @@ The current solution is still in the development phase and encompasses the follo
 
 #### A. Battery Improvement
 
-To address the challenge of limited battery life, we propose the following enhancements:
+To address the challenge of limited battery life, we propose the following improvements:
 
 **Objective**: Extend the device's battery life to 7 days with up to 6 hours of active use per day by optimizing power consumption and implementing efficient battery management techniques.
 
@@ -219,15 +219,16 @@ To address the challenge of limited battery life, we propose the following enhan
 ##### a. Battery Management
 
 - **Implementation Strategy**:
-  One of the most consuming parts of the device is the GPS module. That's why, instead of sending the GPS data every 5 minutes, we send it only if the device feels a shock. This will allow us to save a lot of battery.
+  One of the most energy consuming parts of the device is the GPS module. Instead of sending the GPS data every 5 minutes, it is only sent if the device feels a shock.
+  This will save a lot of battery power.
 
-  ![GPS Management](./Images/GPSFlow.png)
+![GPS Management](./Images/GPSFlow.png)
 
-  If we wanted to save even more battery, once we're in low battery mode, we could stop the GPS module but it would mean that the device would not be able to send its location to the mobile application.
+If we wanted to save even more battery, once we're in low battery mode, we could stop the GPS module but it would mean that the device would not be able to send its location to the mobile application.
 
-  Another solution is to automatically stop the Bluetooth module if the user is not interacting with the device for 5 minutes or if he is not in the range of the device.
+Another solution is to automatically stop the Bluetooth module if the user has not been interacting with the device for 5 minutes or if they are not in range of the device.
 
-  ![Bluetooth Management](./Images/BluetoothFlow.png)
+![Bluetooth Management](./Images/BluetoothFlow.png)
 
 ##### b. Battery Life Enhancement
 
@@ -285,7 +286,7 @@ To expand the device's functionality, we propose integrating NFC capabilities to
   - Secure pairing mechanisms will prevent unauthorized devices from connecting to the SPORTSHIELD device.
   - Authentication measures will successfully validate the identities of the device and the mobile application, mitigating the risk of unauthorized access.
 
-  Unfortunately, we don't have the actual implementation of the Bluetooth security, leading to the fact that we can't provide a flow for this feature.
+  Unfortunately, we don't have the actual implementation of the Bluetooth security, so we cannot provide a flow for this feature.
 
 #### E. Alarm Control Enhancement
 
@@ -293,7 +294,7 @@ To expand the device's functionality, we propose integrating NFC capabilities to
 
 - **Implementation Strategy**:
 
-  - Develop a mechanism allowing users to halt the alarm once activated, for instance, if the device is accidentally moved and triggers the alarm. The user will have two methods to stop the alarm:
+  - Develop a mechanism allowing users to halt the alarm once activated, for instance, if the device is accidentally moved and triggers the alarm. There will be two methods to stop the alarm:
     - The first method involves stopping the alarm using the mobile application via Bluetooth, enabling users to stop the alarm remotely.
     - The second method involves stopping the alarm using NFC functionality, providing users with an alternative method to stop the alarm without relying on the mobile application.
 
@@ -302,7 +303,7 @@ To expand the device's functionality, we propose integrating NFC capabilities to
   ![Alarm Management](./Images/AlarmManagementFlow.png)
 
 - **Acceptance Criteria**:
-  - Users can stop the alarm once the ringing cycle starts, either through the mobile application or the device itself.
+  - Users can stop the alarm once the ringing cycle starts, either with the mobile application or the device itself.
 
 ### 3. Test Plan
 
@@ -346,7 +347,7 @@ The following monitoring and alerting plan will be implemented to ensure the hea
   - Simultaneous actions management: Tracking the system's ability to detect and manage simultaneous actions, particularly the activation of the alarm.
   - Bluetooth security: Monitoring the security of data transmission and the establishment of trusted connections between the device and the mobile application.
 
-- **Alerting Plan**:
+- **Alert Plan**:
 
   - Battery life: Alerts will be triggered when the device's battery life falls below a predefined threshold, indicating the need for recharging.
   - NFC functionality: Alerts will be generated in case of NFC functionality issues, such as failure to lock/unlock the device using NFC.
@@ -396,7 +397,7 @@ In the event of any issues or failures during the roll-out of the new solution, 
   - Simultaneous actions management: Rigorous testing and validation will be performed to verify the system's ability to detect and manage simultaneous actions, particularly the activation of the alarm. Moreover, real-time monitoring will be implemented to swiftly respond to any anomalies in simultaneous action management.
   - Bluetooth security: Comprehensive testing and validation will be conducted to identify and address any security breaches or unauthorized access attempts over Bluetooth. Additionally, encryption protocols will be regularly updated to mitigate potential security risks.
 
-### 7. Alternate Solutions
+### 7. Alternative Solutions
 
 <!--
 Summary statement for each alternative solution
@@ -406,7 +407,7 @@ Ways in which alternatives were inferior to the proposed solution
 Migration plan to next best alternative in case the proposed solution falls through
 -->
 
-The following alternate solutions were considered but ultimately deemed inferior to the proposed solution:
+The following alternative solutions were considered but ultimately deemed inferior to the proposed solution:
 
 - **Alternative Solution 1**:
 
@@ -451,11 +452,11 @@ How will this increase the work of other people?
 
 The first problem that we will encounter is that there is no NFC library existing for the development board that we are using. It means that we cannot implement the NFC functionality without the development of this library. That's why, to avoid losing time, we won't work on the NFC functionality until we have the library.
 
-Because we're adding a lot of features to the device such as the alarm management or the NFC functionality, the team that is in charge of the mobile application will have to update the application to support these new features. This will increase their workload. They are those who will be most impacted by the changes we are making.
+Because we're adding a lot of features to the device such as the alarm management or the NFC functionality, the team that is in charge of the mobile application will have to update the application to support these new features. This will increase their workload. They will be most impacted by the changes we are making.
 
-We also planned to create an operator manual to help the software team understand how our work will impact their work. This will allow them to anticipate the changes and to prepare for them.
+We also planned to create an operator manual to help the software team understand how our work will impact them. This will allow them to anticipate the changes and to prepare for the changes.
 
-You'll be able to find the operator manual in the [Operator Manual](../OperatorManual/OperatorManual.md) document.
+You can to find the operator manual in the [Operator Manual](../OperatorManual/OperatorManual.md) document.
 
 ### 2. Considerations
 
@@ -471,7 +472,7 @@ There are two main threats that we will have to mitigate:
 
 - **Unauthorized Access**: The device is connected to the mobile application via Bluetooth. This means that if the Bluetooth connection is not secure, an attacker could connect to the device and unlock it. We will have to make sure that the Bluetooth connection is secure enough to prevent this from happening.
   The device may also be "infected" with a virus if the device is connected to a computer via the charging cable but we will not address this issue in this project.
-- **Stolen Device**: If the device is stolen, the thief could unlock it and steal the equipment. We will have to make sure that the device is secure enough to prevent this from happening.
+- **Stolen Device**: If the device is stolen, the thief could unlock it and steal the equipment. We will have to make sure that the device is secure enough to stop this happening.
 
 #### B. Privacy Considerations
 
@@ -481,7 +482,7 @@ How does the solution protect users’ data privacy?
 What are some of the tradeoffs between personalization and privacy in the solution?
 -->
 
-Because we're only working on the device and not on how the data is handled, we don't have to worry about the privacy of the users' data. The company is in charge of the data and how it is handled. However, there is still a risk that the data could be compromised if the device is stolen.
+Because we are only working on the device and not on how the data is handled, we don't have to worry about the privacy of the users' data. The company is in charge of the data and how it is handled. However, there is still a risk that the data could be compromised if the device is stolen.
 
 #### C. Risks
 
