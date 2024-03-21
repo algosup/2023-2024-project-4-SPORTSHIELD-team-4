@@ -82,7 +82,8 @@ For this project responsibilities are as follows:
 | I | Informed |
 
 <img src="./pictures/raci.png" />
-Find more details in the [RACI matrix](https://docs.google.com/spreadsheets/d/1NdSN8kjTw9uXcUbG_F4BMpNhVCxAUsPhv6oYFRZ3_c8/edit?usp=sharing)
+
+Find more details in the [RACI matrix](https://docs.google.com/spreadsheets/d/1NdSN8kjTw9uXcUbG_F4BMpNhVCxAUsPhv6oYFRZ3_c8/edit?usp=sharing).
 
 ## Stakeholders
 The main stakeholders of this project are:
