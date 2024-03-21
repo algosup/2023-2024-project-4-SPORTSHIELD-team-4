@@ -34,7 +34,7 @@
       - [A. Battery Improvement](#a-battery-improvement)
         - [a. Battery Management](#a-battery-management)
         - [b. Battery Life Enhancement](#b-battery-life-enhancement)
-      - [B. NFC Integration (Won't be implemented until the release of the library)](#b-nfc-integration-wont-be-implemented-until-the-release-of-the-library)
+      - [B. NFC Integration](#b-nfc-integration)
       - [C. Simultaneous Actions Handling](#c-simultaneous-actions-handling)
       - [D. Bluetooth Security Enhancement](#d-bluetooth-security-enhancement)
       - [E. Alarm Control Enhancement](#e-alarm-control-enhancement)
@@ -238,7 +238,7 @@ Another solution is to automatically stop the Bluetooth module if the user has n
 
 ![Battery Manager](./Images/BatteryFlow.png)
 
-#### B. NFC Integration (Won't be implemented until the release of the library)
+#### B. NFC Integration
 
 To expand the device's functionality, we propose integrating NFC capabilities to facilitate device locking and unlocking:
 
@@ -247,7 +247,7 @@ To expand the device's functionality, we propose integrating NFC capabilities to
 - **Implementation Approach**:
 
   - Utilize a library compatible with the device's development board to enable NFC functionality. This will allow the device to communicate with the mobile application using NFC.
-    Unfortunately, we don't have the library that we will use to implement the NFC functionality.
+    Unfortunately, we don't have the library that we will use to implement the NFC functionality. That's why, if we don't find any other solution, we will try to develop the library ourselves.
 
 - **Acceptance Criteria**:
   - The device will support locking/unlocking via the mobile application using NFC functionality.
@@ -417,13 +417,21 @@ The following alternative solutions were considered but ultimately deemed inferi
   - **Reasons**: The proposed solution offers a more cost-effective and efficient approach to extending battery life without significant changes to the device's hardware.
   - **Migration Plan**: If the proposed solution falls through, the next best alternative would be to explore more powerful battery options and their impact on the device's design and performance.
 
-- **Alternative Solution 2**:
+- **Alternative Solution 2.1**:
 
   - **Summary**: Develop a separate device for NFC functionality, eliminating the need to integrate it into the SPORTSHIELD device.
   - **Pros**: Simplified device design and development, potential for reduced cost and complexity.
   - **Cons**: Additional hardware and maintenance requirements, potential impact on user experience and convenience.
   - **Reasons**: The proposed solution offers a more integrated and user-friendly approach to incorporating NFC functionality into the SPORTSHIELD device, enhancing its capabilities and convenience for users.
   - **Migration Plan**: If the proposed solution falls through, the next best alternative would be to explore the development of a separate device for NFC functionality and its integration with the SPORTSHIELD device.
+
+- **Alternative Solution 2.2**:
+
+  - **Summary**: Develop our own NFC library to implement the NFC functionality.
+  - **Pros**: Full control over the NFC functionality, potential for enhanced user experience and convenience.
+  - **Cons**: Increased complexity and development time, potential for compatibility issues and maintenance requirements.
+  - **Reasons**: The current library is not done yet and we don't know when it will be released. That's why, if we don't find any other solution, we will try to develop the library ourselves.
+  - **Migration Plan**: If the proposed solution falls through, the next best alternative would be to explore the development of our own NFC library and its impact on the device's functionality and user experience.
 
 - **Alternative Solution 3**:
 
@@ -450,7 +458,7 @@ The following alternative solutions were considered but ultimately deemed inferi
 How will this increase the work of other people?
 -->
 
-The first problem that we will encounter is that there is no NFC library existing for the development board that we are using. It means that we cannot implement the NFC functionality without the development of this library. That's why, to avoid losing time, we won't work on the NFC functionality until we have the library.
+The first problem that we will encounter is that there is no NFC library existing for the development board that we are using. It means that we cannot implement the NFC functionality without the development of this library. That's why, if we don't find any other solution, we will try to develop the library ourselves but it will increase the workload of our project.
 
 Because we're adding a lot of features to the device such as the alarm management or the NFC functionality, the team that is in charge of the mobile application will have to update the application to support these new features. This will increase their workload. They will be most impacted by the changes we are making.
 
@@ -513,9 +521,9 @@ There are a lot of risks that we will describe in the table below:
 | Task                                        | Resources Needed                  | Time Estimate   |
 | ------------------------------------------- | --------------------------------- | --------------- |
 | Solution A.1: Battery Life Improvement      | The complete hardware             | 2 weeks         |
-| Solution A.2: Battery Low Level Management  | The complete hardware             | To Define       |
+| Solution A.2: Battery Low Level Management  | The complete hardware             | 1 week          |
 | Solution B: NFC Functionality               | The complete hardware + NFC Tools | 2 week and half |
-| Solution C: Simultaneous Actions Management | The complete hardware             | To Define       |
+| Solution C: Simultaneous Actions Management | The complete hardware             | 1 week and half |
 
 All the tasks will be done in parallel to reduce the time of the project.
 
