@@ -134,7 +134,7 @@ The team will have to respect the following constraints:
 - The Hardware must not be modified, except for the addition of components justified as useful.
 
 ## Risk and Mitigation
-You can find the risk management plan [here](https://docs.google.com/document/d/1oD6-9S7R8g9_v3i8xpIQvwrv3xktrlCw4Nu1wr1FqkM/edit?usp=sharing)
+You can find the risk management plan [here](https://docs.google.com/document/d/1oD6-9S7R8g9_v3i8xpIQvwrv3xktrlCw4Nu1wr1FqkM/edit?usp=sharing).
 
 ## Overall plan
 To ensure the success of the project, the team will follow the following plan:
