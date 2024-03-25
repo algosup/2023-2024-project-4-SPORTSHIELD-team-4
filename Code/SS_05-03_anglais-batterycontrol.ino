@@ -527,7 +527,7 @@ void onDisconnect(BLEDevice central) {
 void onWritePassword(BLEDevice central, BLECharacteristic characteristic) {
   const int motDePasseAttendu = 13330;
   short int value = PasswordCharacteristic.value();
-  Conversion(value);
+  // Conversion(value);
   isAuthenticate = (value == motDePasseAttendu);
   Serial.println(isAuthenticate ? "successful authentication" : "wrong password");
 }
