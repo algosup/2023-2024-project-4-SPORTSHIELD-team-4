@@ -654,5 +654,4 @@ void checkBattery() {
 void stopChargingBattery() {
 // !! Copilot made code, may be incorrect
   digitalWrite(P0_13, HIGH); // Stop charging the battery
-  digitalWrite(VBAT_ENABLE, HIGH); // Disable the battery
 }
