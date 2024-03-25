@@ -84,6 +84,13 @@ float BigRT = 145.0;   //     BigRotationThreshold
 
 //batterie
 #define VBAT_ENABLE 14
+
+#define FULL_CHARGE 3.65
+#define LOW_BATTERY 3.475
+#define LOCKED_BATTERY 3.4
+
+bool isLowBattery = false;
+
 float getBatteryVoltage();
 
 float MotionData;
@@ -174,6 +181,8 @@ void loop() {
 
   MotionData = getMotionData();
   RotationData = getRotationData();
+
+  checkBattery();
 
   if (Config.isActivate) {  //alarm enalbled
     activateGPS();
@@ -619,4 +628,22 @@ String convertDMMtoDD(String dmmCoordinates) {
   String ddCoordinates = String(decimalDegrees, 10);  // You can adjust the number of decimals here
 
   return ddCoordinates;
+}
+
+void checkBattery() {
+  float batteryVoltage = getBatteryVoltage();
+  if (batteryVoltage > LOW_BATTERY) {
+    isLowBattery = false;
+    if (batteryVoltage >= FULL_CHARGE) {
+      Serial.println("Battery fully charged");
+      // TODO: Implement the code to stop charging the battery
+    }
+  } else {
+    isLowBattery = true;
+    if (batteryVoltage == LOW_BATTERY) {
+      Serial.println("Battery put in low battery mode, you can only unlock the device");
+  } else if (batteryVoltage <= LOCKED_BATTERY) {
+      Serial.println("Battery put in locked mode, please charge the battery");s
+    }
+  }
 }
