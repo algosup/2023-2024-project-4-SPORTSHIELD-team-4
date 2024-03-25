@@ -18,7 +18,7 @@
 myConfig Config;
 bool isAuthenticate = false;
 // Timer
-#define HW_TIMER_INTERVAL_MS 1
+#define HW_TIMER_INTERVAL_MS 1000
 NRF52_MBED_Timer ITimer(NRF_TIMER_3);
 NRF52_MBED_ISRTimer ISR_Timer;
 #define TIMER_INTERVAL_120S 120000L
