@@ -182,6 +182,8 @@ void loop() {
   MotionData = getMotionData();
   RotationData = getRotationData();
 
+  Serial.print("Battery voltage: ");
+  Serial.println(getBatteryVoltage());
   checkBattery(); // Check the battery level at the beginning of the loop and take action if necessary
 
   if (Config.isActivate) {  //alarm enalbled
