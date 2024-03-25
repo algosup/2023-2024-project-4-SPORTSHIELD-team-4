@@ -119,7 +119,7 @@ We are operating under the following assumptions:
 
 ### 2. Battery
 
-- **Description:** he EEMB LP603449 is a lithium-ion polymer rechargeable battery. It is designed for portable electronic devices and offers high energy density, lightweight construction, and long cycle life. The LP603449 has a specific capacity of 1100mAh and provides reliable power for extended periods
+- **Description:** The EEMB LP603449 is a lithium-ion polymer rechargeable battery. It is designed for portable electronic devices and offers high energy density, lightweight construction, and long cycle life. The LP603449 has a specific capacity of 1100mAh and provides reliable power for extended periods
 - **Brand:** EEMB
 
 <img src="./Images/Battery.png" alt="Battery" width="300"/>
