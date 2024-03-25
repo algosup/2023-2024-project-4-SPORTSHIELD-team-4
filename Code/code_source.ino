@@ -632,21 +632,27 @@ String convertDMMtoDD(String dmmCoordinates) {
   return ddCoordinates;
 }
 
-// Depending of the battery voltage, the device will be in different states
+// Depending on the battery voltage, the device will be in different states
 void checkBattery() {
   float batteryVoltage = getBatteryVoltage();
   if (batteryVoltage > LOW_BATTERY) {
     isLowBattery = false;
     if (batteryVoltage >= FULL_CHARGE) {
       Serial.println("Battery fully charged");
-      // TODO: Implement the code to stop charging the battery
+      stopChargingBattery(); // Stop charging the battery
     }
   } else {
     isLowBattery = true;
     if (batteryVoltage == LOW_BATTERY) {
-      Serial.println("Battery put in low battery mode, you can only unlock the device");
-  } else if (batteryVoltage <= LOCKED_BATTERY) {
-      Serial.println("Battery put in locked mode, please charge the battery");
+      Serial.println("Battery put in low battery mode, you can only unlock the device. Please charge the device.");
+    } else if (batteryVoltage <= LOCKED_BATTERY) {
+      Serial.println("Battery put in locked mode, please charge the device.");
     }
   }
+}
+
+void stopChargingBattery() {
+// !! Copilot made code, may be incorrect
+  digitalWrite(P0_13, HIGH); // Stop charging the battery
+  digitalWrite(VBAT_ENABLE, HIGH); // Disable the battery
 }
