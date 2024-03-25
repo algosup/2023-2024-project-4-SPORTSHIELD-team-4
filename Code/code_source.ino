@@ -630,6 +630,7 @@ String convertDMMtoDD(String dmmCoordinates) {
   return ddCoordinates;
 }
 
+// Depending of the battery voltage, the device will be in different states
 void checkBattery() {
   float batteryVoltage = getBatteryVoltage();
   if (batteryVoltage > LOW_BATTERY) {
