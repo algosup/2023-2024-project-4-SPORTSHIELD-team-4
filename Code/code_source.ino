@@ -91,6 +91,13 @@ float RotationData;
 
 unsigned long StartCoolDown = 0;  //check point for millis aided cooldown
 
+float lastLatitude = 0.0;
+float lastLongitude = 0.0;
+
+bool hasPositionChanged(float currentLatitude, float currentLongitude) {
+    float threshold = 0.0001; // Définis un seuil de changement, ajuste selon le besoin
+    return (abs(currentLatitude - lastLatitude) > threshold || abs(currentLongitude - lastLongitude) > threshold);
+}
 
 //-------------------------------- SETUP ----------------------------------------
 void setup() {
@@ -247,13 +254,24 @@ void loop() {
     ;  // we can fail to parse a   sentence in which case we should just wait for another
   }
 
-  if (GPS.fix && position_acquired == false) {  // if location detected
-    Serial.println("fix + false");
-    position_acquired = true;
-    GPS.fix = 0;
-    digitalWrite(GPS_WKUP_PIN, LOW);
-    GPS.sendCommand("$PMTK225,4*2F");  // send to backup mode
-  }
+
+// Après avoir capturé et vérifié les données GPS
+if (GPS.fix && position_acquired == false) {
+    float currentLatitude = convertDMMtoDD(String(float(GPS.latitude), 4)).toFloat();
+    float currentLongitude = convertDMMtoDD(String(float(GPS.longitude), 4)).toFloat();
+  
+    if (hasPositionChanged(currentLatitude, currentLongitude)) {
+        lastLatitude = currentLatitude;
+        lastLongitude = currentLongitude;
+        position_acquired = true;
+        GPS.fix = 0;
+        digitalWrite(GPS_WKUP_PIN, LOW);
+        GPS.sendCommand("$PMTK225,4*2F");  // Envoyer au mode backup
+        
+    }
+}
+
+
 
   if (send_move) {  //sending of positions via SIM module
     Serial.println("Envoi detection mouvement");
@@ -305,8 +323,8 @@ void ble_setup(void) {
       ;
   }
   // set advertised local name and service UUID:
-  BLE.setLocalName("SportShield 5");
-  BLE.setDeviceName("SportShield 5");
+  BLE.setLocalName("Team4");
+  BLE.setDeviceName("Team4");
   BLE.setAdvertisedService(PasswordService);
   // add descriptors
   PasswordCharacteristic.addDescriptor(PasswordDescriptor);
