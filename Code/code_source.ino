@@ -76,11 +76,11 @@ const int aimantPin = D3;
 
 // Set a threshold to determine a "small" or "big" movement
 
-float SmallMT = 20.0;  //     SmallMotionThreshold
-float BigMT = 150.0;   //    BigMotionThreshold
+float SmallMT = 40.0;  //     SmallMotionThreshold
+float BigMT = 170.0;   //    BigMotionThreshold
 
-float SmallRT = 20.0;  //     SmallRotationThreshold
-float BigRT = 125.0;   //     BigRotationThreshold
+float SmallRT = 40.0;  //     SmallRotationThreshold
+float BigRT = 145.0;   //     BigRotationThreshold
 
 //batterie
 #define VBAT_ENABLE 14
