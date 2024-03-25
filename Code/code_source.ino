@@ -182,7 +182,7 @@ void loop() {
   MotionData = getMotionData();
   RotationData = getRotationData();
 
-  checkBattery();
+  checkBattery(); // Check the battery level at the beginning of the loop and take action if necessary
 
   if (Config.isActivate) {  //alarm enalbled
     activateGPS();
@@ -644,7 +644,7 @@ void checkBattery() {
     if (batteryVoltage == LOW_BATTERY) {
       Serial.println("Battery put in low battery mode, you can only unlock the device");
   } else if (batteryVoltage <= LOCKED_BATTERY) {
-      Serial.println("Battery put in locked mode, please charge the battery");s
+      Serial.println("Battery put in locked mode, please charge the battery");
     }
   }
 }
