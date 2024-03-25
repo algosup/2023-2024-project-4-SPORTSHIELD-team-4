@@ -3,15 +3,15 @@ Here are the management artifacts that we have created for the project. They are
 
 ## Project charter
 A document that describes the project's goals, objectives, and scope. It also includes the roles and responsibilities of the team members, the project's deliverables, and the project's constraints and risks.  
-[Clic here to access the project charter](management_artifact/project_charter.md)
+[Clic here to access the project charter](ManagementArtifacts/ProjectCharter.md)
 
 ## Team 4 code of conduct
 A document that describes the rules and guidelines that the team members must follow.   
-[Clic here to access the Team 4 code of conduct](management_artifact/team_code_of_conduct.md)
+[Clic here to access the Team 4 code of conduct](ManagementArtifacts/TeamCodeOfConduct.md)
 
 ## Weekly meetings
 We have held weekly meetings to discuss the progress of the project.   
-[Clic here to access the weekly reports](management_artifact/weekly_reports.md)
+[Clic here to access the weekly reports](WeeklyReports/WeeklyReports.md)
 
 ## Task board
 We have used a task board to manage the project's tasks. The task board is available on Google Sheets.  

@@ -28,11 +28,11 @@ Date: 2024/03/15
 
 ## Week issues
 Lucas AUBARD:
-- Struggle on NFC technology
+- Struggle with NFC technology
 
 Habi CAILLEAU:
-- Struggle on Github advanced features (Templates, Actions, etc.)
-- Struggle to define a testing protocols for electronic components
+- Struggle with Github advanced features (Templates, Actions, etc.)
+- Struggle to define testing protocols for electronic components
 
 Paul NOWAK:
 - Struggle to not be too technical in the user manual
@@ -43,12 +43,12 @@ None
 ## Plan for next week
 Wilfried PORTET:
 - Start to implement battery optimization
-  - GPS -> Avoid contionius activation
-  - Sim module usage -> Avoid contionius activation
+  - GPS -> Avoid continuous activation
+  - Sim module usage -> Avoid continuous activation
 
 Lucas AUBARD:
-- Try to implement the NFC technology on sketch
-- Try to implement the NFC technology on the main code
+- Try implementing the NFC technology on the sketch
+- Try implementing the NFC technology on the main code
 
 Habi CAILLEAU:
 - Start test case for testing:
@@ -59,15 +59,15 @@ Habi CAILLEAU:
 - Forward test plan
 
 Paul NOWAK:
-- Continue to work on the user manual
+- Continue working on the user manual
 
 Alexis LASSELIN:
-- Continue to work on the technical specifications
+- Continue working on the technical specifications
 
 Maxime CARON:
-- Finish Gantt diagram
+- Finish the Gantt diagram
 - Set KPIs
 - Finish risk management
 
 ## Conclusion
-Everything is going well, we are on time. We have some issues but we are working on it. We are confident for the next week.
+Everything is going well, we are on time. We have some issues, but we are working on it. We are confident for the next week.
