@@ -1,7 +1,14 @@
+/*
+    This file contains all the global variables used in the project
+*/
+
 #pragma once
 
-#define TIMER_INTERRUPT_DEBUG 0
-#define _TIMERINTERRUPT_LOGLEVEL_ 0
+#ifndef TIMER_INTERRUPT_DEBUG
+    #define TIMER_INTERRUPT_DEBUG 0
+    #define _TIMERINTERRUPT_LOGLEVEL_ 0
+#endif
+
 #include "NRF52_MBED_TimerInterrupt.h"
 #include "NRF52_MBED_ISR_Timer.h"
 #include <Arduino.h>
@@ -28,7 +35,7 @@ NRF52_MBED_ISRTimer ISR_Timer;
 BLEService PasswordService("19B10000-E8F2-537E-4F6C-D104768A1213");  // Bluetooth® Low Energy Service
 BLEService ConfigService("19B10000-E8F2-537E-4F6C-D104768A1214");
 
-BLEShortCharacteristic PasswordCharacteristic("19B10000-E8F2-537E-4F6C-D104768A1213", BLEWrite);  // Bluetooth® Low Energy Characteristic
+BLEStringCharacteristic PasswordCharacteristic("19B10000-E8F2-537E-4F6C-D104768A1213", BLEWrite, 32);  // Bluetooth® Low Energy Characteristic
 BLEStringCharacteristic NameCharacteristic("19B10001-E8F2-537E-4F6C-D104768A1214", BLERead | BLEWrite, 20);
 BLEStringCharacteristic MACCharacteristic("19B10001-E8F2-537E-4F6C-D104768A1217", BLERead, 20);
 BLEBooleanCharacteristic ActivationCharacteristic("19B10001-E8F2-537E-4F6C-D104768A1215", BLERead | BLEWrite);

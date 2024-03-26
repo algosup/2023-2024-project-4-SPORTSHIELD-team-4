@@ -1,3 +1,7 @@
+/*
+  This file is the main file of the project. It contains the setup and loop functions
+*/
+
 // Globale variables
 #ifndef GLOBALVAR_H
   #include "globalVar.h"

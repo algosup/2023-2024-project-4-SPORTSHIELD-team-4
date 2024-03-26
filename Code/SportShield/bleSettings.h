@@ -41,10 +41,11 @@ void onDisconnect(BLEDevice central) {
  * @return void
 */
 void onWritePassword(BLEDevice central, BLECharacteristic characteristic) {
-  const int motDePasseAttendu = 13330;
-  short int value = PasswordCharacteristic.value();
+  String awaitedPassword = "13330";
+  String value = PasswordCharacteristic.value();
+  Serial.println(value);
   // Conversion(value);
-  isAuthenticate = (value == motDePasseAttendu);
+  isAuthenticate = (awaitedPassword.compareTo(value) == 0);
   Serial.println(isAuthenticate ? "successful authentication" : "wrong password");
 }
 
@@ -185,7 +186,7 @@ void ble_setup(void) {
   BLE.addService(PasswordService);
   BLE.addService(ConfigService);
   // set the initial value for the characeristic:
-  PasswordCharacteristic.writeValue(0);
+  PasswordCharacteristic.writeValue("0");
   NameCharacteristic.writeValue("\n");
   ActivationCharacteristic.writeValue(false);
   UnlockCharacteristic.writeValue(false);
