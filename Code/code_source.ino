@@ -90,6 +90,7 @@ float BigRT = 145.0;   //     BigRotationThreshold
 #define LOCKED_BATTERY 3.4
 
 bool isLowBattery = false;
+bool isLockedBattery = false;
 
 float getBatteryVoltage();
 
@@ -581,15 +582,17 @@ void onReadName(BLEDevice central, BLECharacteristic characteristic) {
 void onWriteActivation(BLEDevice central, BLECharacteristic characteristic) {
   if (isAuthenticate) {
     Config.isActivate = ActivationCharacteristic.value();
-    if (Config.isActivate != 0) {
+    if (Config.isActivate != 0 && isLowBattery == false) {
       Serial.println("Alarme enabled");
       digitalWrite(SIM800_DTR_PIN, LOW);  // put in normal mode
       delay(100);
       sim800l->setPowerMode(NORMAL);  // set normal functionnality mode
-    } else {
+    } else if (Config.isActivate == 0 && isLockedBattery == false) {
       Serial.print("Désactivation");
       sim800l->setPowerMode(MINIMUM);      // set minimum functionnality mode
       digitalWrite(SIM800_DTR_PIN, HIGH);  // put in sleep mode
+    } else {
+      Serial.println("Battery level too low, please charge the device.");
     }
   } else {
     ActivationCharacteristic.writeValue(Config.isActivate);
@@ -604,11 +607,15 @@ void onReadActivation(BLEDevice central, BLECharacteristic characteristic) {
 
 void onWriteUnlock(BLEDevice central, BLECharacteristic characteristic) {
   if (isAuthenticate) {
-    // activate electromagnet
-    Serial.println("Unlock");
-    digitalWrite(aimantPin, HIGH);
-    delay(2000);
-    digitalWrite(aimantPin, LOW);
+    if (isLockedBattery == false) {
+      // activate electromagnet
+      Serial.println("Unlock");
+      digitalWrite(aimantPin, HIGH);
+      delay(2000);
+      digitalWrite(aimantPin, LOW);
+    } else {
+      Serial.println("Battery level too low, please charge the device.");
+    }
   }
 }
 
@@ -639,13 +646,15 @@ void checkBattery() {
     isLowBattery = false;
     if (batteryVoltage >= FULL_CHARGE) {
       Serial.println("Battery fully charged");
-      stopChargingBattery(); // Stop charging the battery
+      stopChargingBattery();
     }
   } else {
+    isLockedBattery = false;
     isLowBattery = true;
     if (batteryVoltage == LOW_BATTERY) {
       Serial.println("Battery put in low battery mode, you can only unlock the device. Please charge the device.");
     } else if (batteryVoltage <= LOCKED_BATTERY) {
+      isLockedBattery = true;
       Serial.println("Battery put in locked mode, please charge the device.");
     }
   }
