@@ -1,11 +1,19 @@
+//---------------- VARIABLES -----------------------------
+
+// The different battery states, measured in volts.
+// If you want to change the battery states, you can change the values below.
 #define FULL_CHARGE 3.65
 #define LOW_BATTERY 3.475
 #define LOCKED_BATTERY 3.4
 
+// Those variables are used to know the state of the battery
+// !! Do not modify them
 bool isLowBattery = false;
 bool isLockedBattery = false;
 
-// Returns the battery voltage
+//------------- FUNCTIONS ------------------------------
+
+// Returns the current battery voltage in volts
 float getBatteryVoltage() {
   //unsigned int adcCount = analogRead(PIN_VBAT);
   float adcCount = analogRead(PIN_VBAT);
@@ -15,6 +23,7 @@ float getBatteryVoltage() {
 }
 
 // Depending on the battery voltage, the device will be in different states
+// @param batteryVoltage: The voltage of the battery, in volts. We recommend using the getBatteryVoltage() function to get the battery voltage
 void checkBattery(float batteryVoltage) {
   if (batteryVoltage > LOW_BATTERY) {
     isLowBattery = false;
