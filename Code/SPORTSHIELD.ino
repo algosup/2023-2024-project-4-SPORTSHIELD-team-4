@@ -13,6 +13,8 @@
 #include <Adafruit_GPS.h>
 //SIM
 #include "SIM800L.h"
+// Battery
+#include "battery.h"
 
 //---------------- GLOBAL VARIABLES -----------------------------
 myConfig Config;
@@ -423,13 +425,6 @@ void sim_setup(void) {
 
 
 //------------- ADDITIONAL FUNCTIONS ------------------------------
-float getBatteryVoltage() {
-  //unsigned int adcCount = analogRead(PIN_VBAT);
-  float adcCount = analogRead(PIN_VBAT);
-  float adcVoltage = (((adcCount - 3000) / 4096) * 0.55) + 3.6;
-  //float vBat = adcVoltage * 1510.0/510.0;
-  return adcVoltage;
-}
 
 // provides the absolute difference in acceleration between consecutive calls, helping to monitor changes in motion over time.
 float getMotionData() {
