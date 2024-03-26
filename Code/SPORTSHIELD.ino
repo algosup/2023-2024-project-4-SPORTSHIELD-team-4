@@ -160,7 +160,7 @@ void setup() {
   sim800l = new SIM800L((Stream*)&Serial2, SIM800_RST_PIN, 200, 512);
   pinMode(SIM800_DTR_PIN, OUTPUT);
   delay(1000);
-  sim_setup();
+  //sim_setup();
   Serial.println("SIM SETUP");
 
   analogReadResolution(ADC_RESOLUTION);  //setup battery reading
@@ -537,9 +537,9 @@ void onDisconnect(BLEDevice central) {
   digitalWrite(LEDB, HIGH);
 }
 void onWritePassword(BLEDevice central, BLECharacteristic characteristic) {
-  const int motDePasseAttendu = 13330;
+  const int motDePasseAttendu = 1;
   short int value = PasswordCharacteristic.value();
-  Conversion(value);
+  // Conversion(value);
   isAuthenticate = (value == motDePasseAttendu);
   Serial.println(isAuthenticate ? "successful authentication" : "wrong password");
 }

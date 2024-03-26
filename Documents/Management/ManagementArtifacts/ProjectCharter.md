@@ -73,9 +73,17 @@ The team is composed of the following members:
 | Software Engineer  | Wilfried PORTET |<img src="./pictures/wilfried.png" width="100" height="100" />|
 
 ### Responsibilities
-For this project reposbilities are as follows:
+For this project responsibilities are as follows:
+| Letter | Responsibilities |
+| ------ | ---------------- |
+| R | Responsible |
+| A | Accountable |
+| C | Consulted |
+| I | Informed |
+
 <img src="./pictures/raci.png" />
-Find more details in the [RACI matrix](https://docs.google.com/spreadsheets/d/1NdSN8kjTw9uXcUbG_F4BMpNhVCxAUsPhv6oYFRZ3_c8/edit?usp=sharing)
+
+Find more details in the [RACI matrix](https://docs.google.com/spreadsheets/d/1NdSN8kjTw9uXcUbG_F4BMpNhVCxAUsPhv6oYFRZ3_c8/edit?usp=sharing).
 
 ## Stakeholders
 The main stakeholders of this project are:
@@ -104,11 +112,11 @@ As written in the milestones, we have to deliver the following deliverables :
 - Unit Tests
 - Weekly Reports and Management Planning
 
-And we will present the projet to the client on the 2024/04/19.
+And we will present the projet to the client on 2024/04/19.
 
 ## Resources and Constraints
 ### Resources
-The team will have access to the following material resources and their documentation:
+The team will have access to the entire already developed software and the documentation.
 | Equipment | Description |
 | --------- | ----------- |
 | Development board | Ultra-compact, ultra-low-power Bluetooth development board based on the Nordic nRF52840. |
@@ -127,14 +135,7 @@ The team will have to respect the following constraints:
 - The Hardware must not be modified, except for the addition of components justified as useful.
 
 ## Risk and Mitigation
-
-| Risk | Impact | Mitigation |
-| ---- | ------ | ---------- |
-| Our developer is junior and may have difficulty understanding how to work with a new language. | Low | Arduino is a language dedicated to beginners, and other more experienced developers can help with the task. |
-| The already developed software may be hard to understand. | Low | The team will take the time to understand the software and will ask for help if necessary. |
-| Tests results can be bad interpreted. | Medium | The team will define clear testing procedures and will use KPI's to monitor the progress of the project. |
-| The hardware may be damaged during the development phase. | High | The team will take the necessary precautions to avoid damaging the hardware. |
-| Deadlines may not be met. | High | The team will use a KPI's to monitor the progress of the project and ensure that deadlines are met. |
+You can find the risk management plan [here](https://docs.google.com/document/d/1oD6-9S7R8g9_v3i8xpIQvwrv3xktrlCw4Nu1wr1FqkM/edit?usp=sharing).
 
 ## Overall plan
 To ensure the success of the project, the team will follow the following plan:
@@ -148,9 +149,9 @@ To ensure the success of the project, the team will follow the following plan:
 
 | Term | Definition |
 | ---- | ---------- |
-| SPORTSHIELD | The lock prototype developed by CORIS Innovation. |
-| NFC | Near Field Communication. |
-| KPI | Key Performance Indicator. |
-| GPS | Global Positioning System. |
-| GSM | Global System for Mobile Communications. |
-| Arduino | An open-source electronics platform based on easy-to-use hardware and software. |
+| SPORTSHIELD | A cutting-edge lock prototype developed by CORIS Innovation, designed to offer advanced security features and functionality for sports equipment and facilities. |
+| NFC | 	Near Field Communication (NFC) is a short-range wireless technology that enables communication between devices when they are brought close together, typically within a few centimeters. NFC is commonly used for contactless payments, data exchange, and access control. |
+| KPI | Key Performance Indicator (KPI) refers to quantifiable metrics used to evaluate the success or performance of an organization, project, or individual in reaching specific objectives. KPIs are essential in measuring progress towards goals and making informed decisions. |
+| GPS | Global Positioning System (GPS) is a satellite-based navigation system that allows precise determination of geographical location and time information anywhere on Earth. GPS is widely used in various applications, including navigation, mapping, surveying, and outdoor recreation. |
+| GSM | Global System for Mobile Communications (GSM) is a standard developed for digital cellular networks used in mobile phones. GSM facilitates voice calls, SMS (Short Message Service) text messaging, and data transmission over cellular networks worldwide. |
+| Arduino | Arduino is an open-source electronics platform based on easy-to-use hardware and software. It consists of microcontroller boards and a development environment for writing, compiling, and uploading code to the boards. Arduino is popular among hobbyists, students, and professionals for creating interactive projects and prototypes.. |
