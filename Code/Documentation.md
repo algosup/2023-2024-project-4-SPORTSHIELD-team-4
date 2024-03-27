@@ -39,6 +39,15 @@ if (GPS.fix && position_acquired == false) {
 
 To measure the effectiveness of this implementation, we will leave the board plugged into a battery for an entire night and connect the board to a device that can measure the battery's behavior in real-time.
 
+**Test : Battery**
+
+**Protocol :**
+To test the battery's durability, we left the board connected to the battery overnight and connected the battery to an oscillometer to determine its exact consumption over 18 hours.
+
+**Result :**
+The result of this test was positive: the battery lost 0.16V over a period of 18 hours and 18 minutes.
+
+
 ---
 
 **Modification :**
