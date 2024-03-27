@@ -13,7 +13,10 @@ bool isLockedBattery = false;
 
 //------------- FUNCTIONS ------------------------------
 
-// Returns the current battery voltage in volts
+/*
+  * Function to get the battery voltage
+  * @return The battery voltage, in volts
+*/
 float getBatteryVoltage() {
   //unsigned int adcCount = analogRead(PIN_VBAT);
   float adcCount = analogRead(PIN_VBAT);
@@ -22,8 +25,12 @@ float getBatteryVoltage() {
   return adcVoltage;
 }
 
-// Depending on the battery voltage, the device will be in different states
-// @param batteryVoltage: The voltage of the battery, in volts. We recommend using the getBatteryVoltage() function to get the battery voltage
+/*
+  * Function to check the battery state
+  * @param batteryVoltage The battery voltage, in volts
+  * @return Depending on the battery state, the function acts differently
+  * @note We advise you to get the battery voltage with the function getBatteryVoltage()
+*/
 void checkBattery(float batteryVoltage) {
   if (batteryVoltage > LOW_BATTERY) {
     isLowBattery = false;
@@ -43,7 +50,11 @@ void checkBattery(float batteryVoltage) {
   }
 }
 
-// Disables the charging of the battery
+
+/*
+  * Function to start charging the battery
+  * @note Don't use this function if you don't know what you are doing
+*/
 void stopChargingBattery() {
 // !! Copilot made code, may be incorrect
   digitalWrite(P0_13, HIGH); // Stop charging the battery
