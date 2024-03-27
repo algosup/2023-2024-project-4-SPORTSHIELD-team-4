@@ -1,6 +1,15 @@
+#pragma once
+
 /*
   This file contains the functions and setup functions for the Battery Management System.
 */
+
+// Globale variables
+#ifndef GLOBALVAR_H
+  #include "globalVar.h"
+#endif
+
+
 //---------------- VARIABLES -----------------------------
 
 // The different battery states, measured in volts.
@@ -8,11 +17,6 @@
 #define FULL_CHARGE 3.65
 #define LOW_BATTERY 3.475
 #define LOCKED_BATTERY 3.4
-
-// Those variables are used to know the state of the battery
-// !! Do not modify them
-bool isLowBattery = false;
-bool isLockedBattery = false;
 
 //------------- FUNCTIONS ------------------------------
 
@@ -26,6 +30,14 @@ float getBatteryVoltage() {
   float adcVoltage = (((adcCount - 3000) / 4096) * 0.55) + 3.6;
   //float vBat = adcVoltage * 1510.0/510.0;
   return adcVoltage;
+}
+
+/*
+  * Function to start charging the battery
+  * @note Don't use this function if you don't know what you are doing
+*/
+void stopChargingBattery() {
+  // To implement with the good material
 }
 
 /*
@@ -51,14 +63,4 @@ void checkBattery(float batteryVoltage) {
       Serial.println("Battery put in locked mode, please charge the device.");
     }
   }
-}
-
-
-/*
-  * Function to start charging the battery
-  * @note Don't use this function if you don't know what you are doing
-*/
-void stopChargingBattery() {
-// !! Copilot made code, may be incorrect
-  digitalWrite(P0_13, HIGH); // Stop charging the battery
 }
