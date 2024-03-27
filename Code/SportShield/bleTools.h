@@ -41,11 +41,17 @@ void onDisconnect(BLEDevice central) {
  * @return void
 */
 void onWritePassword(BLEDevice central, BLECharacteristic characteristic) {
-  String awaitedPassword = "13330";
+  String password = "13330";
   String value = PasswordCharacteristic.value();
-  Serial.println(value);
-  isAuthenticate = (awaitedPassword.compareTo(value) == 0);
-  Serial.println(isAuthenticate ? "successful authentication" : "wrong password");
+  isAuthenticate = (password.compareTo(value) == 0);
+  if(isAuthenticate){
+    randNumber = random(999999);
+    Serial.println(randNumber);
+    Serial.println("Successful authentication");
+  }
+  else{
+    Serial.println("Wrong password");
+  }
 }
 
 
@@ -146,6 +152,8 @@ void ble_setup(void) {
     while (1)  // set a reset in this case? risk of card crash?
       ;
   }
+  // Set random seed for token
+  randomSeed(analogRead(0));
   // set advertised local name and service UUID:
   BLE.setLocalName("Team4");
   BLE.setDeviceName("Team4");
