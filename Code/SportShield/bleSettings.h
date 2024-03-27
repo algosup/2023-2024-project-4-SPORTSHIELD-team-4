@@ -44,30 +44,10 @@ void onWritePassword(BLEDevice central, BLECharacteristic characteristic) {
   String awaitedPassword = "13330";
   String value = PasswordCharacteristic.value();
   Serial.println(value);
-  // Conversion(value);
   isAuthenticate = (awaitedPassword.compareTo(value) == 0);
   Serial.println(isAuthenticate ? "successful authentication" : "wrong password");
 }
 
-/*
- * Function to convert a short int to a hexadecimal string
- * @param data the short int to convert
- * @return the hexadecimal string
-*/
-String Conversion(unsigned short int data) {
-  char mdphexadecimal[5];
-  sprintf(mdphexadecimal, "%04X", data);
-
-  for (int i = 0; i < 2; ++i) {
-    char temp = mdphexadecimal[i];
-    mdphexadecimal[i] = mdphexadecimal[2 + i];
-    mdphexadecimal[2 + i] = temp;
-  }
-  //Serial.println("Mot de passe : " + String(valeur) + " ");  //used to see the value in decimal
-  Serial.print("Written password  = ");
-  Serial.println(mdphexadecimal);
-  return String(mdphexadecimal);
-}
 
 /*
  * Function called when a central device writes to the name characteristic
@@ -117,7 +97,7 @@ void onWriteActivation(BLEDevice central, BLECharacteristic characteristic) {
       delay(100);
       sim800l->setPowerMode(NORMAL);  // set normal functionnality mode
     } else {
-      Serial.print("Désactivation");
+      Serial.print("Deactivation");
       sim800l->setPowerMode(MINIMUM);      // set minimum functionnality mode
       digitalWrite(SIM800_DTR_PIN, HIGH);  // put in sleep mode
     }
