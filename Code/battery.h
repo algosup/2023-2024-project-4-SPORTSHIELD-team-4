@@ -1,3 +1,6 @@
+/*
+  This file contains the functions and setup functions for the Battery Management System.
+*/
 //---------------- VARIABLES -----------------------------
 
 // The different battery states, measured in volts.
