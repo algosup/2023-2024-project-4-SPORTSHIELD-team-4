@@ -20,9 +20,9 @@ For this project, Coris Innovation has asked us to:
 Here is the list of all the main documents related to the project:
 
 - [Management Artifacts](Documents/Management/ManagementArtifacts.md)
-- [Functional Specification](Documents/FunctionalSpecification/FunctionalSpecification.md)
-- [Technical Specification](Documents/TechnicalSpecification/TechnicalSpecification.md)
-- [User Manual](Documents/UserManual/UserManual.md)
+- [Functional Specification](Documents/FunctionalSpecifications/FunctionalSpecifications.md)
+- [Technical Specification](Documents/TechnicalSpecification/TechnicalSpecifications.md)
+- [User Manual](Documents/UserManual/UserManual.md) Note: The user manual is not yet available.
 - [Test Plan](Documents/QA/TestPlan.md)
 
 ## Contributors
