@@ -12,8 +12,8 @@ For this project, Coris Innovation has asked us to:
 
 ## Technologies used
 
-- **C++** for the embedded software. ![C++](Documents/TechnicalSpecification/Images/C++.png){ width=15px height=15px }
-- **Arduino** for the development of the hardware. ![Arduino](Documents/TechnicalSpecification/Images/Arduino.png){ width=15px height=15px }
+- **C++** for the embedded software. <img src="Documents/TechnicalSpecification/Images/C++_logo-removebg-preview.png" width="15px" height="15px"/>
+- **Arduino** for the development of the hardware. <img src="Documents/TechnicalSpecification/Images/Arduino-removebg-preview.png" width="15px" height="15px"/>
 
 ## Documentation
 
