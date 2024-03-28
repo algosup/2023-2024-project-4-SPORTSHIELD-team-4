@@ -1,4 +1,6 @@
 /.vscode
 *.drawio
 .github
+document
 .output
+dev
