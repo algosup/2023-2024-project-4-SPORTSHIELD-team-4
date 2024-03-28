@@ -4,7 +4,7 @@
 
 // Globale variables
 #ifndef GLOBALVAR_H
-  #include "globalVar.h"
+#include "globalVar.h"
 #endif
 
 // Battery
