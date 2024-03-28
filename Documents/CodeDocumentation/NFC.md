@@ -8,7 +8,7 @@ The NFC component, particularly the Molex 1462360031, is incompatible with the A
 
 ### Library Absence
 
-The primary reason for the NFC component's failure to works with the Arduino Xiao BLE board is the absence of a suitable library. This library is crucial as it provides the necessary instructions for the NFC component to communicate effectively with the Arduino Xiao BLE board.
+The primary reason for the NFC component's failure to work with the Arduino Xiao BLE board is the absence of a suitable library. This library is crucial as it provides the necessary instructions for the NFC component to communicate effectively with the Arduino Xiao BLE board.
 
 ## Solutions
 
