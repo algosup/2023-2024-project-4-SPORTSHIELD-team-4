@@ -31,6 +31,7 @@ Here is the list of all the main documents related to the project:
 Before getting started, ensure you have the following:
 
 - **Arduino IDE**: Install it on your computer. You can download it [here](https://www.arduino.cc/en/software).
+- Download all the libraries used in the project.
 - **LightBlue** Application: Install it on your smartphone. You can download it for [Android](https://play.google.com/store/apps/details?id=com.punchthrough.lightblueexplorer&hl=fr&gl=US) and [iOS](https://apps.apple.com/fr/app/lightblue/id557428110).
 - **Arduino** Board: Make sure you have one available.
 
@@ -39,32 +40,73 @@ Before getting started, ensure you have the following:
 Follow these steps to set up:
 
 1. **Clone the Repository**:
-    ```bash
-    git clone https://github.com/algosup/2023-2024-project-4-SPORTSHIELD-team-4.git
-    ```
+
+   ```bash
+   git clone https://github.com/algosup/2023-2024-project-4-SPORTSHIELD-team-4.git
+   ```
 
 2. **Open Arduino IDE**:
-    Open the Arduino IDE and navigate to the SPORTSHIELD.ino file located in the Code folder here: `2023-2024-project-4-SPORTSHIELD-team-4/Code/SPORTSHIELD/SPORTSHIELD.ino`
+   Open the Arduino IDE and navigate to the SPORTSHIELD.ino file located in the Code folder here: `2023-2024-project-4-SPORTSHIELD-team-4/Code/SPORTSHIELD/SPORTSHIELD.ino`
 
-3. **Connect Arduino Board**:
-    Connect your Arduino board to your computer.
+3. **Install Libraries**:
+   Install all the libraries used in the project. You can find them here in the Required Libraries section.
 
-4. **Configure Arduino IDE**:
-    Select the correct board and port in the Arduino IDE.
+4. **Connect Arduino Board**:
+   Connect your Arduino board to your computer.
 
-5. **Upload Code**:
-    Upload the code to your Arduino board.
+5. **Configure Arduino IDE**:
+   Select the correct board and port in the Arduino IDE.
 
-6. **Open LightBlue Application**:
-    Launch the LightBlue application on your smartphone.
+6. **Upload Code**:
+   Upload the code to your Arduino board.
 
-7. **Connect to SPORTSHIELD Device**:
-    Find and connect to the SPORTSHIELD device. It should appear in the list of devices in the LightBlue application with the name "Team 4".
+7. **Open LightBlue Application**:
+   Launch the LightBlue application on your smartphone.
 
-8. **Start Using SPORTSHIELD**:
-    Now you can start using the SPORTSHIELD device. Enjoy!
+8. **Connect to SPORTSHIELD Device**:
+   Find and connect to the SPORTSHIELD device. It should appear in the list of devices in the LightBlue application with the name "Team 4".
+
+9. **Start Using SPORTSHIELD**:
+   Now you can start using the SPORTSHIELD device. Enjoy!
+
+### Required Libraries:
+
+After installing the Arduino IDE, open it and install the following libraries through the **Library Manager** (`Sketch` > `Include Library` > `Manage Libraries...`).
+
+1. **NRF52_MBED_TimerInterrupt (V1.4.1)**
+
+   - In the search field, type `NRF52_MBED_TimerInterrupt`, select version `1.4.1`, and click `Install`.
+
+2. **ArduinoBLE (V1.3.6)**
+
+   - Search for `ArduinoBLE`, select version `1.3.6`, and click `Install`.
+
+3. **Adafruit GPS Library (V1.7.4)**
+
+   - Type `Adafruit GPS Library`, select version `1.7.4`, and click `Install`.
+
+4. **Sim800L http connector (V1.14.0)**
+
+   - Search for `Sim800L http connector`, choose version `1.14.0`, and click `Install`.
+
+5. **Seeed Arduino LSM6DS3 (V2.0.3)**
+
+   - Type `Seeed Arduino LSM6DS3`, select version `2.0.3`, and click `Install`.
+
+6. **OneWire (V2.3.7)**
+
+   - Search for `OneWire`, choose version `2.3.7`, and click `Install`.
+
+### Required Board:
+
+To install the necessary board, follow these steps in the Arduino IDE:
+
+1. Open the **Board Manager** by going to `Tools` > `Board` > `Boards Manager...`.
+
+2. In the Boards Manager search bar, type `Seeed NRF52 mbed enabled Boards`.
 
 ## Contributors
+
 | Photo                                                                                                                                     | Name            | Role              | LinkedIn                                                           |
 | ----------------------------------------------------------------------------------------------------------------------------------------- | --------------- | ----------------- | ------------------------------------------------------------------ |
 | [<img src="Documents/TechnicalSpecification/Images/MaximeCARON.jpeg" width="100px" height="100px"/>](https://github.com/MaximeAlgosup)    | Maxime CARON    | Project Manager   | [LinkedIn](https://www.linkedin.com/in/maxime-caron-dev/)          |
