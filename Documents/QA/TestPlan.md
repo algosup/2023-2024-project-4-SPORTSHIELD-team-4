@@ -228,24 +228,24 @@ Testing individual units or components of the SportShield device, such as softwa
 
 GitHub Issues are central to our issue management strategy, enabling efficient tracking and resolution of all identified issues, bugs, and enhancement requests during testing. Here's how we do it:
 
-Issue Tracking: We use GitHub's robust system to meticulously document and monitor all issues, ensuring nothing slips through the cracks.
+1. Issue Tracking: We use GitHub's robust system to meticulously document and monitor all issues, ensuring nothing slips through the cracks.
 
-Issue Creation: Each problem is thoroughly documented in detailed GitHub issues, providing clear descriptions, reproducible steps, and relevant attachments for comprehensive context.
+2. Issue Creation: Each problem is thoroughly documented in detailed GitHub issues, providing clear descriptions, reproducible steps, and relevant attachments for comprehensive context.
 
-Prioritization: Issues are prioritized based on severity, impact, and business priorities, ensuring critical issues receive immediate attention to minimize project delays.
+3. Prioritization: Issues are prioritized based on severity, impact, and business priorities, ensuring critical issues receive immediate attention to minimize project delays.
 
-Assigning Ownership: Ownership of issues is assigned to appropriate team members, fostering accountability and streamlining resolution efforts.
+4. Assigning Ownership: Ownership of issues is assigned to appropriate team members, fostering accountability and streamlining resolution efforts.
 
-Status Updates: Regular status updates keep stakeholders informed of issue resolution progress, promoting transparency and collaboration.
+5. Collaboration: GitHub issues facilitate collaboration among team members, enabling knowledge sharing and efficient problem-solving to maximize productivity.
 
-Collaboration: GitHub issues facilitate collaboration among team members, enabling knowledge sharing and efficient problem-solving to maximize productivity.
-
-Resolution and Closure: Timely resolution of issues is essential, with prompt closure after verification to maintain an accurate and up-to-date issue tracking system.
+6. Resolution and Closure: Timely resolution of issues is essential, with prompt closure after verification to maintain an accurate and up-to-date issue tracking system.
 
 
 To facilitate the utulisation of GitHub issues I created a template :
 
-<img src="Documents\QA\Images\GitHub_ISSUE.png"/>
+<img src="./Images/GitHub_ISSUE.png" alt="Template ISSUE"/>
+
+
 
 
 
