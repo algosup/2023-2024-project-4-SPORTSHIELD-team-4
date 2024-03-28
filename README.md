@@ -72,6 +72,7 @@ Follow these steps to set up:
 
     Now you can start using the SPORTSHIELD device. Enjoy!
 
+## Contributors
 | Photo                                                                                                                                     | Name            | Role              | LinkedIn                                                           |
 | ----------------------------------------------------------------------------------------------------------------------------------------- | --------------- | ----------------- | ------------------------------------------------------------------ |
 | [<img src="Documents/TechnicalSpecification/Images/MaximeCARON.jpeg" width="100px" height="100px"/>](https://github.com/MaximeAlgosup)    | Maxime CARON    | Project Manager   | [LinkedIn](https://www.linkedin.com/in/maxime-caron-dev/)          |
