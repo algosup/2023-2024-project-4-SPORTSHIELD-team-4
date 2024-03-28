@@ -12,7 +12,7 @@ For this project, Coris Innovation has asked us to:
 
 ## Technologies used
 
-- **Arduino** for the development of the hardware. <img src="Documents/TechnicalSpecification/Images/Arduino-removebg-preview.png" width="15px" height="15px"/> (For the code <img src="Documents/TechnicalSpecification/Images/Clogo-removebg-preview.png" width="15px" height="15px"/> and <img src="Documents/TechnicalSpecification/Images/C++_logo-removebg-preview.png" width="15px" height="15px"/> )
+- **Arduino** for the development of the hardware. <img src="Documents/TechnicalSpecification/Images/Arduino-removebg-preview.png" width="15px" height="15px"/> (And to develop it we use <img src="Documents/TechnicalSpecification/Images/Clogo-removebg-preview.png" width="15px" height="15px"/> and <img src="Documents/TechnicalSpecification/Images/C++_logo-removebg-preview.png" width="15px" height="15px"/> )
 
 ## Documentation
 
@@ -24,13 +24,35 @@ Here is the list of all the main documents related to the project:
 - [User Manual](Documents/UserManual/UserManual.md) Note: The user manual is not yet available.
 - [Test Plan](Documents/QA/TestPlan.md)
 
-## Contributors
+## How to use
 
-| Photo | Name | Role | LinkedIn |
-| --- | --- | --- | --- |
-| [<img src="Documents/TechnicalSpecification/Images/MaximeCARON.jpeg" width="100px" height="100px"/>](https://github.com/MaximeAlgosup) | Maxime CARON | Project Manager | [LinkedIn](https://www.linkedin.com/in/maxime-caron-dev/) |
-| [<img src="Documents/TechnicalSpecification/Images/LucasAUBARD.png" width="100px" height="100px"/>](https://github.com/LucasAub) | Lucas AUBARD | Program Manager | [LinkedIn](https://www.linkedin.com/in/lucas-aubard-596b37251/) |
-| [<img src="Documents/TechnicalSpecification/Images/AlexisLASSELIN.png" width="100px" height="100px"/>](https://github.com/AlexisLasselin) | Alexis LASSELIN | Technical Leader | [LinkedIn](https://www.linkedin.com/in/alexis-lasselin-318649251/) |
+### Prerequisites
+
+- **Arduino IDE** installed on your computer. You can download it [here](https://www.arduino.cc/en/software).
+- **LightBlue** application installed on your smartphone. You can download it [here for Android](https://play.google.com/store/apps/details?id=com.punchthrough.lightblueexplorer&hl=fr&gl=US) and [here for iOS](https://apps.apple.com/fr/app/lightblue/id557428110).
+- The **Arduino** board at your disposal.
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/algosup/2023-2024-project-4-SPORTSHIELD-team-4.git
+```
+
+2. Open the **Arduino IDE** and open the **SPORTSHIELD.ino** file located in the **Code** folder here `2023-2024-project-4-SPORTSHIELD-team-4/Code/SPORTSHIELD/SPORTSHIELD.ino`
+3. Connect your **Arduino** board to your computer.
+4. Select the correct board and port in the **Arduino IDE**.
+5. Upload the code to your **Arduino** board.
+6. Open the **LightBlue** application on your smartphone.
+7. Connect to the **SPORTSHIELD** device. The device should appear in the list of devices in the **LightBlue** application with the name **Team 4**.
+8. Now you can use the **SPORTSHIELD** device.
+
+| Photo                                                                                                                                     | Name            | Role              | LinkedIn                                                           |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | --------------- | ----------------- | ------------------------------------------------------------------ |
+| [<img src="Documents/TechnicalSpecification/Images/MaximeCARON.jpeg" width="100px" height="100px"/>](https://github.com/MaximeAlgosup)    | Maxime CARON    | Project Manager   | [LinkedIn](https://www.linkedin.com/in/maxime-caron-dev/)          |
+| [<img src="Documents/TechnicalSpecification/Images/LucasAUBARD.png" width="100px" height="100px"/>](https://github.com/LucasAub)          | Lucas AUBARD    | Program Manager   | [LinkedIn](https://www.linkedin.com/in/lucas-aubard-596b37251/)    |
+| [<img src="Documents/TechnicalSpecification/Images/AlexisLASSELIN.png" width="100px" height="100px"/>](https://github.com/AlexisLasselin) | Alexis LASSELIN | Technical Leader  | [LinkedIn](https://www.linkedin.com/in/alexis-lasselin-318649251/) |
 | [<img src="Documents/TechnicalSpecification/Images/WilfriedPORTET.png" width="100px" height="100px"/>](https://github.com/PortetWilfried) | Wilfried PORTET | Software Engineer | [LinkedIn](https://www.linkedin.com/in/wilfried-portet-a882b9293/) |
-| [<img src="Documents/TechnicalSpecification/Images/PaulNOWAK.jpeg" width="100px" height="100px"/>](https://github.com/PaulNowak36) | Paul NOWAK | Technical Writer | [LinkedIn](https://www.linkedin.com/in/paul-nowak-0757a61a7/) |
-| [<img src="Documents/TechnicalSpecification/Images/HabiCAILLEAU.png" width="100px" height="100px"/>](https://github.com/habicll) | Habi CAILLEAU | Quality Assurance | [LinkedIn](https://www.linkedin.com/in/habi-cailleau-3b72b5293/) |
+| [<img src="Documents/TechnicalSpecification/Images/PaulNOWAK.jpeg" width="100px" height="100px"/>](https://github.com/PaulNowak36)        | Paul NOWAK      | Technical Writer  | [LinkedIn](https://www.linkedin.com/in/paul-nowak-0757a61a7/)      |
+| [<img src="Documents/TechnicalSpecification/Images/HabiCAILLEAU.png" width="100px" height="100px"/>](https://github.com/habicll)          | Habi CAILLEAU   | Quality Assurance | [LinkedIn](https://www.linkedin.com/in/habi-cailleau-3b72b5293/)   |
