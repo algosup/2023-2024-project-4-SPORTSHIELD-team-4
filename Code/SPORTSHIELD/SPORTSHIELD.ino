@@ -154,8 +154,6 @@ void setup() {
   digitalWrite(LEDG, LOW);
   Temps();
 
-  Serial.print("V Bat: ");
-  Serial.println(getBatteryVoltage());
 }
 
 //-------------------------------- LOOP ----------------------------------------
@@ -164,9 +162,7 @@ void loop() {
   MotionData = getMotionData();
   RotationData = getRotationData();
 
-  float batteryVoltage = getBatteryVoltage();
-  Serial.println(batteryVoltage);
-  checkBattery(batteryVoltage); // Check the battery level at the beginning of the loop and take action if necessary
+  checkBattery(getBatteryVoltage()); // Check the battery level at the beginning of the loop and take action if necessary
 
   if (Config.isActivate) {  //alarm enalbled
     activateGPS();

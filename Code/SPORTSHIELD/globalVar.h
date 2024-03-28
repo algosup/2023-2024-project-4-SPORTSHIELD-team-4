@@ -50,8 +50,7 @@ BLEDescriptor MACDescriptor("2901", "MAC Address");
 
 bool BLE_activated = true;  //true if the bluetooth is activated
 uint32_t tim_connec = 0;    // time in ms or we start to activate the bluetooth following a detection of movement
-long randNumber;
-
+BLEDevice userDevice;      // device that connects to the bluetooth
 
 //IMU : LSM6DS3
 LSM6DS3 imu(I2C_MODE, 0x6A);  //I2C device address 0x6A

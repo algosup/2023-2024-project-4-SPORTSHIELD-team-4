@@ -31,6 +31,7 @@ void onDisconnect(BLEDevice central) {
   Serial.print(F("Disconnected from central: "));
   Serial.println(central.address());
   isAuthenticate = false;
+  userDevice = BLEDevice();
   digitalWrite(LEDB, HIGH);
 }
 
@@ -45,9 +46,8 @@ void onWritePassword(BLEDevice central, BLECharacteristic characteristic) {
   String value = PasswordCharacteristic.value();
   isAuthenticate = (password.compareTo(value) == 0);
   if(isAuthenticate){
-    randNumber = random(999999);
-    Serial.println(randNumber);
     Serial.println("Successful authentication");
+    userDevice = central;
   }
   else{
     Serial.println("Wrong password");
@@ -62,7 +62,7 @@ void onWritePassword(BLEDevice central, BLECharacteristic characteristic) {
  * @return void
 */
 void onWriteName(BLEDevice central, BLECharacteristic characteristic) {
-  if (isAuthenticate) {
+  if (isAuthenticate && (userDevice.address().compareTo(central.address()) == 0)){
     Config.Name = NameCharacteristic.value();
     String value = NameCharacteristic.value();
     Serial.print("Written name : ");
@@ -81,7 +81,7 @@ void onWriteName(BLEDevice central, BLECharacteristic characteristic) {
 void onReadName(BLEDevice central, BLECharacteristic characteristic) {
   Serial.println("CALLBACK READ");
   Serial.println(isAuthenticate);
-  if (isAuthenticate) {
+  if (isAuthenticate && (userDevice.address().compareTo(central.address()) == 0)) {
     NameCharacteristic.writeValue(Config.Name);
   } else {
     NameCharacteristic.writeValue("\n");
@@ -95,7 +95,7 @@ void onReadName(BLEDevice central, BLECharacteristic characteristic) {
  * @return void
 */
 void onWriteActivation(BLEDevice central, BLECharacteristic characteristic) {
-  if (isAuthenticate) {
+  if (isAuthenticate && (userDevice.address().compareTo(central.address()) == 0)) {
     Config.isActivate = ActivationCharacteristic.value();
     if (Config.isActivate != 0) {
       Serial.println("Alarme enabled");
@@ -131,7 +131,7 @@ void onReadActivation(BLEDevice central, BLECharacteristic characteristic) {
  * @return void
 */
 void onWriteUnlock(BLEDevice central, BLECharacteristic characteristic) {
-  if (isAuthenticate) {
+  if (isAuthenticate && (userDevice.address().compareTo(central.address()) == 0)) {
     // activate electromagnet
     Serial.println("Unlock");
     digitalWrite(aimantPin, HIGH);
