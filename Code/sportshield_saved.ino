@@ -525,7 +525,7 @@ void onDisconnect(BLEDevice central) {
   digitalWrite(LEDB, HIGH);
 }
 void onWritePassword(BLEDevice central, BLECharacteristic characteristic) {
-  const int motDePasseAttendu = 13330;
+  const int motDePasseAttendu = 1;
   short int value = PasswordCharacteristic.value();
   // Conversion(value);
   isAuthenticate = (value == motDePasseAttendu);
