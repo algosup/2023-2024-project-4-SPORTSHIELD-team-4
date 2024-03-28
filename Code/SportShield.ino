@@ -1,98 +1,16 @@
-#define TIMER_INTERRUPT_DEBUG 0
-#define _TIMERINTERRUPT_LOGLEVEL_ 0
-#include "NRF52_MBED_TimerInterrupt.h"
-#include "NRF52_MBED_ISR_Timer.h"
-#include <Arduino.h>
-// BLE
-#include <ArduinoBLE.h>
-#include "struct.h"
-// IMU
-#include <LSM6DS3.h>
-#include <Wire.h>
-//GPS
-#include <Adafruit_GPS.h>
-//SIM
-#include "SIM800L.h"
+/*
+  This file is the main file of the project. It contains the setup and loop functions
+*/
 
-//---------------- GLOBAL VARIABLES -----------------------------
-myConfig Config;
-bool isAuthenticate = false;
-// Timer
-#define HW_TIMER_INTERVAL_MS 1000
-NRF52_MBED_Timer ITimer(NRF_TIMER_3);
-NRF52_MBED_ISRTimer ISR_Timer;
-#define TIMER_INTERVAL_120S 120000L
-// BLE
-BLEService PasswordService("19B10000-E8F2-537E-4F6C-D104768A1213");  // Bluetooth® Low Energy Service
-BLEService ConfigService("19B10000-E8F2-537E-4F6C-D104768A1214");
+// Globale variables
+#ifndef GLOBALVAR_H
+  #include "globalVar.h"
+#endif
 
-BLEShortCharacteristic PasswordCharacteristic("19B10000-E8F2-537E-4F6C-D104768A1213", BLEWrite);  // Bluetooth® Low Energy Characteristic
-BLEStringCharacteristic NameCharacteristic("19B10001-E8F2-537E-4F6C-D104768A1214", BLERead | BLEWrite, 20);
-BLEStringCharacteristic MACCharacteristic("19B10001-E8F2-537E-4F6C-D104768A1217", BLERead, 20);
-BLEBooleanCharacteristic ActivationCharacteristic("19B10001-E8F2-537E-4F6C-D104768A1215", BLERead | BLEWrite);
-BLEBooleanCharacteristic UnlockCharacteristic("19B10001-E8F2-537E-4F6C-D104768A1216", BLEWrite);
-
-BLEDescriptor PasswordDescriptor("2901", "Password");  // Bluetooth® Low Energy Descriptor
-BLEDescriptor NameDescriptor("2901", "Name");
-BLEDescriptor ActivationDescriptor("2901", "Activation");
-BLEDescriptor UnlockDescriptor("2901", "Unlock");
-BLEDescriptor MACDescriptor("2901", "MAC Address");
-
-bool BLE_activated = true;  //true if the bluetooth is activated
-uint32_t tim_connec = 0;    // time in ms or we start to activate the bluetooth following a detection of movement
-
-
-//IMU : LSM6DS3
-LSM6DS3 imu(I2C_MODE, 0x6A);  //I2C device address 0x6A
-uint32_t timer_imu = millis();
-bool MotionBig = false;
-bool MotionSmall = false;
-bool MotionDetect = false;
-
-// GPS PA1010D
-Adafruit_GPS GPS(&Serial1);
-bool start_gps = false;
-bool position_acquired = false;
-uint32_t timer = millis();
-#define GPS_WKUP_PIN D8
-
-// SIM800L GSM 2G Module
-UART Serial2(D0, D1, NC, NC);
-#define SIM800_RST_PIN A5
-#define SIM800_DTR_PIN A5
-#define TIME_OUT_MS_BLE_ACT 5000  // 300s 300000 times in ms or bluetooth enabled to allow connection following motion detection. (value 5000 for 5s tests)
-SIM800L* sim800l;
-bool send_position = false;
-bool send_move = false;
-
-// Buzzer
-const int buzzerPin = D2;
-void PulseBuzzer(int repetitions, unsigned long durationOn, unsigned long durationOff);
-unsigned long previousMillis = 0;
-int currentRep = 0;
-
-//Electroaimant
-const int aimantPin = D3;
-
-// Set a threshold to determine a "small" or "big" movement
-
-float SmallMT = 40.0;  //     SmallMotionThreshold
-float BigMT = 170.0;   //    BigMotionThreshold
-
-float SmallRT = 40.0;  //     SmallRotationThreshold
-float BigRT = 145.0;   //     BigRotationThreshold
-
-//batterie
-#define VBAT_ENABLE 14
-float getBatteryVoltage();
-
-float MotionData;
-float RotationData;
-
-unsigned long StartCoolDown = 0;  //check point for millis aided cooldown
-
-float lastLatitude = 0.0;
-float lastLongitude = 0.0;
+// Battery
+#ifndef BATTERY_H
+  #include "battery.h"
+#endif
 
 bool hasPositionChanged(float currentLatitude, float currentLongitude) {
     float threshold = 0.0001; // Définis un seuil de changement, ajuste selon le besoin
@@ -174,6 +92,10 @@ void loop() {
 
   MotionData = getMotionData();
   RotationData = getRotationData();
+
+  float batteryVoltage = getBatteryVoltage();
+  Serial.println(batteryVoltage);
+  checkBattery(batteryVoltage); // Check the battery level at the beginning of the loop and take action if necessary
 
   if (Config.isActivate) {  //alarm enalbled
     activateGPS();
@@ -411,13 +333,6 @@ void sim_setup(void) {
 
 
 //------------- ADDITIONAL FUNCTIONS ------------------------------
-float getBatteryVoltage() {
-  //unsigned int adcCount = analogRead(PIN_VBAT);
-  float adcCount = analogRead(PIN_VBAT);
-  float adcVoltage = (((adcCount - 3000) / 4096) * 0.55) + 3.6;
-  //float vBat = adcVoltage * 1510.0/510.0;
-  return adcVoltage;
-}
 
 // provides the absolute difference in acceleration between consecutive calls, helping to monitor changes in motion over time.
 float getMotionData() {
@@ -525,7 +440,7 @@ void onDisconnect(BLEDevice central) {
   digitalWrite(LEDB, HIGH);
 }
 void onWritePassword(BLEDevice central, BLECharacteristic characteristic) {
-  const int motDePasseAttendu = 13330;
+  const int motDePasseAttendu = 1;
   short int value = PasswordCharacteristic.value();
   // Conversion(value);
   isAuthenticate = (value == motDePasseAttendu);
@@ -570,15 +485,17 @@ void onReadName(BLEDevice central, BLECharacteristic characteristic) {
 void onWriteActivation(BLEDevice central, BLECharacteristic characteristic) {
   if (isAuthenticate) {
     Config.isActivate = ActivationCharacteristic.value();
-    if (Config.isActivate != 0) {
+    if (Config.isActivate != 0 && isLowBattery == false) {
       Serial.println("Alarme enabled");
       digitalWrite(SIM800_DTR_PIN, LOW);  // put in normal mode
       delay(100);
       sim800l->setPowerMode(NORMAL);  // set normal functionnality mode
-    } else {
+    } else if (Config.isActivate == 0 && isLockedBattery == false) {
       Serial.print("Désactivation");
       sim800l->setPowerMode(MINIMUM);      // set minimum functionnality mode
       digitalWrite(SIM800_DTR_PIN, HIGH);  // put in sleep mode
+    } else {
+      Serial.println("Battery level too low, please charge the device.");
     }
   } else {
     ActivationCharacteristic.writeValue(Config.isActivate);
@@ -593,11 +510,15 @@ void onReadActivation(BLEDevice central, BLECharacteristic characteristic) {
 
 void onWriteUnlock(BLEDevice central, BLECharacteristic characteristic) {
   if (isAuthenticate) {
-    // activate electromagnet
-    Serial.println("Unlock");
-    digitalWrite(aimantPin, HIGH);
-    delay(2000);
-    digitalWrite(aimantPin, LOW);
+    if (isLockedBattery == false) {
+      // activate electromagnet
+      Serial.println("Unlock");
+      digitalWrite(aimantPin, HIGH);
+      delay(2000);
+      digitalWrite(aimantPin, LOW);
+    } else {
+      Serial.println("Battery level too low, please charge the device.");
+    }
   }
 }
 
