@@ -31,12 +31,16 @@ BLEStringCharacteristic NameCharacteristic("19B10001-E8F2-537E-4F6C-D104768A1214
 BLEStringCharacteristic MACCharacteristic("19B10001-E8F2-537E-4F6C-D104768A1217", BLERead, 20);
 BLEBooleanCharacteristic ActivationCharacteristic("19B10001-E8F2-537E-4F6C-D104768A1215", BLERead | BLEWrite);
 BLEBooleanCharacteristic UnlockCharacteristic("19B10001-E8F2-537E-4F6C-D104768A1216", BLEWrite);
+BLEBooleanCharacteristic StopAlarmCharacteristic("19B10001-E8F2-537E-4F6C-D104768A1218", BLEWrite); // Ajout d'une caractéristique pour arrêter l'alarme
+
 
 BLEDescriptor PasswordDescriptor("2901", "Password");  // Bluetooth® Low Energy Descriptor
 BLEDescriptor NameDescriptor("2901", "Name");
 BLEDescriptor ActivationDescriptor("2901", "Activation");
 BLEDescriptor UnlockDescriptor("2901", "Unlock");
 BLEDescriptor MACDescriptor("2901", "MAC Address");
+BLEDescriptor stopAlarmDescriptor("2901", "Stop Alarm");
+
 
 bool BLE_activated = true;  //true if the bluetooth is activated
 uint32_t tim_connec = 0;    // time in ms or we start to activate the bluetooth following a detection of movement
@@ -98,6 +102,17 @@ bool hasPositionChanged(float currentLatitude, float currentLongitude) {
     float threshold = 0.0001; // Définis un seuil de changement, ajuste selon le besoin
     return (abs(currentLatitude - lastLatitude) > threshold || abs(currentLongitude - lastLongitude) > threshold);
 }
+
+void onWriteStopAlarm(BLEDevice central, BLECharacteristic characteristic) {
+  Serial.println("onWriteStopAlarm appelée"); // Ajoutez cette ligne
+  if (StopAlarmCharacteristic.value()) {
+    Serial.println("Arrêt de l'alarme demandé"); // Ajoutez cette ligne
+    stopAlarm();
+    StopAlarmCharacteristic.writeValue(false);
+  }
+}
+
+bool alarmShouldStop = false; // Variable globale pour contrôler l'arrêt de l'alarme
 
 //-------------------------------- SETUP ----------------------------------------
 void setup() {
@@ -332,12 +347,15 @@ void ble_setup(void) {
   ActivationCharacteristic.addDescriptor(ActivationDescriptor);
   UnlockCharacteristic.addDescriptor(UnlockDescriptor);
   MACCharacteristic.addDescriptor(MACDescriptor);
+  StopAlarmCharacteristic.addDescriptor(stopAlarmDescriptor);
+
   // add the characteristic to the service
   PasswordService.addCharacteristic(PasswordCharacteristic);
   ConfigService.addCharacteristic(NameCharacteristic);
   ConfigService.addCharacteristic(ActivationCharacteristic);
   ConfigService.addCharacteristic(UnlockCharacteristic);
   ConfigService.addCharacteristic(MACCharacteristic);
+  ConfigService.addCharacteristic(StopAlarmCharacteristic);
   // add service
   BLE.addService(PasswordService);
   BLE.addService(ConfigService);
@@ -356,6 +374,8 @@ void ble_setup(void) {
   ActivationCharacteristic.setEventHandler(BLEWritten, onWriteActivation);
   ActivationCharacteristic.setEventHandler(BLERead, onReadActivation);
   UnlockCharacteristic.setEventHandler(BLEWritten, onWriteUnlock);
+  StopAlarmCharacteristic.setEventHandler(BLEWritten, onWriteStopAlarm);
+
   // start advertising
   BLE.advertise();
 }
@@ -464,22 +484,49 @@ void Temps(void) {
 }
 
 void PulseBuzzer(int repetitions, unsigned long durationOn, unsigned long durationOff) {
-  static int buzzerState = LOW;
-  unsigned long currentMillis = millis();
+    static int buzzerState = LOW; // État actuel du buzzer, initialisé à éteint
+    unsigned long currentMillis = millis(); // Temps actuel en millisecondes
 
-  if (currentRep < repetitions) {
-    if (currentMillis - previousMillis >= (buzzerState == LOW ? durationOn : durationOff)) {
-      digitalWrite(buzzerPin, buzzerState = !buzzerState);
-      previousMillis = currentMillis;
-      if (!buzzerState) currentRep++;
+    // Vérifie si l'alarme doit être arrêtée
+      Serial.println("PulseBuzzer appelée"); // Ajoutez cette ligne
+    if (alarmShouldStop) {
+        Serial.println("Arrêt de l'alarme en cours dans PulseBuzzer"); 
+        digitalWrite(buzzerPin, LOW); // Éteindre le buzzer
+        alarmShouldStop = false; // Réinitialiser le drapeau pour permettre une future activation
+        currentRep = 0; // Réinitialiser le compteur de répétitions
+        previousMillis = 0; // Réinitialiser le compteur de temps
+        MotionSmall = false; // Réinitialiser les indicateurs de mouvement
+        MotionBig = false;
+        return; // Sortir immédiatement de la fonction
     }
-  } else {
-    // Reset variables after performing all repetitions
-    currentRep = 0;
-    previousMillis = 0;
-    MotionSmall = false;
-    MotionBig = false;
-  }
+
+    // Si l'alarme n'est pas demandée à être arrêtée, continuer le processus normal
+    if (currentRep < repetitions) {
+        if ((buzzerState == LOW && currentMillis - previousMillis >= durationOn) ||
+            (buzzerState == HIGH && currentMillis - previousMillis >= durationOff)) {
+            
+            buzzerState = !buzzerState; // Changer l'état du buzzer
+            digitalWrite(buzzerPin, buzzerState); // Mettre à jour l'état du buzzer
+            previousMillis = currentMillis; // Réinitialiser le compteur de temps
+
+            // Si le buzzer vient d'être éteint, incrémenter le compteur de répétitions
+            if (buzzerState == LOW) {
+                currentRep++;
+            }
+        }
+    } else {
+        // Une fois toutes les répétitions effectuées, réinitialiser les variables pour une prochaine utilisation
+        currentRep = 0;
+        previousMillis = 0;
+        MotionSmall = false;
+        MotionBig = false;
+    }
+}
+
+void stopAlarm() {
+  Serial.println("Début stopAlarm"); // Ajoutez cette ligne
+  alarmShouldStop = true;
+  Serial.println("alarmShouldStop défini sur true"); // Ajoutez cette ligne
 }
 
 void GPS_ISR() {
