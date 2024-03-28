@@ -24,29 +24,53 @@ Here is the list of all the main documents related to the project:
 - [User Manual](Documents/UserManual/UserManual.md) Note: The user manual is not yet available.
 - [Test Plan](Documents/QA/TestPlan.md)
 
-## How to use
+## How to Use
 
 ### Prerequisites
 
-- **Arduino IDE** installed on your computer. You can download it [here](https://www.arduino.cc/en/software).
-- **LightBlue** application installed on your smartphone. You can download it [here for Android](https://play.google.com/store/apps/details?id=com.punchthrough.lightblueexplorer&hl=fr&gl=US) and [here for iOS](https://apps.apple.com/fr/app/lightblue/id557428110).
-- The **Arduino** board at your disposal.
+Before getting started, ensure you have the following:
+
+- **Arduino IDE**: Install it on your computer. You can download it [here](https://www.arduino.cc/en/software).
+- **LightBlue** Application: Install it on your smartphone. You can download it for [Android](https://play.google.com/store/apps/details?id=com.punchthrough.lightblueexplorer&hl=fr&gl=US) and [iOS](https://apps.apple.com/fr/app/lightblue/id557428110).
+- **Arduino** Board: Make sure you have one available.
 
 ### Installation
 
-1. Clone the repository:
+Follow these steps to set up:
 
-```bash
-git clone https://github.com/algosup/2023-2024-project-4-SPORTSHIELD-team-4.git
-```
+1. **Clone the Repository**:
 
-2. Open the **Arduino IDE** and open the **SPORTSHIELD.ino** file located in the **Code** folder here `2023-2024-project-4-SPORTSHIELD-team-4/Code/SPORTSHIELD/SPORTSHIELD.ino`
-3. Connect your **Arduino** board to your computer.
-4. Select the correct board and port in the **Arduino IDE**.
-5. Upload the code to your **Arduino** board.
-6. Open the **LightBlue** application on your smartphone.
-7. Connect to the **SPORTSHIELD** device. The device should appear in the list of devices in the **LightBlue** application with the name **Team 4**.
-8. Now you can use the **SPORTSHIELD** device.
+    ```bash
+    git clone https://github.com/algosup/2023-2024-project-4-SPORTSHIELD-team-4.git
+    ```
+
+2. **Open Arduino IDE**:
+
+    Open the Arduino IDE and navigate to the SPORTSHIELD.ino file located in the Code folder here: `2023-2024-project-4-SPORTSHIELD-team-4/Code/SPORTSHIELD/SPORTSHIELD.ino`
+
+3. **Connect Arduino Board**:
+
+    Connect your Arduino board to your computer.
+
+4. **Configure Arduino IDE**:
+
+    Select the correct board and port in the Arduino IDE.
+
+5. **Upload Code**:
+
+    Upload the code to your Arduino board.
+
+6. **Open LightBlue Application**:
+
+    Launch the LightBlue application on your smartphone.
+
+7. **Connect to SPORTSHIELD Device**:
+
+    Find and connect to the SPORTSHIELD device. It should appear in the list of devices in the LightBlue application with the name "Team 4".
+
+8. **Start Using SPORTSHIELD**:
+
+    Now you can start using the SPORTSHIELD device. Enjoy!
 
 | Photo                                                                                                                                     | Name            | Role              | LinkedIn                                                           |
 | ----------------------------------------------------------------------------------------------------------------------------------------- | --------------- | ----------------- | ------------------------------------------------------------------ |
