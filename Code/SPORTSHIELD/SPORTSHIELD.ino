@@ -12,6 +12,16 @@
   #include "battery.h"
 #endif
 
+// BLE
+#ifndef BLE_H
+  #include "bluetooth.h"
+#endif
+
+// IMU
+#ifndef IMU_H
+  #include "imu.h"
+#endif
+
 bool hasPositionChanged(float currentLatitude, float currentLongitude) {
     float threshold = 0.0001; // Définis un seuil de changement, ajuste selon le besoin
     return (abs(currentLatitude - lastLatitude) > threshold || abs(currentLongitude - lastLongitude) > threshold);
@@ -238,58 +248,11 @@ if (GPS.fix && position_acquired == false) {
 }
 
 //------------- SETUP FUNCTIONS ------------------------------
-void ble_setup(void) {
-  if (!BLE.begin()) {
-    Serial.println("starting Bluetooth® Low Energy module failed!");
-    while (1)  // set a reset in this case? risk of card crash?
-      ;
-  }
-  // set advertised local name and service UUID:
-  BLE.setLocalName("Team4");
-  BLE.setDeviceName("Team4");
-  BLE.setAdvertisedService(PasswordService);
-  // add descriptors
-  PasswordCharacteristic.addDescriptor(PasswordDescriptor);
-  NameCharacteristic.addDescriptor(NameDescriptor);
-  ActivationCharacteristic.addDescriptor(ActivationDescriptor);
-  UnlockCharacteristic.addDescriptor(UnlockDescriptor);
-  MACCharacteristic.addDescriptor(MACDescriptor);
-  // add the characteristic to the service
-  PasswordService.addCharacteristic(PasswordCharacteristic);
-  ConfigService.addCharacteristic(NameCharacteristic);
-  ConfigService.addCharacteristic(ActivationCharacteristic);
-  ConfigService.addCharacteristic(UnlockCharacteristic);
-  ConfigService.addCharacteristic(MACCharacteristic);
-  // add service
-  BLE.addService(PasswordService);
-  BLE.addService(ConfigService);
-  // set the initial value for the characeristic:
-  PasswordCharacteristic.writeValue(0);
-  NameCharacteristic.writeValue("\n");
-  ActivationCharacteristic.writeValue(false);
-  UnlockCharacteristic.writeValue(false);
-  MACCharacteristic.writeValue(BLE.address());
-  //set event handler
-  BLE.setEventHandler(BLEConnected, onConnect);
-  BLE.setEventHandler(BLEDisconnected, onDisconnect);
-  PasswordCharacteristic.setEventHandler(BLEWritten, onWritePassword);
-  NameCharacteristic.setEventHandler(BLEWritten, onWriteName);
-  NameCharacteristic.setEventHandler(BLERead, onReadName);
-  ActivationCharacteristic.setEventHandler(BLEWritten, onWriteActivation);
-  ActivationCharacteristic.setEventHandler(BLERead, onReadActivation);
-  UnlockCharacteristic.setEventHandler(BLEWritten, onWriteUnlock);
-  // start advertising
-  BLE.advertise();
-}
 
-void imu_setup(void) {
-  if (imu.begin() != 0) {
-    Serial.println("Device error");
-  } else {
-    Serial.println("Accelerometer launched");
-  }
-}
-
+/*
+  * Function to setup the GPS module
+  * @return void
+*/
 void gps_setup(void) {
   pinMode(GPS_WKUP_PIN, OUTPUT);
   digitalWrite(GPS_WKUP_PIN, LOW);
@@ -303,6 +266,10 @@ void gps_setup(void) {
   // GPS.sendCommand("$PMTK161,0*28");   // send to standby mode
 }
 
+/*
+  * Function to setup the SIM800L module
+  * @return void
+*/
 void sim_setup(void) {
   while (!sim800l->isReady()) {
     Serial.println(F("Problem to initialize AT command, retry in 1 sec"));
@@ -334,36 +301,10 @@ void sim_setup(void) {
 
 //------------- ADDITIONAL FUNCTIONS ------------------------------
 
-// provides the absolute difference in acceleration between consecutive calls, helping to monitor changes in motion over time.
-float getMotionData() {
-  static float previousAcceleration = 0;
-  //r
-  float accelX = imu.readFloatAccelX();
-  float accelY = imu.readFloatAccelY();
-  float accelZ = imu.readFloatAccelZ();
-
-  float currentAcceleration = sqrt(accelX * accelX + accelY * accelY + accelZ * accelZ) * 100;
-  float MotionDataerence = currentAcceleration - previousAcceleration;  // Calculate the acceleration difference
-  previousAcceleration = currentAcceleration;
-
-  return fabs(MotionDataerence);  //returns a value always positive
-}
-
-float getRotationData() {
-  static float previousRotation = 0;
-
-  // Read gyroscope values
-  float gyroX = imu.readFloatGyroX();
-  float gyroY = imu.readFloatGyroY();
-  float gyroZ = imu.readFloatGyroZ();
-
-  float currentRotation = sqrt(gyroX * gyroX + gyroY * gyroY + gyroZ * gyroZ);  // Calculate the current rotation based on gyroscope readings
-  float RotationDataerence = currentRotation - previousRotation;                // Calculate the difference in rotation
-  previousRotation = currentRotation;                                           // Update the previous rotation value
-
-  return fabs(RotationDataerence);
-}
-
+/*
+  * Function to print current time in hours, minutes, and seconds
+  * @return void
+*/
 void Temps(void) {
   unsigned long millisPassed = millis();
   unsigned int seconds = (millisPassed / 1000) % 60;
@@ -378,6 +319,13 @@ void Temps(void) {
   Serial.println("s");
 }
 
+/*
+  * Function to pulse the buzzer for a specified number of repetitions, duration on, and duration off
+  * @param repetitions the number of times to pulse the buzzer
+  * @param durationOn the duration in milliseconds the buzzer is on
+  * @param durationOff the duration in milliseconds the buzzer is off
+  * @return void
+*/
 void PulseBuzzer(int repetitions, unsigned long durationOn, unsigned long durationOff) {
   static int buzzerState = LOW;
   unsigned long currentMillis = millis();
@@ -397,6 +345,12 @@ void PulseBuzzer(int repetitions, unsigned long durationOn, unsigned long durati
   }
 }
 
+/*
+  * Function to check if the position has changed
+  * @param currentLatitude the current latitude
+  * @param currentLongitude the current longitude
+  * @return bool
+*/
 void GPS_ISR() {
   if (Config.isActivate != 0) {
     if (!position_acquired) {
@@ -411,6 +365,10 @@ void GPS_ISR() {
   }
 }
 
+/*
+  * Function to activate the GPS module
+  * @return void
+*/
 void activateGPS() {
   if (start_gps == true) {
     digitalWrite(GPS_WKUP_PIN, HIGH);
@@ -418,110 +376,27 @@ void activateGPS() {
   }
 }
 
+/*
+  * Function to activate the ISR timer
+  * @return void
+*/
 void TimerHandler() {
   ISR_Timer.run();
 }
 
+/*
+  * Function to set send_position to true
+  * @return void
+*/
 void SIM_ISR() {
   send_position = true;
 }
 
-void onConnect(BLEDevice central) {
-  Serial.print("Connected to ");
-  Serial.println(central.address());
-  Serial.println(BLE.address());
-  digitalWrite(LEDB, LOW);
-}
-
-void onDisconnect(BLEDevice central) {
-  Serial.print(F("Disconnected from central: "));
-  Serial.println(central.address());
-  isAuthenticate = false;
-  digitalWrite(LEDB, HIGH);
-}
-void onWritePassword(BLEDevice central, BLECharacteristic characteristic) {
-  const int motDePasseAttendu = 1;
-  short int value = PasswordCharacteristic.value();
-  // Conversion(value);
-  isAuthenticate = (value == motDePasseAttendu);
-  Serial.println(isAuthenticate ? "successful authentication" : "wrong password");
-}
-
-char Conversion(unsigned short int data) {
-  char mdphexadecimal[5];
-  sprintf(mdphexadecimal, "%04X", data);
-
-  for (int i = 0; i < 2; ++i) {
-    char temp = mdphexadecimal[i];
-    mdphexadecimal[i] = mdphexadecimal[2 + i];
-    mdphexadecimal[2 + i] = temp;
-  }
-  //Serial.println("Mot de passe : " + String(valeur) + " ");  //used to see the value in decimal
-  Serial.print("Written password  = ");
-  Serial.println(mdphexadecimal);
-}
-
-void onWriteName(BLEDevice central, BLECharacteristic characteristic) {
-  if (isAuthenticate) {
-    Config.Name = NameCharacteristic.value();
-    String value = NameCharacteristic.value();
-    Serial.print("Written name : ");
-    Serial.println(value);
-  } else {
-    NameCharacteristic.writeValue("\n");
-  }
-}
-
-void onReadName(BLEDevice central, BLECharacteristic characteristic) {
-  Serial.println("CALLBACK READ");
-  Serial.println(isAuthenticate);
-  if (isAuthenticate) {
-    NameCharacteristic.writeValue(Config.Name);
-  } else {
-    NameCharacteristic.writeValue("\n");
-  }
-}
-
-void onWriteActivation(BLEDevice central, BLECharacteristic characteristic) {
-  if (isAuthenticate) {
-    Config.isActivate = ActivationCharacteristic.value();
-    if (Config.isActivate != 0 && isLowBattery == false) {
-      Serial.println("Alarme enabled");
-      digitalWrite(SIM800_DTR_PIN, LOW);  // put in normal mode
-      delay(100);
-      sim800l->setPowerMode(NORMAL);  // set normal functionnality mode
-    } else if (Config.isActivate == 0 && isLockedBattery == false) {
-      Serial.print("Désactivation");
-      sim800l->setPowerMode(MINIMUM);      // set minimum functionnality mode
-      digitalWrite(SIM800_DTR_PIN, HIGH);  // put in sleep mode
-    } else {
-      Serial.println("Battery level too low, please charge the device.");
-    }
-  } else {
-    ActivationCharacteristic.writeValue(Config.isActivate);
-  }
-}
-
-void onReadActivation(BLEDevice central, BLECharacteristic characteristic) {
-  // Serial.println("CALLBACK READ");
-  // Serial.println(isAuthenticate);
-  ActivationCharacteristic.writeValue(Config.isActivate);
-}
-
-void onWriteUnlock(BLEDevice central, BLECharacteristic characteristic) {
-  if (isAuthenticate) {
-    if (isLockedBattery == false) {
-      // activate electromagnet
-      Serial.println("Unlock");
-      digitalWrite(aimantPin, HIGH);
-      delay(2000);
-      digitalWrite(aimantPin, LOW);
-    } else {
-      Serial.println("Battery level too low, please charge the device.");
-    }
-  }
-}
-
+/*
+  * Function to convert DMM coordinates to DD coordinates
+  * @param dmmCoordinates the DMM coordinates to convert
+  * @return String
+*/
 String convertDMMtoDD(String dmmCoordinates) {
   int degrees;
   float minutes;
