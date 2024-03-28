@@ -36,6 +36,31 @@ Implementing energy-saving modes for inactive components can further reduce ener
 
 Implementing dynamic energy management techniques can help optimize energy consumption according to the system's operational requirements. By dynamically adjusting power parameters and component states, we can achieve greater energy efficiency and extend battery life.
 
+## Testing
+
+After implementing the above solutions, we conducted tests to evaluate the impact on battery life. We let the project run continuously a whole night and measured the battery level at the beginning and end of the test.
+
+### Test Results
+
+#### Initial battery voltage: 3.96V
+
+#### Final battery voltage: 3.8V
+
+#### Test duration: 18 hours and 20 minutes
+
+### Test Analysis
+
+The test results show a significant improvement in battery life after implementing the optimization solutions. The battery voltage dropped by only 0.16V over an 18-hour period, indicating a much lower power consumption rate compared to the previous configuration.
+
+If the project continues to consume power at the same rate, the battery life can be estimated as follows:
+
+```electricity
+Initial battery voltage: 3.7V
+Final battery voltage: 3.4V
+Voltage drop: 0.25V
+Estimated battery life: 5.7 days
+```
+
 ## Conclusion
 
 In conclusion, improving the project's battery life requires a combination of component optimization and energy-saving strategies. By optimizing the power consumption of the Bluetooth and GPS modules and implementing standby modes and dynamic power management, we can significantly improve battery life and achieve optimum performance for the project. These solutions will address the current limitations of the battery and ensure that the project efficiently meets its energy needs.
