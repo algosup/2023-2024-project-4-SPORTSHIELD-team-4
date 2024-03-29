@@ -224,7 +224,7 @@ void loop() {
   }
 
   if (MotionSmall) {
-    PulseBuzzer(2, 100, 100);  // repetitions, DurationOn , DurationOff
+    PulseBuzzer(6, 100, 100);  // repetitions, DurationOn , DurationOff
   }
 
   MotionDetect = true;
