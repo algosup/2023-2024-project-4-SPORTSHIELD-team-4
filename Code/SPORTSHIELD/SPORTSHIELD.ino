@@ -103,7 +103,7 @@ void loop() {
   RotationData = getRotationData();
 
   float batteryVoltage = getBatteryVoltage();
-  Serial.println(batteryVoltage);
+  //Serial.println(batteryVoltage);
   checkBattery(batteryVoltage); // Check the battery level at the beginning of the loop and take action if necessary
 
   if (Config.isActivate) {  //alarm enalbled
@@ -404,19 +404,40 @@ void PulseBuzzer(int repetitions, unsigned long durationOn, unsigned long durati
   static int buzzerState = LOW;
   unsigned long currentMillis = millis();
 
-  if (currentRep < repetitions) {
-    if (currentMillis - previousMillis >= (buzzerState == LOW ? durationOn : durationOff)) {
-      digitalWrite(buzzerPin, buzzerState = !buzzerState);
-      previousMillis = currentMillis;
-      if (!buzzerState) currentRep++;
+    // Vérifie si l'alarme doit être arrêtée
+    // Serial.println("PulseBuzzer appelée"); // Log pour débogage
+    if (alarmShouldStop) {
+        Serial.println("Arrêt de l'alarme en cours dans PulseBuzzer"); 
+        digitalWrite(buzzerPin, LOW); // Éteindre le buzzer
+        alarmShouldStop = false; // Réinitialiser le drapeau pour permettre une future activation
+        currentRep = 0; // Réinitialiser le compteur de répétitions
+        previousMillis = 0; // Réinitialiser le compteur de temps
+        MotionSmall = false; // Réinitialiser les indicateurs de mouvement
+        MotionBig = false;
+        return; // Sortir immédiatement de la fonction
     }
-  } else {
-    // Reset variables after performing all repetitions
-    currentRep = 0;
-    previousMillis = 0;
-    MotionSmall = false;
-    MotionBig = false;
-  }
+
+    // Si l'alarme n'est pas demandée à être arrêtée, continuer le processus normal
+    if (currentRep < repetitions) {
+        if ((buzzerState == LOW && currentMillis - previousMillis >= durationOff) ||
+            (buzzerState == HIGH && currentMillis - previousMillis >= durationOn)) {
+            
+            buzzerState = !buzzerState; // Changer l'état du buzzer
+            digitalWrite(buzzerPin, buzzerState); // Mettre à jour l'état du buzzer
+            previousMillis = currentMillis; // Réinitialiser le compteur de temps
+
+            // Si le buzzer vient d'être éteint, incrémenter le compteur de répétitions
+            if (buzzerState == LOW) {
+                currentRep++;
+            }
+        }
+    } else {
+        // Une fois toutes les répétitions effectuées, réinitialiser les variables pour une prochaine utilisation
+        currentRep = 0;
+        previousMillis = 0;
+        MotionSmall = false;
+        MotionBig = false;
+    }
 }
 
 void GPS_ISR() {

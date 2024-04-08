@@ -50,7 +50,7 @@ void checkBattery(float batteryVoltage) {
   if (batteryVoltage > LOW_BATTERY) {
     isLowBattery = false;
     if (batteryVoltage >= FULL_CHARGE) {
-      Serial.println("Battery fully charged");
+      //Serial.println("Battery fully charged");
       stopChargingBattery();
     }
   } else {
