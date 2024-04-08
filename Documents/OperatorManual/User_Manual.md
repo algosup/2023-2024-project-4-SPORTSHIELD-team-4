@@ -1,10 +1,3 @@
----
-type: DailyNote
-title: March 27, 2024
-date: '2024-03-27'
-tags: []
----
-
 ## Setup Manual
 
 ### Required Software:
