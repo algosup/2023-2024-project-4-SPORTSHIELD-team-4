@@ -34,15 +34,21 @@ BLEStringCharacteristic NameCharacteristic("19B10001-E8F2-537E-4F6C-D104768A1214
 BLEStringCharacteristic MACCharacteristic("19B10001-E8F2-537E-4F6C-D104768A1217", BLERead, 20);
 BLEBooleanCharacteristic ActivationCharacteristic("19B10001-E8F2-537E-4F6C-D104768A1215", BLERead | BLEWrite);
 BLEBooleanCharacteristic UnlockCharacteristic("19B10001-E8F2-537E-4F6C-D104768A1216", BLEWrite);
+BLEBooleanCharacteristic StopAlarmCharacteristic("19B10001-E8F2-537E-4F6C-D104768A1218", BLEWrite); // Ajout d'une caractéristique pour arrêter l'alarme
+
 
 BLEDescriptor PasswordDescriptor("2901", "Password");  // Bluetooth® Low Energy Descriptor
 BLEDescriptor NameDescriptor("2901", "Name");
 BLEDescriptor ActivationDescriptor("2901", "Activation");
 BLEDescriptor UnlockDescriptor("2901", "Unlock");
 BLEDescriptor MACDescriptor("2901", "MAC Address");
+BLEDescriptor stopAlarmDescriptor("2901", "Stop Alarm");
+
 
 bool BLE_activated = true;  //true if the bluetooth is activated
 uint32_t tim_connec = 0;    // time in ms or we start to activate the bluetooth following a detection of movement
+bool alarmShouldStop = false; // Variable globale pour contrôler l'arrêt de l'alarme
+
 
 
 //IMU : LSM6DS3

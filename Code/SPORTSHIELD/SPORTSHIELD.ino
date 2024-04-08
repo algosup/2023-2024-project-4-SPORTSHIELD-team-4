@@ -9,13 +9,23 @@
 
 // Battery
 #ifndef BATTERY_H
-  #include "battery.h"
+#include "battery.h"
 #endif
 
 bool hasPositionChanged(float currentLatitude, float currentLongitude) {
     float threshold = 0.0001; // Définis un seuil de changement, ajuste selon le besoin
     return (abs(currentLatitude - lastLatitude) > threshold || abs(currentLongitude - lastLongitude) > threshold);
 }
+
+void onWriteStopAlarm(BLEDevice central, BLECharacteristic characteristic) {
+  if (StopAlarmCharacteristic.value()) {
+    stopAlarm();
+    StopAlarmCharacteristic.writeValue(false);
+  } else {
+    // Peut-être ajouter un message d'erreur ou une réponse indiquant que l'authentification est nécessaire
+  }
+}
+
 
 //-------------------------------- SETUP ----------------------------------------
 void setup() {
@@ -130,7 +140,7 @@ void loop() {
   }
 
   if (MotionSmall) {
-    PulseBuzzer(3, 100, 100);  // repetitions, DurationOn , DurationOff
+    PulseBuzzer(10, 100, 100);  // repetitions, DurationOn , DurationOff
   }
 
   MotionDetect = true;
@@ -254,12 +264,16 @@ void ble_setup(void) {
   ActivationCharacteristic.addDescriptor(ActivationDescriptor);
   UnlockCharacteristic.addDescriptor(UnlockDescriptor);
   MACCharacteristic.addDescriptor(MACDescriptor);
+  StopAlarmCharacteristic.addDescriptor(stopAlarmDescriptor);
+
   // add the characteristic to the service
   PasswordService.addCharacteristic(PasswordCharacteristic);
   ConfigService.addCharacteristic(NameCharacteristic);
   ConfigService.addCharacteristic(ActivationCharacteristic);
   ConfigService.addCharacteristic(UnlockCharacteristic);
   ConfigService.addCharacteristic(MACCharacteristic);
+  ConfigService.addCharacteristic(StopAlarmCharacteristic);
+
   // add service
   BLE.addService(PasswordService);
   BLE.addService(ConfigService);
@@ -278,6 +292,8 @@ void ble_setup(void) {
   ActivationCharacteristic.setEventHandler(BLEWritten, onWriteActivation);
   ActivationCharacteristic.setEventHandler(BLERead, onReadActivation);
   UnlockCharacteristic.setEventHandler(BLEWritten, onWriteUnlock);
+  StopAlarmCharacteristic.setEventHandler(BLEWritten, onWriteStopAlarm);
+
   // start advertising
   BLE.advertise();
 }

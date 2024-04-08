@@ -112,6 +112,8 @@ void onWriteStopAlarm(BLEDevice central, BLECharacteristic characteristic) {
     // Peut-être ajouter un message d'erreur ou une réponse indiquant que l'authentification est nécessaire
   }
 }
+
+
 //-------------------------------- SETUP ----------------------------------------
 void setup() {
   pinMode(buzzerPin, OUTPUT);  // setup for buzzer
