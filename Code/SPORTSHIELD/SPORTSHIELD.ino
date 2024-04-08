@@ -22,7 +22,6 @@ void onWriteStopAlarm(BLEDevice central, BLECharacteristic characteristic) {
     stopAlarm();
     StopAlarmCharacteristic.writeValue(false);
   } else {
-    // Peut-être ajouter un message d'erreur ou une réponse indiquant que l'authentification est nécessaire
   }
 }
 
@@ -393,6 +392,13 @@ void Temps(void) {
   Serial.print(seconds);
   Serial.println("s");
 }
+
+void stopAlarm() {
+  Serial.println("Début stopAlarm"); // Ajoutez cette ligne
+  alarmShouldStop = true;
+  Serial.println("alarmShouldStop défini sur true"); // Ajoutez cette ligne
+}
+
 
 void PulseBuzzer(int repetitions, unsigned long durationOn, unsigned long durationOff) {
   static int buzzerState = LOW;
