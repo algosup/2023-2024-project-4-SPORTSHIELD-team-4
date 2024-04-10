@@ -38,6 +38,14 @@
     - [Team remarks](#team-remarks-3)
     - [Plan for next week](#plan-for-next-week-3)
     - [Conclusion](#conclusion-3)
+  - [Week 5](#week-5)
+    - [Present team members](#present-team-members-4)
+    - [Week objectives](#week-objectives-4)
+    - [Week achievements](#week-achievements-4)
+    - [Week issues](#week-issues-4)
+    - [Team remarks](#team-remarks-4)
+    - [Plan for next week](#plan-for-next-week-4)
+    - [Conclusion](#conclusion-4)
 
 </details>
 
@@ -286,3 +294,38 @@ As there was no dedicated project time for this week, the meeting is not face-to
 
 ### Conclusion
 The fact that the team didn't have dedicated time to work on the project for the whole week, and had other tasks to complete, made it difficult for everyone to take the time to work on the project, but they all did. It's important to point out that, as project manager; I made it compulsory for them to work for at least one hour during the week to ensure that the project was completed by the deadline, even if we had no time to devote to the project. The team is confident that the project will be completed before the end and are also very proud of their work.
+
+## Week 5
+
+Date: 2024/04/10
+
+### Present team members
+- Maxime CARON
+- Alexis LASSELIN
+- Lucas AUBARD
+- Habi CAILLEAU
+- Paul NOWAK
+- Wilfried PORTET
+
+### Week objectives
+- Finish the operator manual
+- Review the test plan/test case
+- Finish user manual
+- Continue work on team management
+
+### Week achievements
+- Finish the operator manual (Alexis and Wilfried)
+- Review the test plan/test case (Lucas and Habi)
+- Finish user manual (Paul and Maxime)
+- Continue work on team management (Maxime)
+ 
+### Week issues
+
+### Team remarks
+- Everyone is proud of the work done so far
+
+### Plan for next week
+- Prepare the presentation (all team members)
+
+### Conclusion
+The main part of the project is finished and the team is confident that the presentation will be successful. Everyone is proud of the work done so far and is looking forward to the final presentation.
