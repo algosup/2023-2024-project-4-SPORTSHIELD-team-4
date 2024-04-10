@@ -32,11 +32,11 @@
     - [I. Overview](#i-overview)
     - [II. Purpose](#ii-purpose)
     - [III. Scope](#iii-scope)
-    - [VI. Test objectives](#vi-test-objectives)
+    - [IV. Test objectives](#iv-test-objectives)
   - [2.Test Environment](#2test-environment)
     - [I. Hardware Configuration](#i-hardware-configuration)
     - [II. Software Configuration](#ii-software-configuration)
-    - [III. Tools and Utilities ( not finish )](#iii-tools-and-utilities--not-finish-)
+    - [III. Tools and Utilities](#iii-tools-and-utilities)
   - [3.Test approach](#3test-approach)
     - [I. Test principles](#i-test-principles)
     - [II. Test levels](#ii-test-levels)
@@ -49,12 +49,9 @@
       - [Unit Testing](#unit-testing-1)
       - [User Acceptance Testing (UAT)](#user-acceptance-testing-uat)
   - [4. Test Execution](#4-test-execution)
-    - [I. Evaluation criteria](#i-evaluation-criteria)
-    - [II. Testing phases](#ii-testing-phases)
+    - [I. Testing phases](#i-testing-phases)
+    - [II. Test case Execution](#ii-test-case-execution)
     - [III. GitHub issue management](#iii-github-issue-management)
-    - [VI. Test case Execution](#vi-test-case-execution)
-    - [V. Validation and Bug report handling](#v-validation-and-bug-report-handling)
-    - [VI. Bug tracking and report](#vi-bug-tracking-and-report)
     - [5. Testing outcomes](#5-testing-outcomes)
   - [8. Conclusion](#8-conclusion)
   - [9. Glossary](#9-glossary)
@@ -110,7 +107,7 @@ The purpose of the SportShield test plan is to systematically validate and ensur
 
 - Localization Testing: Validation of the SportShield device's functionality, user interface, or content across different languages, regions, or cultural settings is not addressed in this test plan. Localization testing, including translation verification and cultural adaptation testing, is excluded from the scope.
 
-### VI. Test objectives
+### IV. Test objectives
 
 The test objectives for the SportShield project are to validate the functionality, reliability, and compatibility of the device, identify and document any defects or vulnerabilities, ensure optimal performance and security measures, and evaluate usability to enhance overall customer satisfaction. Through thorough testing, the aim is to confirm that the SportShield device meets its specified requirements, complies with industry standards, and delivers a seamless and user-friendly experience for end-users.
 
@@ -166,12 +163,11 @@ Molex 146236
 
 
 
-### III. Tools and Utilities ( not finish )
+### III. Tools and Utilities
 
 - Digital multimeter 9V 
 - oscillator 
-- LightBlue 
-
+- LightBlue application
 
 ## 3.Test approach
 
@@ -206,6 +202,8 @@ Evaluating the integrated SportShield device as a whole to validate its overall 
 #### Acceptance Testing 
 Conducting tests to validate that the SportShield device meets the acceptance criteria defined by CORIS Innovation and fulfills their business needs and expectations.
 
+
+
 ### III. Test types 
 
 The test types employed in the SportShield project encompass various approaches to validate different aspects of the device's functionality and performance. These test types include:
@@ -218,12 +216,47 @@ Validating specific functionalities and features of the SportShield device to en
 Testing individual units or components of the SportShield device, such as software modules or hardware components, to verify their correctness and functionality in isolation.
 
 #### User Acceptance Testing (UAT)
- Involving end-users or representatives to evaluate the SportShield device in a real-world environment to ensure it meets their expectations and business needs.
+Involving end-users or representatives to evaluate the SportShield device in a real-world environment to ensure it meets their expectations and business needs.
 
 ## 4. Test Execution
 
-### I. Evaluation criteria 
-### II. Testing phases
+### I. Testing phases
+
+In the testing phases, you can include different stages of the testing process, each with its own specific objectives and activities. Here are some examples of testing phases you might consider:
+
+1. Test Planning: Define the test strategy, allocate necessary resources, and establish a schedule for testing activities.µ
+   
+2. Test Design: Develop test cases based on software specifications and functional requirements.
+   
+3. Test Preparation: Configure the test environment, prepare test data, and install necessary tools.
+   
+4. Test Execution: Execute test cases and record results.
+   
+5. Test Evaluation: Analyze test results to identify defects and issues.
+   
+6. Test Reporting: Present test results in reports to inform my team.
+   
+7. Defect Correction: Address identified defects and perform regression testing if necessary.
+   
+8. Validation and Verification: Validate that the software meets requirements and verify that identified issues have been resolved.
+   
+9.  Test Closure: Finalize testing activities and archive associated documents and artifacts.
+
+### II. Test case Execution
+The following structure will be use to test the SPORTSHIELD product, there is one of them for each test case :
+
+| Test Case ID | 28 |
+| --- | --- |
+| Name | Name of the test case |
+| Description | Description of the test case |
+| Pre-conditions | Requirements for the test |
+| Steps | Steps to go from the current state to the expected result |
+| Expected Result |Actual result of the test (could differ from what's expected) |
+| Status | Status of the test (To Test , Testing , Tested )  |
+| Importance | Defines if a test is important or not. Using symbols : Low / Medium / High |
+
+I create a Google Sheet to store the state of the tests and added some comment you can find them here ___ but also in this document.
+
 ### III. GitHub issue management
 
 GitHub Issues are central to our issue management strategy, enabling efficient tracking and resolution of all identified issues, bugs, and enhancement requests during testing. Here's how we do it:
@@ -243,15 +276,9 @@ GitHub Issues are central to our issue management strategy, enabling efficient t
 
 To facilitate the utulisation of GitHub issues I created a template :
 
-<img src="./Images/GitHub_ISSUE.png" alt="Template ISSUE"/>
+<img src="..\TechnicalSpecification\Images\GITHUB_ISSUE.png" alt="Template ISSUE"/>
 
 
-
-
-
-### VI. Test case Execution
-### V. Validation and Bug report handling
-### VI. Bug tracking and report
 
 ### 5. Testing outcomes
 
@@ -264,4 +291,12 @@ To facilitate the utulisation of GitHub issues I created a template :
 
 ## 8. Conclusion
 
+In summary, the SportShield test plan ensures the device meets user needs, complies with standards, and functions reliably. It addresses defects, validates performance, and prioritizes user satisfaction. With a structured approach and efficient issue management, it aims for a seamless user experience and successful product deployment.
+
 ## 9. Glossary 
+
+| Term | Definition |
+| --- | --- |
+| C | C is a general-purpose computer programming language. It was created in the 1970s by Dennis Ritchie, and remains very widely used and influential. By design, C's features cleanly reflect the capabilities of the targeted CPUs.	 |
+| IDE: Integrated Development Environment	 | An integrated development environment is a software application that provides comprehensive facilities for software development. An IDE normally consists of at least a source-code editor, build automation tools, and a debugger. (Visual Studio Code)	 |
+| Test Case | A test case is a set of conditions or variables under which a tester will determine whether an application, software system or one of its features is working as it was originally established for it to do. |
