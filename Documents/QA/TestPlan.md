@@ -53,8 +53,8 @@
     - [II. Test case Execution](#ii-test-case-execution)
     - [III. GitHub issue management](#iii-github-issue-management)
     - [5. Testing outcomes](#5-testing-outcomes)
-  - [8. Conclusion](#8-conclusion)
-  - [9. Glossary](#9-glossary)
+  - [6. Conclusion](#6-conclusion)
+  - [7. Glossary](#7-glossary)
 
 
 </details> 
@@ -289,11 +289,11 @@ To facilitate the utulisation of GitHub issues I created a template :
 |Bug Reports|Supply a detailed account of the problems to the development team, aiding in the prompt resolution of the issue|[REPORTS](https://github.com/algosup/2023-2024-project-4-SPORTSHIELD-team-4/issues?q=is%3Aissue+is%3Aclosed)|
 
 
-## 8. Conclusion
+## 6. Conclusion
 
 In summary, the SportShield test plan ensures the device meets user needs, complies with standards, and functions reliably. It addresses defects, validates performance, and prioritizes user satisfaction. With a structured approach and efficient issue management, it aims for a seamless user experience and successful product deployment.
 
-## 9. Glossary 
+## 7. Glossary 
 
 | Term | Definition |
 | --- | --- |
