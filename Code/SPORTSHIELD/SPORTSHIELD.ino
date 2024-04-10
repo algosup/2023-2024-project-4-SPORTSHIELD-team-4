@@ -12,11 +12,27 @@
 #include "battery.h"
 #endif
 
+/**
+ * Check if the position has changed based on the current latitude and longitude compared to the last known values.
+ *
+ * @param currentLatitude the current latitude value
+ * @param currentLongitude the current longitude value
+ *
+ * @return true if the position has changed beyond a certain threshold, false otherwise
+ */
 bool hasPositionChanged(float currentLatitude, float currentLongitude) {
-    float threshold = 0.0001; // Définis un seuil de changement, ajuste selon le besoin
+    float threshold = 0.0001; // Define a threshold for change, adjust as needed
     return (abs(currentLatitude - lastLatitude) > threshold || abs(currentLongitude - lastLongitude) > threshold);
 }
 
+/**
+ * Handle the event when writing to the StopAlarm characteristic.
+ *
+ * @param central the BLE device triggering the event
+ * @param characteristic the BLE characteristic being written to
+ *
+ * @return void
+*/
 void onWriteStopAlarm(BLEDevice central, BLECharacteristic characteristic) {
   if (StopAlarmCharacteristic.value()) {
     stopAlarm();
@@ -87,7 +103,7 @@ void setup() {
   pinMode(VBAT_ENABLE, OUTPUT);
   digitalWrite(VBAT_ENABLE, LOW);
 
-  Serial.println("fin setup ");
+  Serial.println("end setup ");
   digitalWrite(LEDR, HIGH);
   digitalWrite(LEDG, LOW);
   Temps();
@@ -166,7 +182,7 @@ void loop() {
 
   //bluetooth actived when we are interacting with the module or when the alarm is on
   if ((BLE_activated == true) || (Config.isActivate)) {
-    BLE.poll();  //communication autorisé
+    BLE.poll();  //communication allowed
   }
 
   //at the end of the time during which the lock has not moved, if bluetooth is activated, and the lock is not in activation mode then it is turned off to save the battery
@@ -186,7 +202,7 @@ void loop() {
   }
 
 
-// Après avoir capturé et vérifié les données GPS
+// After capturing and verifying the GPS data
 if (GPS.fix && position_acquired == false) {
     float currentLatitude = convertDMMtoDD(String(float(GPS.latitude), 4)).toFloat();
     float currentLongitude = convertDMMtoDD(String(float(GPS.longitude), 4)).toFloat();
@@ -197,7 +213,7 @@ if (GPS.fix && position_acquired == false) {
         position_acquired = true;
         GPS.fix = 0;
         digitalWrite(GPS_WKUP_PIN, LOW);
-        GPS.sendCommand("$PMTK225,4*2F");  // Envoyer au mode backup
+        GPS.sendCommand("$PMTK225,4*2F");  // Send to backup mode
         
     }
 }
@@ -205,7 +221,7 @@ if (GPS.fix && position_acquired == false) {
 
 
   if (send_move) {  //sending of positions via SIM module
-    Serial.println("Envoi detection mouvement");
+    Serial.println("Send motion detection");
     sim800l->setupGPRS("iot.1nce.net");
     sim800l->connectGPRS();
     String Route = "http://141.94.244.11:2000/sendNotfication/" + BLE.address();
@@ -384,7 +400,7 @@ void Temps(void) {
   unsigned int seconds = (millisPassed / 1000) % 60;
   unsigned int minutes = (millisPassed / (1000 * 60)) % 60;
   unsigned int hours = (millisPassed / (1000 * 60 * 60)) % 24;
-  Serial.print("Détecté a : ");
+  Serial.print("Detected at : ");
   Serial.print(hours);
   Serial.print("h");
   Serial.print(minutes);
@@ -393,10 +409,13 @@ void Temps(void) {
   Serial.println("s");
 }
 
+/**
+ * Stop the alarm by setting the alarmShouldStop flag to true.
+ */
 void stopAlarm() {
-  Serial.println("Début stopAlarm"); // Ajoutez cette ligne
+  Serial.println("Start stopAlarm"); 
   alarmShouldStop = true;
-  Serial.println("alarmShouldStop défini sur true"); // Ajoutez cette ligne
+  Serial.println("alarmShouldStop Set to true"); 
 }
 
 
@@ -404,35 +423,35 @@ void PulseBuzzer(int repetitions, unsigned long durationOn, unsigned long durati
   static int buzzerState = LOW;
   unsigned long currentMillis = millis();
 
-    // Vérifie si l'alarme doit être arrêtée
+    // Check if the alarm should be stopped
     // Serial.println("PulseBuzzer appelée"); // Log pour débogage
     if (alarmShouldStop) {
-        Serial.println("Arrêt de l'alarme en cours dans PulseBuzzer"); 
-        digitalWrite(buzzerPin, LOW); // Éteindre le buzzer
-        alarmShouldStop = false; // Réinitialiser le drapeau pour permettre une future activation
-        currentRep = 0; // Réinitialiser le compteur de répétitions
-        previousMillis = 0; // Réinitialiser le compteur de temps
-        MotionSmall = false; // Réinitialiser les indicateurs de mouvement
+        Serial.println("Stop the current alarm in PulseBuzzer"); 
+        digitalWrite(buzzerPin, LOW); // Turn off the buzzer
+        alarmShouldStop = false; // Reset the flag to allow future activation
+        currentRep = 0; // Reset the repetition counter
+        previousMillis = 0; // Reset the time counter
+        MotionSmall = false; // Reset the motion indicators
         MotionBig = false;
-        return; // Sortir immédiatement de la fonction
+        return; 
     }
 
-    // Si l'alarme n'est pas demandée à être arrêtée, continuer le processus normal
+    // If the alarm is not requested to be stopped, continue the normal process
     if (currentRep < repetitions) {
         if ((buzzerState == LOW && currentMillis - previousMillis >= durationOff) ||
             (buzzerState == HIGH && currentMillis - previousMillis >= durationOn)) {
             
-            buzzerState = !buzzerState; // Changer l'état du buzzer
-            digitalWrite(buzzerPin, buzzerState); // Mettre à jour l'état du buzzer
-            previousMillis = currentMillis; // Réinitialiser le compteur de temps
+            buzzerState = !buzzerState; // Change the state of the buzzer
+            digitalWrite(buzzerPin, buzzerState); // Update the state of the buzzer
+            previousMillis = currentMillis; // Reset the time counter
 
-            // Si le buzzer vient d'être éteint, incrémenter le compteur de répétitions
+            // If the buzzer has just been turned off, increment the repetition counter
             if (buzzerState == LOW) {
                 currentRep++;
             }
         }
     } else {
-        // Une fois toutes les répétitions effectuées, réinitialiser les variables pour une prochaine utilisation
+        // Once all repetitions are done, reset the variables for future use
         currentRep = 0;
         previousMillis = 0;
         MotionSmall = false;
