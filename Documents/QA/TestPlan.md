@@ -286,7 +286,7 @@ To facilitate the utulisation of GitHub issues I created a template :
 |-:|:-|:-:|
 |Test Plan|Describes the strategy, breadth, goals, and assets allocated for testing.|[TEST PLAN](https://github.com/algosup/2023-2024-project-4-SPORTSHIELD-team-4/blob/document/Documents/QA/TestPlan.md)|
 |Test Cases|Ensure the software is working as intended, with all features and functionalities operating correctly.|[TEST CASE](https://github.com/algosup/2023-2024-project-4-SPORTSHIELD-team-4/blob/document/Documents/QA/TestCases.md)|
-|Bug Reports|Supply a detailed account of the problems to the development team, aiding in the prompt resolution of the issue|[REPORTS](https://docs.google.com/spreadsheets/d/1GjeIAvrFhA0iOncT1shhkVFlbu5Exm2oXAq9Hg6xBJ8/edit?usp=sharing)|
+|Bug Reports|Supply a detailed account of the problems to the development team, aiding in the prompt resolution of the issue|[REPORTS](https://github.com/algosup/2023-2024-project-4-SPORTSHIELD-team-4/issues?q=is%3Aissue+is%3Aclosed)|
 
 
 ## 8. Conclusion
