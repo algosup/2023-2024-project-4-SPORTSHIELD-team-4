@@ -12,11 +12,27 @@
 #include "battery.h"
 #endif
 
+/**
+ * Check if the position has changed based on the current latitude and longitude compared to the last known values.
+ *
+ * @param currentLatitude the current latitude value
+ * @param currentLongitude the current longitude value
+ *
+ * @return true if the position has changed beyond a certain threshold, false otherwise
+ */
 bool hasPositionChanged(float currentLatitude, float currentLongitude) {
     float threshold = 0.0001; // Définis un seuil de changement, ajuste selon le besoin
     return (abs(currentLatitude - lastLatitude) > threshold || abs(currentLongitude - lastLongitude) > threshold);
 }
 
+/**
+ * Handle the event when writing to the StopAlarm characteristic.
+ *
+ * @param central the BLE device triggering the event
+ * @param characteristic the BLE characteristic being written to
+ *
+ * @return void
+*/
 void onWriteStopAlarm(BLEDevice central, BLECharacteristic characteristic) {
   if (StopAlarmCharacteristic.value()) {
     stopAlarm();
