@@ -1,5 +1,9 @@
 # Test Cases
 
+[Google sheet](https://docs.google.com/spreadsheets/d/1GjeIAvrFhA0iOncT1shhkVFlbu5Exm2oXAq9Hg6xBJ8/edit?usp=sharing)
+
+## Overview
+A test case is a structured document outlining specific scenarios or procedures to be tested within a software or system. Its purpose is to ensure that the software functions correctly and reliably, allowing for seamless production use without encountering significant bugs
 
 | Test Case ID | 1 |
 | --- | --- |

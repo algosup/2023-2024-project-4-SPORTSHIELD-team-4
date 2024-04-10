@@ -53,8 +53,8 @@
     - [II. Test case Execution](#ii-test-case-execution)
     - [III. GitHub issue management](#iii-github-issue-management)
     - [5. Testing outcomes](#5-testing-outcomes)
-  - [8. Conclusion](#8-conclusion)
-  - [9. Glossary](#9-glossary)
+  - [6. Conclusion](#6-conclusion)
+  - [7. Glossary](#7-glossary)
 
 
 </details> 
@@ -255,7 +255,7 @@ The following structure will be use to test the SPORTSHIELD product, there is on
 | Status | Status of the test (To Test , Testing , Tested )  |
 | Importance | Defines if a test is important or not. Using symbols : Low / Medium / High |
 
-I create a Google Sheet to store the state of the tests and added some comment you can find them here ___ but also in this document.
+I create a Google Sheet to store the state of the tests and added some comment you can find them [here](https://docs.google.com/spreadsheets/d/1GjeIAvrFhA0iOncT1shhkVFlbu5Exm2oXAq9Hg6xBJ8/edit?usp=sharing) but also in this [document](https://github.com/algosup/2023-2024-project-4-SPORTSHIELD-team-4/blob/document/Documents/QA/TestCases.md).
 
 ### III. GitHub issue management
 
@@ -284,16 +284,16 @@ To facilitate the utulisation of GitHub issues I created a template :
 
 |Name|Purpose|Link|
 |-:|:-|:-:|
-|Test Plan|Describes the strategy, breadth, goals, and assets allocated for testing.|[TEST PLAN]([../Testing/test_plan.md](https://github.com/algosup/2023-2024-project-4-SPORTSHIELD-team-4/blob/main/Documents/QA/TestPlan.md))|
-|Test Cases|Ensure the software is working as intended, with all features and functionalities operating correctly.|[TO DO](nothing)|
-|Bug Reports|Supply a detailed account of the problems to the development team, aiding in the prompt resolution of the issue|[REPORTS](https://github.com/algosup/2023-2024-project-4-SPORTSHIELD-team-4/issues)|
+|Test Plan|Describes the strategy, breadth, goals, and assets allocated for testing.|[TEST PLAN](https://github.com/algosup/2023-2024-project-4-SPORTSHIELD-team-4/blob/document/Documents/QA/TestPlan.md)|
+|Test Cases|Ensure the software is working as intended, with all features and functionalities operating correctly.|[TEST CASE](https://github.com/algosup/2023-2024-project-4-SPORTSHIELD-team-4/blob/document/Documents/QA/TestCases.md)|
+|Bug Reports|Supply a detailed account of the problems to the development team, aiding in the prompt resolution of the issue|[REPORTS](https://github.com/algosup/2023-2024-project-4-SPORTSHIELD-team-4/issues?q=is%3Aissue+is%3Aclosed)|
 
 
-## 8. Conclusion
+## 6. Conclusion
 
 In summary, the SportShield test plan ensures the device meets user needs, complies with standards, and functions reliably. It addresses defects, validates performance, and prioritizes user satisfaction. With a structured approach and efficient issue management, it aims for a seamless user experience and successful product deployment.
 
-## 9. Glossary 
+## 7. Glossary 
 
 | Term | Definition |
 | --- | --- |
