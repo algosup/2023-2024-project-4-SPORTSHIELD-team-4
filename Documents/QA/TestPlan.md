@@ -10,7 +10,7 @@
 ## Test Plan approval
 | Role               | Name                    | Signature | Date       |
 | ------------------ | ----------------------- | --------- | ---------- |
-| Project Manager    | Maxime CARON            |   To fill   | To fill  |
+| Project Manager    | Maxime CARON            |   ✅      | 04/10/2024 |
 | Program Manager    | Lucas AUBARD            |   To fill   | To fill  |
 | Technical Lead     | Alexis LASSELIN         |   To fill   | To fill  |
 | Software Engineer  | Wilfried PORTET         |   To fill   | To fill  |
