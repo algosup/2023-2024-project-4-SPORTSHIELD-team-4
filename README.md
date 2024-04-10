@@ -21,7 +21,7 @@ Here is the list of all the main documents related to the project:
 - [Management Artifacts](Documents/Management/ManagementArtifacts.md)
 - [Functional Specification](Documents/FunctionalSpecifications/FunctionalSpecifications.md)
 - [Technical Specification](Documents/TechnicalSpecification/TechnicalSpecifications.md)
-- [User Manual](Documents/UserManual/UserManual.md) Note: The user manual is not yet available.
+- [User Manual](/User%20Manual%20SportShield%20.pdf)
 - [Test Plan](Documents/QA/TestPlan.md)
 
 ## How to Use
