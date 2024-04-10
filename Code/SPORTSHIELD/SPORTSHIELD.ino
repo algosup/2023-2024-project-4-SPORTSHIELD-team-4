@@ -21,7 +21,7 @@
  * @return true if the position has changed beyond a certain threshold, false otherwise
  */
 bool hasPositionChanged(float currentLatitude, float currentLongitude) {
-    float threshold = 0.0001; // Définis un seuil de changement, ajuste selon le besoin
+    float threshold = 0.0001; // Define a threshold for change, adjust as needed
     return (abs(currentLatitude - lastLatitude) > threshold || abs(currentLongitude - lastLongitude) > threshold);
 }
 
@@ -103,7 +103,7 @@ void setup() {
   pinMode(VBAT_ENABLE, OUTPUT);
   digitalWrite(VBAT_ENABLE, LOW);
 
-  Serial.println("fin setup ");
+  Serial.println("end setup ");
   digitalWrite(LEDR, HIGH);
   digitalWrite(LEDG, LOW);
   Temps();
@@ -182,7 +182,7 @@ void loop() {
 
   //bluetooth actived when we are interacting with the module or when the alarm is on
   if ((BLE_activated == true) || (Config.isActivate)) {
-    BLE.poll();  //communication autorisé
+    BLE.poll();  //communication allowed
   }
 
   //at the end of the time during which the lock has not moved, if bluetooth is activated, and the lock is not in activation mode then it is turned off to save the battery
@@ -221,7 +221,7 @@ if (GPS.fix && position_acquired == false) {
 
 
   if (send_move) {  //sending of positions via SIM module
-    Serial.println("Envoi detection mouvement");
+    Serial.println("Send motion detection");
     sim800l->setupGPRS("iot.1nce.net");
     sim800l->connectGPRS();
     String Route = "http://141.94.244.11:2000/sendNotfication/" + BLE.address();
@@ -400,7 +400,7 @@ void Temps(void) {
   unsigned int seconds = (millisPassed / 1000) % 60;
   unsigned int minutes = (millisPassed / (1000 * 60)) % 60;
   unsigned int hours = (millisPassed / (1000 * 60 * 60)) % 24;
-  Serial.print("Détecté a : ");
+  Serial.print("Detected at : ");
   Serial.print(hours);
   Serial.print("h");
   Serial.print(minutes);
@@ -409,10 +409,13 @@ void Temps(void) {
   Serial.println("s");
 }
 
+/**
+ * Stop the alarm by setting the alarmShouldStop flag to true.
+ */
 void stopAlarm() {
-  Serial.println("Début stopAlarm"); 
+  Serial.println("Start stopAlarm"); 
   alarmShouldStop = true;
-  Serial.println("alarmShouldStop défini sur true"); 
+  Serial.println("alarmShouldStop Set to true"); 
 }
 
 
@@ -423,7 +426,7 @@ void PulseBuzzer(int repetitions, unsigned long durationOn, unsigned long durati
     // Check if the alarm should be stopped
     // Serial.println("PulseBuzzer appelée"); // Log pour débogage
     if (alarmShouldStop) {
-        Serial.println("Arrêt de l'alarme en cours dans PulseBuzzer"); 
+        Serial.println("Stop the current alarm in PulseBuzzer"); 
         digitalWrite(buzzerPin, LOW); // Turn off the buzzer
         alarmShouldStop = false; // Reset the flag to allow future activation
         currentRep = 0; // Reset the repetition counter
